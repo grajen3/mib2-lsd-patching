@@ -29,6 +29,14 @@ DisplayManagementDelegate {
     static /* synthetic */ Class class$de$vw$mib$asl$internal$mostkombi$streamsink$api$displaymanagement$asl$DisplayManagementService;
 
     public ChangeDataRateSequence(int n) {
+        if (n == 1) {
+            System.out.println("ChangeDataRateSequence: " + n + " ( mod -> 2 )");
+            n = 2;
+        } else {
+            System.out.println("ChangeDataRateSequence: " + n);
+        }
+        new Exception("Stack trace").printStackTrace();
+
         this._streamSinkDataRate = n;
     }
 
@@ -134,15 +142,15 @@ DisplayManagementDelegate {
     private void _stepChangeDataRate() {
         switch (this.getStreamSinkDataRate()) {
             case 0: {
-                this.getDisplayManagementService().setDataFrameRate(0);
+                this.getDisplayManagementService().setDataFrameRate(0); // invisible
                 break;
             }
             case 1: {
-                this.getDisplayManagementService().setDataFrameRate(1);
+                this.getDisplayManagementService().setDataFrameRate(1); // invisible
                 break;
             }
             case 2: {
-                this.getDisplayManagementService().setDataFrameRate(10);
+                this.getDisplayManagementService().setDataFrameRate(10); // visible
                 break;
             }
         }
@@ -188,7 +196,7 @@ DisplayManagementDelegate {
             return Class.forName(string);
         }
         catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+            throw new NoClassDefFoundError(string);
         }
     }
 }

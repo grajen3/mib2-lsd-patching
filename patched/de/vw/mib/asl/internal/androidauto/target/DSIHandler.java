@@ -1,11 +1,12 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled with CFR 0.151-SNAPSHOT (5569f06-dirty).
  */
 package de.vw.mib.asl.internal.androidauto.target;
 
 import de.vw.mib.asl.internal.androidauto.target.AndroidAutoTarget;
 import de.vw.mib.asl.internal.androidauto.target.AudioHandler;
 import de.vw.mib.asl.internal.androidauto.target.RequestHandler;
+import de.vw.mib.asl.framework.internal.framework.ServiceManager;
 
 class DSIHandler {
     private AndroidAutoTarget target;
@@ -84,9 +85,12 @@ class DSIHandler {
             this.target.trace(new StringBuffer().append("DSIHandler::handleDsiAndroidAuto2NavFocusRequestNotification - validFlag    = ").append(n2).toString());
             this.target.trace(new StringBuffer().append("DSIHandler::handleDsiAndroidAuto2NavFocusRequestNotification - navFocusType = ").append(n).toString());
         }
+        // System.out.println("** Ignore performNavFocusRequestNotification");
         if (n2 == 1) {
+            // Required to allow aa nav to actually start
             this.requestHandler.performNavFocusRequestNotification(n);
         }
+        ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
     }
 }
 

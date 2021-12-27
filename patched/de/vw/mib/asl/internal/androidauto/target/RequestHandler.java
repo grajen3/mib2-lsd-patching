@@ -193,29 +193,29 @@ public class RequestHandler {
         }
         switch (n) {
             case 1: {
-                ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
-                this.properties.setAndroidAutoNavigationActive(false);
-                if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
-                    this.target.getDSIAndroidAuto2().navFocusNotification(1, false);
-                }
-                if (this.exboxGuidanceListenerImpl == null) break;
-                this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
-                break;
+                // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
+                // this.properties.setAndroidAutoNavigationActive(false);
+                // if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
+                //     this.target.getDSIAndroidAuto2().navFocusNotification(1, false);
+                // }
+                // if (this.exboxGuidanceListenerImpl == null) break;
+                // this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
+                // break;
             }
             case 2: {
                 if (this.navigationHandler.isGuidanceActive()) {
                     if (this.target.isTraceEnabled()) {
                         this.target.trace("RequestHandler::performNavFocusRequestNotification ==> sending stopGuidance() to native navigation...");
                     }
-                    this.navigationHandler.stopGuidance();
+                    // this.navigationHandler.stopGuidance();
                 }
-                ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
+                // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
                 this.properties.setAndroidAutoNavigationActive(true);
                 if (this.startupHandler.isDeviceConnected() && this.startupHandler.isDSI2Registered()) {
                     this.target.getDSIAndroidAuto2().navFocusNotification(2, false);
                 }
-                if (this.exboxGuidanceListenerImpl == null) break;
-                this.exboxGuidanceListenerImpl.setSmartphoneGuidanceActive();
+                // if (this.exboxGuidanceListenerImpl == null) break;
+                // this.exboxGuidanceListenerImpl.setSmartphoneGuidanceActive();
                 break;
             }
             default: {

@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled with CFR 0.151-SNAPSHOT (5569f06-dirty).
  */
 package de.vw.mib.asl.internal.androidauto.api.impl;
 
@@ -7,7 +7,7 @@ import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceListener;
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceManager;
 import de.vw.mib.asl.api.exboxm.guidance.GuidanceState;
 import de.vw.mib.asl.internal.androidauto.target.NavigationListener;
-import de.vw.mib.hmi.utils.Preconditions;
+// import de.vw.mib.hmi.utils.Preconditions;
 
 public class ExboxGuidanceListenerImpl
 implements ExboxGuidanceListener {
@@ -15,8 +15,8 @@ implements ExboxGuidanceListener {
     private /*final*/NavigationListener androidautoListener;
 
     public ExboxGuidanceListenerImpl(NavigationListener navigationListener, ExboxGuidanceManager exboxGuidanceManager) {
-        Preconditions.checkNotNull(navigationListener, "AndroidAutoListener must not be null!");
-        Preconditions.checkNotNull(exboxGuidanceManager, "ExboxGuidanceManager must not be null!");
+        // Preconditions.checkNotNull(navigationListener, "AndroidAutoListener must not be null!");
+        // Preconditions.checkNotNull(exboxGuidanceManager, "ExboxGuidanceManager must not be null!");
         this.exBoxGuidanceManager = exboxGuidanceManager;
         this.androidautoListener = navigationListener;
     }
@@ -30,19 +30,20 @@ implements ExboxGuidanceListener {
     }
 
     public void setSmartphoneGuidanceActive() {
-        this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.ACTIVE);
+        this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);
+        // this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.ACTIVE);
     }
 
     public void setSmartphoneGuidanceInactive() {
         this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);
     }
 
-   // @Override
+    // @Override
     public void onExboxGuidanceStateChanged(GuidanceState guidanceState) {
-        if (guidanceState == GuidanceState.ACTIVE) {
-            this.androidautoListener.updateGuidanceActive(true);
+     //   if (guidanceState == GuidanceState.ACTIVE) {
+            this.androidautoListener.updateGuidanceActive(false);
             this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);
-        }
+      //  }
     }
 }
 

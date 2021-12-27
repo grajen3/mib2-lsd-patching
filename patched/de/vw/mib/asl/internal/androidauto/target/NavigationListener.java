@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled with CFR 0.151-SNAPSHOT (5569f06-dirty).
  */
 package de.vw.mib.asl.internal.androidauto.target;
 
@@ -28,21 +28,22 @@ extends AbstractASLNavigationServicesListener {
         this.navServices = aSLNavigationServices;
     }
 
-   // @Override
+    // @Override
     public void updateGuidanceActive(boolean bl) {
         if (this.target.isTraceEnabled()) {
-            this.target.trace(new StringBuffer().append("NavigationHandler::updateGuidanceActive - flag = ").append(bl).toString());
+            this.target.trace(new StringBuffer().append("NavigationHandler::updateGuidanceActive (ignored) - flag = ").append(bl).toString());
         }
-        if (bl) {
-            ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
-            this.properties.setAndroidAutoNavigationActive(false);
-            if (this.startupHandler.isDSI2Registered() && this.startupHandler.isDeviceConnected()) {
-                this.target.getDSIAndroidAuto2().navFocusNotification(1, true);
-            }
-        }
+        // if (bl) {
+        //     // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, false);
+        //     this.properties.setAndroidAutoNavigationActive(false);
+        //     if (this.startupHandler.isDSI2Registered() && this.startupHandler.isDeviceConnected()) {
+        // //         this.target.getDSIAndroidAuto2().navFocusNotification(1, true);
+        //     }
+        // }
+        // ServiceManager.aslPropertyManager.valueChangedBoolean(895953920, true);
     }
 
-   // @Override
+    // @Override
     public void updateServiceAvailable(boolean bl) {
         if (bl && this.stopGuidancePending) {
             this.stopGuidancePending = false;
@@ -52,20 +53,21 @@ extends AbstractASLNavigationServicesListener {
 
     public void stopGuidance() {
         if (this.target.isTraceEnabled()) {
-            this.target.trace("NavigationHandler::stopGuidance");
+            this.target.trace("NavigationHandler::stopGuidance (ignored)");
         }
-        if (this.navServices.isServiceAvailable()) {
-            this.navServices.stopGuidance(6);
-        } else {
-            this.stopGuidancePending = true;
-            if (this.target.isTraceEnabled()) {
-                this.target.trace("NavigationListener::stopGuidance() = isServiceAvailable false");
-            }
-        }
+       // if (this.navServices.isServiceAvailable()) {
+       //     this.navServices.stopGuidance(6);
+       // } else {
+            // this.stopGuidancePending = true;
+            // if (this.target.isTraceEnabled()) {
+            //     this.target.trace("NavigationListener::stopGuidance() = isServiceAvailable false");
+            // }
+       // }
     }
 
     public boolean isGuidanceActive() {
-        return this.navServices.isGuidanceActive();
+        //return this.navServices.isGuidanceActive();
+        return false;
     }
 }
 

@@ -1,5 +1,5 @@
 /*
- * Decompiled with CFR 0.152.
+ * Decompiled with CFR 0.151-SNAPSHOT (5569f06-dirty).
  */
 package de.vw.mib.bap.mqbab2.common.api.androidauto;
 
@@ -23,12 +23,13 @@ implements AndroidAutoService {
         this.register();
     }
 
-   // @Override
+    // @Override
     public boolean isAndroidAutoRouteGuidanceActive() {
-        return this.getDataPool().getBoolean(895953920, false);
+        // return this.getDataPool().getBoolean(895953920, false);
+        return false;
     }
 
-   // @Override
+    // @Override
     public void datapoolValueChanged(int n) {
         this._notifyServiceDelegates(n);
     }
@@ -44,27 +45,27 @@ implements AndroidAutoService {
         }
     }
 
-   // @Override
+    // @Override
     protected int[] getPropertyIds() {
         return ANDROID_AUTO_ASL_PROPERTY_IDS_TO_LISTEN_TO;
     }
 
-   // @Override
+    // @Override
     protected int[] getListIds() {
         return null;
     }
 
-   // @Override
+    // @Override
     protected void listValueChanged(int n) {
         this._notifyServiceDelegates(n);
     }
 
-   // @Override
+    // @Override
     public void addAndroidAutoServiceListener(AndroidAutoServiceListener androidAutoServiceListener, int[] nArray) {
         this.registerServiceListener((Object)androidAutoServiceListener, nArray);
     }
 
-   // @Override
+    // @Override
     public void removeAndroidAutoServiceListener(AndroidAutoServiceListener androidAutoServiceListener, int[] nArray) {
         this.removeServiceListener(androidAutoServiceListener, nArray);
     }
