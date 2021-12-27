@@ -1,0 +1,4 @@
+car_lsd.jar filter=lfs diff=lfs merge=lfs -text
+cfr-0.152.jar filter=lfs diff=lfs merge=lfs -text
+ibm-java-ws-jre-pxa6460sr4ifx.zip filter=lfs diff=lfs merge=lfs -text
+ibm-java-ws-sdk-pxi3260sr4ifx.zip filter=lfs diff=lfs merge=lfs -text
