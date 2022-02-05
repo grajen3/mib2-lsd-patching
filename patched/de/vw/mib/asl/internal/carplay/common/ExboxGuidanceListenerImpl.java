@@ -1,24 +1,24 @@
 /*
  * Decompiled with CFR 0.152.
  */
-package de.vw.mib.asl.internal.androidauto.api.impl;
+package de.vw.mib.asl.internal.carplay.common;
 
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceListener;
 import de.vw.mib.asl.api.exboxm.guidance.ExboxGuidanceManager;
 import de.vw.mib.asl.api.exboxm.guidance.GuidanceState;
-import de.vw.mib.asl.internal.androidauto.target.NavigationListener;
+import de.vw.mib.asl.api.navigation.ASLNavigationServicesListener;
 import de.vw.mib.hmi.utils.Preconditions;
 
 public class ExboxGuidanceListenerImpl
 implements ExboxGuidanceListener {
     private /*final*/ ExboxGuidanceManager exBoxGuidanceManager;
-    private /*final*/ NavigationListener androidautoListener;
+    private /*final*/ ASLNavigationServicesListener carplayListener;
 
-    public ExboxGuidanceListenerImpl(NavigationListener navigationListener, ExboxGuidanceManager exboxGuidanceManager) {
-        Preconditions.checkNotNull(navigationListener, "AndroidAutoListener must not be null!");
+    public ExboxGuidanceListenerImpl(ASLNavigationServicesListener aSLNavigationServicesListener, ExboxGuidanceManager exboxGuidanceManager) {
+        Preconditions.checkNotNull(aSLNavigationServicesListener, "CarplayListener must not be null!");
         Preconditions.checkNotNull(exboxGuidanceManager, "ExboxGuidanceManager must not be null!");
+        this.carplayListener = aSLNavigationServicesListener;
         this.exBoxGuidanceManager = exboxGuidanceManager;
-        this.androidautoListener = navigationListener;
     }
 
     public void startup() {
@@ -40,7 +40,7 @@ implements ExboxGuidanceListener {
    // @Override
     public void onExboxGuidanceStateChanged(GuidanceState guidanceState) {
         if (guidanceState == GuidanceState.ACTIVE) {
-            this.androidautoListener.updateGuidanceActive(true);
+            this.carplayListener.updateGuidanceActive(true);
             this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);
         }
     }
