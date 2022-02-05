@@ -190,7 +190,11 @@ implements de.vw.mib.asl.api.navigation.ASLNavigationServices {
 
    // @Override
     public int stopGuidance(int n) {
-        this.target.stopGuidance(n);
+        this.target.trace("ASLNavigationServices.stopGuidance(" + n + ") received.");
+        new Exception("Stack trace").printStackTrace();
+        if (n != 6) {
+            this.target.stopGuidance(n);
+        }
         return 1;
     }
 }

@@ -30,15 +30,21 @@ implements ExboxGuidanceListener {
     }
 
     public void setSmartphoneGuidanceActive() {
+        System.out.println("CP ExboxGuidanceListenerImpl.setSmartphoneGuidanceActive()");
+        new Exception("Stack trace").printStackTrace();
         this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.ACTIVE);
     }
 
     public void setSmartphoneGuidanceInactive() {
+        System.out.println("CP ExboxGuidanceListenerImpl.setSmartphoneGuidanceInactive()");
+        new Exception("Stack trace").printStackTrace();
         this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);
     }
 
    // @Override
     public void onExboxGuidanceStateChanged(GuidanceState guidanceState) {
+        System.out.println("CP ExboxGuidanceListenerImpl.onExboxGuidanceStateChanged(" + guidanceState + ")");
+        new Exception("Stack trace").printStackTrace();
         if (guidanceState == GuidanceState.ACTIVE) {
             this.carplayListener.updateGuidanceActive(true);
             this.exBoxGuidanceManager.changeSmartphoneGuidanceStateTo(GuidanceState.INACTIVE);

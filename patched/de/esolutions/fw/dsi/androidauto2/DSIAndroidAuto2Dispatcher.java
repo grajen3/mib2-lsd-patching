@@ -385,6 +385,9 @@ implements DSIAndroidAuto2Reply {
 
    // @Override
     public void setExternalDestination(double d2, double d3, String string, String string2, int n) {
+        System.out.println("DSIAndroidAuto2Dispatcher.setExternalDestination(" + d2 +", "+ d3 +", "+ string +", "+ string2 +", "+ n + ")");
+        new Exception("Stack trace").printStackTrace();  
+
         Object[] objectArray = this.getResponseListenerList();
         if (objectArray != null) {
             for (int i2 = 0; i2 < objectArray.length; ++i2) {
@@ -457,7 +460,7 @@ implements DSIAndroidAuto2Reply {
             return Class.forName(string);
         }
         catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+            throw new NoClassDefFoundError(string);
         }
     }
 }

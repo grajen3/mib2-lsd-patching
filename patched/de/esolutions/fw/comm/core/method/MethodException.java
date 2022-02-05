@@ -4,7 +4,7 @@
 package de.esolutions.fw.comm.core.method;
 
 public class MethodException
-extends Exception {
+extends RuntimeException {
     private static /*final*/ long serialVersionUID;
 
     public MethodException() {

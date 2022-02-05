@@ -190,9 +190,9 @@ public class CarPlayModeHandling {
         n = this.getNavigationType(appStateArray);
         int n3 = this.properties.getActiveNavigation();
         if (n == 2 && n3 != 2) {
-            if (this.target.isTraceEnabled()) {
+            // if (this.target.isTraceEnabled()) {
                 this.target.trace("CARPLAY - handledsiCarPlayupdateMode - Active Navigation is now: CARPLAY");
-            }
+            // }
             ServiceManager.aslPropertyManager.valueChangedBoolean(963062784, true);
             this.properties.setActiveNavigation(2);
             if (this.navServices.isServiceAvailable()) {
@@ -200,40 +200,40 @@ public class CarPlayModeHandling {
             } else if (this.target.isTraceEnabled()) {
                 this.target.trace("CARPLAY - handledsiCarPlayupdateMode - We can not stop hmi navi because service is not ready yet");
             }
-            if (this.exboxGuidanceListenerImpl != null) {
-                this.exboxGuidanceListenerImpl.setSmartphoneGuidanceActive();
-            }
+            // if (this.exboxGuidanceListenerImpl != null) {
+            //     this.exboxGuidanceListenerImpl.setSmartphoneGuidanceActive();
+            // }
         } else if (n == 3 && n3 != 3) {
-            if (this.target.isTraceEnabled()) {
+            // if (this.target.isTraceEnabled()) {
                 this.target.trace("CARPLAY - handledsiCarPlayupdateMode - Active Navigation is now: HMI");
-            }
+            // }
             if (n3 == 2) {
                 ServiceManager.aslPropertyManager.valueChangedBoolean(963062784, false);
             }
             this.properties.setActiveNavigation(3);
-            if (!this.properties.isHmiRouteGuidanceActive()) {
-                CarPlayHMIRequestParameterConfiguration carPlayHMIRequestParameterConfiguration = this.properties.getParamconfig();
-                super.getClass();
-                ResourceRequest[] resourceRequestArray = carPlayHMIRequestParameterConfiguration.getRessourceRequest(0);
-                CarPlayHMIRequestParameterConfiguration carPlayHMIRequestParameterConfiguration2 = this.properties.getParamconfig();
-                super.getClass();
-                AppStateRequest[] appStateRequestArray = carPlayHMIRequestParameterConfiguration2.getAppStateRequest(2);
-                this.target.getDSICarPlay().requestModeChange(resourceRequestArray, appStateRequestArray, "User initiated");
-            }
-            if (this.exboxGuidanceListenerImpl != null) {
-                this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
-            }
+            // if (!this.properties.isHmiRouteGuidanceActive()) {
+            //     CarPlayHMIRequestParameterConfiguration carPlayHMIRequestParameterConfiguration = this.properties.getParamconfig();
+            //     super.getClass();
+            //     ResourceRequest[] resourceRequestArray = carPlayHMIRequestParameterConfiguration.getRessourceRequest(0);
+            //     CarPlayHMIRequestParameterConfiguration carPlayHMIRequestParameterConfiguration2 = this.properties.getParamconfig();
+            //     super.getClass();
+            //     AppStateRequest[] appStateRequestArray = carPlayHMIRequestParameterConfiguration2.getAppStateRequest(2);
+            //     this.target.getDSICarPlay().requestModeChange(resourceRequestArray, appStateRequestArray, "User initiated");
+            // }
+            // if (this.exboxGuidanceListenerImpl != null) {
+            //     this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
+            // }
         } else if (n == 1) {
-            if (this.target.isTraceEnabled()) {
+            // if (this.target.isTraceEnabled()) {
                 this.target.trace("CARPLAY - handledsiCarPlayupdateMode - Navigation is now inactive");
-            }
+            // }
             if (n3 == 2) {
                 ServiceManager.aslPropertyManager.valueChangedBoolean(963062784, false);
             }
             this.properties.setActiveNavigation(1);
-            if (this.exboxGuidanceListenerImpl != null) {
-                this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
-            }
+            // if (this.exboxGuidanceListenerImpl != null) {
+            //     this.exboxGuidanceListenerImpl.setSmartphoneGuidanceInactive();
+            // }
         }
         int n4 = this.properties.getCurrentMainAudioSource();
         int n5 = this.getMainAudioSource(resourceArray);

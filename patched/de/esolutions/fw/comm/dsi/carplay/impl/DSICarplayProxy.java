@@ -92,6 +92,28 @@ DSICarplayC {
 
    // @Override
     public void requestModeChange(ResourceRequest[] resourceRequestArray, AppStateRequest[] appStateRequestArray, String string) {
+        
+        boolean ignored = false;
+        if (appStateRequestArray != null) {
+            for (int i=0; i < appStateRequestArray.length; i++) {
+                AppStateRequest appStateRequest = appStateRequestArray[i];
+                String footer = "";
+                if (appStateRequest.appStateID == 2 && appStateRequest.state && appStateRequest.speechMode == 0) {
+                    footer = " (ignored)";
+                    ignored = true;
+                }
+                System.out.println("DSICarplayProxy.requestModeChange(" + string + "): " + appStateRequest.toString() + footer);
+            }
+        } else {
+            System.out.println("DSICarplayProxy.requestModeChange(" + string + "): " + resourceRequestArray);
+        }
+                    
+        new Exception("Stack trace").printStackTrace();
+
+        if (ignored) {
+            return;
+        }
+
         DSICarplayProxy$3 dSICarplayProxy$3 = new DSICarplayProxy$3(this, resourceRequestArray, appStateRequestArray, string);
         this.proxy.remoteCallMethod((short)9, dSICarplayProxy$3);
     }

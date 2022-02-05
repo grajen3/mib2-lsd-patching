@@ -48,16 +48,23 @@ ExboxGuidanceListener {
 
    // @Override
     public void changeSmartphoneGuidanceStateTo(GuidanceState guidanceState) {
+        System.out.println("changeSmartphoneGuidanceStateTo(" + guidanceState + ")");
+        new Exception("Stack trace").printStackTrace();
         this.exboxStateService.setSmartphoneGuidanceState(guidanceState);
     }
 
    // @Override
     public GuidanceState getGuidanceState() {
-        return this.exboxStateService.getExboxGuidanceState();
+        GuidanceState guidanceState = this.exboxStateService.getExboxGuidanceState();
+        System.out.println("getGuidanceState():" + guidanceState);
+        new Exception("Stack trace").printStackTrace();
+        return guidanceState;
     }
 
    // @Override
     public void onExboxGuidanceStateChanged(GuidanceState guidanceState) {
+        System.out.println("onExboxGuidanceStateChanged(" + guidanceState + ")");
+        new Exception("Stack trace").printStackTrace();
         this.notifyListeners(guidanceState);
     }
 
