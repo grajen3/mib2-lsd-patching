@@ -7,7 +7,7 @@ FILE=$1
 
 cleanup_java() {
   echo "Cleanup $1"
-  sed -i 's: final : /*final*/:g' $1
+  sed -i 's: final : /*final*/ :g' $1
   sed -r -i 's:  @Override: // @Override:g' $1
   perl -0777 -npi -e 's:    default (.*)\{\n    \}:    /*default*/ \1;:g' $1
 }

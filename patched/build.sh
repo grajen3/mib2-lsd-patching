@@ -18,7 +18,7 @@ de/vw/mib/asl/internal/androidauto/target/NavigationListener.java \
 
 for j in $FILES; do
 echo "Compiling $j"
-${JAVA_HOME}/bin/javac -source 1.2 -target 1.2 -cp car_lsd.jar $j
+${JAVA_HOME}/bin/javac -source 1.2 -target 1.2 -cp ".:${JAR}" $j
 done
 
 #python2 ../Krakatau/assemble.py de/vw/mib/asl/internal/mostkombi/streamsink/usecases/ChangeDataRateSequence.j
@@ -31,6 +31,7 @@ CLASSES=$(echo $FILES | sed -r 's:\.java:.class:g')
 
 jar cvf NavActiveIgnore.jar $CLASSES
 
+ssh mibw sh -l /root/.profile
 #scp LoggingPatcher.jar mibw:/mnt/app/eso/hmi/lsd/jars/
 scp NavActiveIgnore.jar mibw:/mnt/app/eso/hmi/lsd/jars/
 
