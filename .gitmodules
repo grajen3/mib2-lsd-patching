@@ -1,6 +1,6 @@
 [submodule "jxe2jar"]
 	path = jxe2jar
-	url = git@github.com:andrewleech/jxe2jar.git
+	url = https://github.com/andrewleech/jxe2jar.git
 [submodule "Krakatau"]
 	path = Krakatau
-	url = git@github.com:andrewleech/Krakatau.git
+	url = https://github.com/andrewleech/Krakatau.git
