@@ -1,3 +1,4 @@
 *.jxe
 /jdk
 *.jar
+*.class
