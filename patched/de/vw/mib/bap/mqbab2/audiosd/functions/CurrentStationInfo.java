@@ -38,53 +38,54 @@ import de.vw.mib.bap.mqbab2.common.api.tvtuner.TvTunerServiceListener;
 import de.vw.mib.bap.mqbab2.generated.audiosd.serializer.CurrentStationInfo_Status;
 
 public class CurrentStationInfo
-extends Function
-implements TimerNotifier,
-Property,
-ASLAudioSDConstants,
-RadioServiceListener,
-MediaServiceListener,
-SoundServiceListener,
-TvTunerServiceListener,
-SmartphoneIntegrationServiceListener,
-NavigationServiceListener,
-ConfigurationServiceLanguageChangeListener,
-ExboxServiceListener {
+        extends Function
+        implements TimerNotifier,
+        Property,
+        ASLAudioSDConstants,
+        RadioServiceListener,
+        MediaServiceListener,
+        SoundServiceListener,
+        TvTunerServiceListener,
+        SmartphoneIntegrationServiceListener,
+        NavigationServiceListener,
+        ConfigurationServiceLanguageChangeListener,
+        ExboxServiceListener {
     protected boolean transmitALongDABProgrammStation = false;
     protected boolean autostoreRunning = false;
     protected boolean manualTuning = false;
     private int currentAbsolutePosition = 0;
     private int lastAudioComponent = 1;
-    private static /*final*/ int TIMER_UPDATE_TIME;
+    private static /* final */ int TIMER_UPDATE_TIME;
     private Timer timer = null;
-    private static /*final*/ int TIMER_ACTION_NOTHING;
-    private static /*final*/ int TIMER_ACTION_UPDATE_DATA;
-    private static /*final*/ int TIMER_ACTION_STOP_IGNORE_ENTERTAINMENT_SUPRESSION;
-    private static /*final*/ int TIMER_UPDATE_SUPPRESSION_TIME;
+    private static /* final */ int TIMER_ACTION_NOTHING;
+    private static /* final */ int TIMER_ACTION_UPDATE_DATA;
+    private static /* final */ int TIMER_ACTION_STOP_IGNORE_ENTERTAINMENT_SUPRESSION;
+    private static /* final */ int TIMER_UPDATE_SUPPRESSION_TIME;
     private Timer _suppressionTimer;
-    private static /*final*/ String MIRROR_LINK_NAME;
-    private static /*final*/ String APPLE_CAR_PLAY_NAME;
-    private static /*final*/ String GOOGLE_GAL_NAME;
-    private static /*final*/ String BAIDU_CARLIFE_NAME;
-    private static /*final*/ String TV_TUNER_SOURCE_AV_PI;
-    private static /*final*/ String I18N_FILTERCRITERIA_UNKNOWN_ARTIST_STRING;
-    private static /*final*/ String I18N_FILTERCRITERIA_UNKNOWN_ALBUM_STRING;
-    private static /*final*/ String I18N_FILTERCRITERIA_NOW_PLAYING_FOLDER_STRING;
-    protected static /*final*/ int[] RADIO_LISTENER_IDS;
-    protected static /*final*/ int[] MEDIA_LISTENER_IDS;
-    protected static /*final*/ int[] TV_TUNER_LISTENER_IDS;
-    protected static /*final*/ int[] SMARTPHONE_INTEGRATION_LISTENER_IDS;
-    protected static /*final*/ int[] NAVIGATION_LISTENER_IDS;
-    protected static /*final*/ int[] SOUND_LISTENER_IDS;
-    protected static /*final*/ int[] EXBOX_LISTENER_IDS;
+    private static /* final */ String MIRROR_LINK_NAME;
+    private static /* final */ String APPLE_CAR_PLAY_NAME;
+    private static /* final */ String GOOGLE_GAL_NAME;
+    private static /* final */ String BAIDU_CARLIFE_NAME;
+    private static /* final */ String TV_TUNER_SOURCE_AV_PI;
+    private static /* final */ String I18N_FILTERCRITERIA_UNKNOWN_ARTIST_STRING;
+    private static /* final */ String I18N_FILTERCRITERIA_UNKNOWN_ALBUM_STRING;
+    private static /* final */ String I18N_FILTERCRITERIA_NOW_PLAYING_FOLDER_STRING;
+    protected static /* final */ int[] RADIO_LISTENER_IDS;
+    protected static /* final */ int[] MEDIA_LISTENER_IDS;
+    protected static /* final */ int[] TV_TUNER_LISTENER_IDS;
+    protected static /* final */ int[] SMARTPHONE_INTEGRATION_LISTENER_IDS;
+    protected static /* final */ int[] NAVIGATION_LISTENER_IDS;
+    protected static /* final */ int[] SOUND_LISTENER_IDS;
+    protected static /* final */ int[] EXBOX_LISTENER_IDS;
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status;
 
-   // @Override
+    // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
         this.getRadioService().addRadioServiceListener(this, RADIO_LISTENER_IDS);
         this.getMediaService().addMediaServiceListener(this, MEDIA_LISTENER_IDS);
         this.getTvTunerService().addTvTunerServiceListener(this, TV_TUNER_LISTENER_IDS);
-        this.getSmartphoneIntegrationService().addSmartphoneIntegrationServiceListener(this, SMARTPHONE_INTEGRATION_LISTENER_IDS);
+        this.getSmartphoneIntegrationService().addSmartphoneIntegrationServiceListener(this,
+                SMARTPHONE_INTEGRATION_LISTENER_IDS);
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         this.getSoundService().addSoundServiceListener(this, SOUND_LISTENER_IDS);
         this.getExboxService().addExboxServiceListener(this, EXBOX_LISTENER_IDS);
@@ -96,38 +97,42 @@ ExboxServiceListener {
         return currentStationInfo_Status;
     }
 
-   // @Override
+    // @Override
     public void setFunctionData(BAPStage bAPStage, Object object) {
         switch (bAPStage.getFunctionId()) {
             case 22: {
-                this.setCurrentStationHandleSend((Integer)object);
+                this.setCurrentStationHandleSend((Integer) object);
                 break;
             }
             case 43: {
-                this.setTransmitLongDabPs((Boolean)object);
+                this.setTransmitLongDabPs((Boolean) object);
                 break;
             }
             case 30: {
-                this.setAutostoreRunning((Boolean)object);
+                this.setAutostoreRunning((Boolean) object);
                 break;
             }
             case 20: {
-                this.setManualTuneMode((Boolean)object);
+                this.setManualTuneMode((Boolean) object);
                 break;
             }
         }
     }
 
     protected void setCurrentStationInfoSend(Boolean bl) {
-        int[] nArray = new int[]{24, 20};
+        int[] nArray = new int[] { 24, 20 };
         this.context.updateStages(this, nArray, bl);
     }
 
     protected CurrentStationInfo_Status dequeueBAPEntity() {
-        return (CurrentStationInfo_Status)this.context.dequeueBAPEntity(this, class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status == null ? (class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status = CurrentStationInfo.class$("de.vw.mib.bap.mqbab2.generated.audiosd.serializer.CurrentStationInfo_Status")) : class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status);
+        return (CurrentStationInfo_Status) this.context.dequeueBAPEntity(this,
+                class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status == null
+                        ? (class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status = CurrentStationInfo
+                                .class$("de.vw.mib.bap.mqbab2.generated.audiosd.serializer.CurrentStationInfo_Status"))
+                        : class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status);
     }
 
-   // @Override
+    // @Override
     public int getFunctionId() {
         return 21;
     }
@@ -158,9 +163,10 @@ ExboxServiceListener {
         }
     }
 
-    protected /*final*/ boolean isRadioTextPlusEnabledAMFM() {
+    protected /* final */ boolean isRadioTextPlusEnabledAMFM() {
         RadioService radioService = this.getRadioService();
-        return radioService.isRadioTextSetupActive() && radioService.isRadioTextPlusSetupActive() && radioService.isRatioTextPlusActive() && radioService.isRDSSetupOptionEnabled();
+        return radioService.isRadioTextSetupActive() && radioService.isRadioTextPlusSetupActive()
+                && radioService.isRatioTextPlusActive() && radioService.isRDSSetupOptionEnabled();
     }
 
     private boolean isRadioTextPlusEnabledDAB() {
@@ -208,7 +214,10 @@ ExboxServiceListener {
 
     private boolean isOnlyFilenameAvailable() {
         MediaCurrentTrackInfo mediaCurrentTrackInfo = this.getMediaService().getCurrentTrackInfo();
-        return mediaCurrentTrackInfo.getCurrentTrackTitle().compareTo(mediaCurrentTrackInfo.getCurrentTrackFilename()) == 0 && mediaCurrentTrackInfo.getCurrentTrackAlbum().length() == 0 && mediaCurrentTrackInfo.getCurrentTrackArtist().length() == 0;
+        return mediaCurrentTrackInfo.getCurrentTrackTitle()
+                .compareTo(mediaCurrentTrackInfo.getCurrentTrackFilename()) == 0
+                && mediaCurrentTrackInfo.getCurrentTrackAlbum().length() == 0
+                && mediaCurrentTrackInfo.getCurrentTrackArtist().length() == 0;
     }
 
     private String getActivePlayingFolderName() {
@@ -226,7 +235,8 @@ ExboxServiceListener {
             currentStationInfo_Status.pi_Type = bl ? (this.isOnlyFilenameAvailable() ? 6 : 72) : 0;
             currentStationInfo_Status.pi_Id = 0;
             this.setArtistAndAlbum(currentStationInfo_Status);
-            String string2 = currentStationInfo_Status.pi_Type != 0 || currentStationInfo_Status.si_Type != 0 || currentStationInfo_Status.ti_Type != 0 ? this.getActivePlayingFolderName() : "";
+            String string2 = currentStationInfo_Status.pi_Type != 0 || currentStationInfo_Status.si_Type != 0
+                    || currentStationInfo_Status.ti_Type != 0 ? this.getActivePlayingFolderName() : "";
             currentStationInfo_Status.quaternaryInformation.setContent(string2);
             int n2 = currentStationInfo_Status.qi_Type = string2.length() != 0 ? 1 : 0;
             if (string2.length() > 0 && currentStationInfo_Status.pi_Type == 0) {
@@ -248,11 +258,11 @@ ExboxServiceListener {
 
     private void setStationInfoForMedia(CurrentStationInfo_Status currentStationInfo_Status) {
         MediaService mediaService = this.getMediaService();
-        block0 : switch (mediaService.getCurrentAudioSource()) {
-            case 1: 
+        block0: switch (mediaService.getCurrentAudioSource()) {
+            case 1:
             case 4: {
                 switch (mediaService.getCDContentType()) {
-                    case 3: 
+                    case 3:
                     case 4: {
                         int n = mediaService.getDvdChapter();
                         int n2 = mediaService.getDvdChapterCount();
@@ -261,7 +271,8 @@ ExboxServiceListener {
                             currentStationInfo_Status.pi_Type = 0;
                             currentStationInfo_Status.pi_Id = 0;
                         } else {
-                            currentStationInfo_Status.primaryInformation.setContent(new StringBuffer().append(n).append("/").append(n2).toString());
+                            currentStationInfo_Status.primaryInformation
+                                    .setContent(new StringBuffer().append(n).append("/").append(n2).toString());
                             currentStationInfo_Status.pi_Type = 65;
                             currentStationInfo_Status.pi_Id = n;
                         }
@@ -285,24 +296,24 @@ ExboxServiceListener {
                 this.setStationInfoNoInformationAvailable(currentStationInfo_Status);
                 break;
             }
-            case 7: 
+            case 7:
             case 14: {
                 this.setStationInfoForMediaExternalDevice(currentStationInfo_Status);
                 currentStationInfo_Status.quaternaryInformation.setContent("");
                 currentStationInfo_Status.qi_Type = 0;
                 break;
             }
-            case 2: 
-            case 5: 
-            case 6: 
-            case 8: 
-            case 10: 
-            case 11: 
+            case 2:
+            case 5:
+            case 6:
+            case 8:
+            case 10:
+            case 11:
             case 13: {
                 this.setStationInfoForMediaExternalDevice(currentStationInfo_Status);
                 break;
             }
-            case 3: 
+            case 3:
             case 9: {
                 this.setStationInfoNoInformationAvailable(currentStationInfo_Status);
                 break;
@@ -437,7 +448,10 @@ ExboxServiceListener {
 
     protected void setStationProperties(CurrentStationInfo_Status currentStationInfo_Status) {
         RadioService radioService = this.getRadioService();
-        currentStationInfo_Status.stationProperties.dabServiceLinkedToFm = this.getSoundService().getCurrentAudioComponent() == 1 && radioService.getCurrentStationBand() == 2 ? radioService.getDABServiceState() == 3 : false;
+        currentStationInfo_Status.stationProperties.dabServiceLinkedToFm = this.getSoundService()
+                .getCurrentAudioComponent() == 1 && radioService.getCurrentStationBand() == 2
+                        ? radioService.getDABServiceState() == 3
+                        : false;
         currentStationInfo_Status.stationProperties.ibocLiveTransmissionActiveHdLiveMode = false;
     }
 
@@ -459,24 +473,32 @@ ExboxServiceListener {
             n = 0;
             bl = true;
         } else if (n2 == 1) {
-            string = !this.transmitALongDABProgrammStation ? radioCurrentDABStationInfo.getCurrentDABStationServiceShortName() : radioCurrentDABStationInfo.getCurrentDABStationServiceProgrammStation();
+            string = !this.transmitALongDABProgrammStation
+                    ? radioCurrentDABStationInfo.getCurrentDABStationServiceShortName()
+                    : radioCurrentDABStationInfo.getCurrentDABStationServiceProgrammStation();
             n = 70;
         } else if (n4 == 2) {
-            string = !this.transmitALongDABProgrammStation ? radioCurrentDABStationInfo.getCurrentDABStationSecondaryServiceShortName() : radioCurrentDABStationInfo.getCurrentDABStationSecondaryServiceName();
+            string = !this.transmitALongDABProgrammStation
+                    ? radioCurrentDABStationInfo.getCurrentDABStationSecondaryServiceShortName()
+                    : radioCurrentDABStationInfo.getCurrentDABStationSecondaryServiceName();
             n = 76;
         } else {
-            string = !this.transmitALongDABProgrammStation ? radioCurrentDABStationInfo.getCurrentDABStationServiceShortName() : radioCurrentDABStationInfo.getCurrentDABStationServiceProgrammStation();
+            string = !this.transmitALongDABProgrammStation
+                    ? radioCurrentDABStationInfo.getCurrentDABStationServiceShortName()
+                    : radioCurrentDABStationInfo.getCurrentDABStationServiceProgrammStation();
             n = 70;
         }
         if ((!this.manualTuning || bl) && string.length() > 0) {
             currentStationInfo_Status.primaryInformation.setContent(string);
             currentStationInfo_Status.pi_Type = n;
         } else {
-            currentStationInfo_Status.primaryInformation.setContent(radioCurrentDABStationInfo.getCurrentDABStationFrequencyLabel());
+            currentStationInfo_Status.primaryInformation
+                    .setContent(radioCurrentDABStationInfo.getCurrentDABStationFrequencyLabel());
             currentStationInfo_Status.pi_Type = 0;
         }
         currentStationInfo_Status.pi_Id = this.currentAbsolutePosition;
-        currentStationInfo_Status.secondaryInformation.setContent(radioCurrentDABStationInfo.getCurrentDABStationEnsembleName());
+        currentStationInfo_Status.secondaryInformation
+                .setContent(radioCurrentDABStationInfo.getCurrentDABStationEnsembleName());
         currentStationInfo_Status.si_Type = currentStationInfo_Status.secondaryInformation.isEmptyString() ? 0 : 75;
         String string2 = "";
         String string3 = "";
@@ -499,7 +521,9 @@ ExboxServiceListener {
     }
 
     protected String formatFrequency(int n, int n2) {
-        String string = this.getRadioService().getFMFrequencyScale() == 1 ? this.getFixFormatter().fmtIcFrequencyNAR(n, n2, -1) : this.getFixFormatter().fmtIcFrequency(n, n2, this.getConfigurationService().getCurrentGUILanguage());
+        String string = this.getRadioService().getFMFrequencyScale() == 1
+                ? this.getFixFormatter().fmtIcFrequencyNAR(n, n2, -1)
+                : this.getFixFormatter().fmtIcFrequency(n, n2, this.getConfigurationService().getCurrentGUILanguage());
         return string;
     }
 
@@ -508,7 +532,9 @@ ExboxServiceListener {
         RadioCurrentChannelInfo radioCurrentChannelInfo = radioService.getCurrentChannelInfo();
         RadioCurrentSatRadioText radioCurrentSatRadioText = radioService.getCurrentSatRadioText();
         currentStationInfo_Status.channel_Id = radioCurrentChannelInfo.getCurrentSatChannelNumber();
-        currentStationInfo_Status.primaryInformation.setContent(this.transmitALongDABProgrammStation ? radioCurrentChannelInfo.getCurrentSatChannelName() : radioCurrentChannelInfo.getCurrentSatChannelShortName());
+        currentStationInfo_Status.primaryInformation
+                .setContent(this.transmitALongDABProgrammStation ? radioCurrentChannelInfo.getCurrentSatChannelName()
+                        : radioCurrentChannelInfo.getCurrentSatChannelShortName());
         currentStationInfo_Status.pi_Type = 69;
         String string = radioCurrentSatRadioText.getCurrentSatRadioTextTitleName();
         currentStationInfo_Status.secondaryInformation.setContent(string);
@@ -516,7 +542,8 @@ ExboxServiceListener {
         String string2 = radioCurrentSatRadioText.getCurrentSatRadioTextArtistName();
         currentStationInfo_Status.tertiaryInformation.setContent(string2);
         currentStationInfo_Status.ti_Type = string2.length() != 0 ? 73 : 0;
-        currentStationInfo_Status.quaternaryInformation.setContent(radioCurrentSatRadioText.getCurrentSatRadioTextCategoryName());
+        currentStationInfo_Status.quaternaryInformation
+                .setContent(radioCurrentSatRadioText.getCurrentSatRadioTextCategoryName());
         currentStationInfo_Status.qi_Type = 16;
     }
 
@@ -575,7 +602,7 @@ ExboxServiceListener {
                 this.lastAudioComponent = n;
             }
             switch (this.lastAudioComponent) {
-                case 2: 
+                case 2:
                 case 3: {
                     this.setStationInfoForMedia(currentStationInfo_Status);
                     break;
@@ -609,8 +636,10 @@ ExboxServiceListener {
         RadioService radioService = this.getRadioService();
         NavigationService navigationService = this.getNavigationService();
         currentStationInfo_Status.stationInfoSwitches.taTpAvailable = radioService.getTPState() == 0;
-        currentStationInfo_Status.stationInfoSwitches.tmcAvailable = radioService.isRDSSetupOptionEnabled() && navigationService.isTMCSignalAvailable();
-        currentStationInfo_Status.stationInfoSwitches.vicsAvailableJapanMarketOnly = navigationService.isVISCSignalAvailable();
+        currentStationInfo_Status.stationInfoSwitches.tmcAvailable = radioService.isRDSSetupOptionEnabled()
+                && navigationService.isTMCSignalAvailable();
+        currentStationInfo_Status.stationInfoSwitches.vicsAvailableJapanMarketOnly = navigationService
+                .isVISCSignalAvailable();
         currentStationInfo_Status.stationInfoSwitches.ibocHdRadioAvailable = this.isHDRadioAvailable();
     }
 
@@ -627,67 +656,68 @@ ExboxServiceListener {
         }
     }
 
-   // @Override
+    // @Override
     public void getProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void requestAcknowledge() {
         this.setCurrentStationInfoSend(null);
     }
 
-   // @Override
+    // @Override
     public void indicationError(int n, BAPFunctionListener bAPFunctionListener) {
     }
 
-   // @Override
+    // @Override
     public void errorAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void initialize(boolean bl) {
         this.timer.stop();
         this.getSuppressionTimer().stop();
     }
 
-   // @Override
+    // @Override
     public void uninitialize() {
         this.timer.stop();
         this.getSuppressionTimer().stop();
         this.getRadioService().removeRadioServiceListener(this, RADIO_LISTENER_IDS);
         this.getMediaService().removeMediaServiceListener(this, MEDIA_LISTENER_IDS);
         this.getTvTunerService().removeTvTunerServiceListener(this, TV_TUNER_LISTENER_IDS);
-        this.getSmartphoneIntegrationService().removeSmartphoneIntegrationServiceListener(this, SMARTPHONE_INTEGRATION_LISTENER_IDS);
+        this.getSmartphoneIntegrationService().removeSmartphoneIntegrationServiceListener(this,
+                SMARTPHONE_INTEGRATION_LISTENER_IDS);
         this.getNavigationService().removeNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         this.getSoundService().removeSoundServiceListener(this, SOUND_LISTENER_IDS);
         this.getExboxService().removeExboxServiceListener(this, EXBOX_LISTENER_IDS);
         this.getConfigurationService().removeLanguageChangeListener(this);
     }
 
-   // @Override
+    // @Override
     public void setGetProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void ackProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
     protected void setCurrentStationHandleSend(Integer n) {
-        this.currentAbsolutePosition = n;
+        this.currentAbsolutePosition = n.intValue();
     }
 
     protected void setTransmitLongDabPs(Boolean bl) {
-        boolean bl2 = bl;
+        boolean bl2 = bl.booleanValue();
         if (this.transmitALongDABProgrammStation != bl2) {
             this.transmitALongDABProgrammStation = bl2;
             this.process(-1);
         }
     }
 
-   // @Override
+    // @Override
     public void process(int n) {
         if (!this.timer.isRunning()) {
             CurrentStationInfo_Status currentStationInfo_Status = this.dequeueBAPEntity();
@@ -698,16 +728,17 @@ ExboxServiceListener {
         }
     }
 
-   // @Override
+    // @Override
     public void timerFired(Timer timer) {
-        int n = (Integer)timer.getUserInfo();
+        int n = ((Integer) timer.getUserInfo()).intValue();
         switch (n) {
             case 1: {
                 this.process(-1);
                 break;
             }
             case 2: {
-                if (this.lastAudioComponent == 0 || this.getSoundService().getCurrentAudioComponent() != 0) break;
+                if (this.lastAudioComponent == 0 || this.getSoundService().getCurrentAudioComponent() != 0)
+                    break;
                 this.lastAudioComponent = 0;
                 this.process(-1);
                 break;
@@ -723,57 +754,57 @@ ExboxServiceListener {
     }
 
     protected void setAutostoreRunning(Boolean bl) {
-        if (this.autostoreRunning != bl) {
-            this.autostoreRunning = bl;
+        if (this.autostoreRunning != bl.booleanValue()) {
+            this.autostoreRunning = bl.booleanValue();
             this.process(-1);
         }
     }
 
     protected void setManualTuneMode(Boolean bl) {
-        this.manualTuning = bl;
+        this.manualTuning = bl.booleanValue();
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void processHMIEvent(int n) {
     }
 
-   // @Override
+    // @Override
     public void updateNavigationData(NavigationService navigationService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateSmartphoneIntegrationData(SmartphoneIntegrationService smartphoneIntegrationService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateTvTunerData(TvTunerService tvTunerService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateSoundData(SoundService soundService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateMediaData(MediaService mediaService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateRadioData(RadioService radioService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateExboxData(ExboxService exboxService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void languageChanged() {
         this.process(-1);
     }
@@ -781,20 +812,20 @@ ExboxServiceListener {
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            throw new NoClassDefFoundError(string);
         }
     }
 
     static {
-        RADIO_LISTENER_IDS = new int[]{1410, 1339, 1324, 1320, 1321, 1371, 1372, 3404, 3403, 1443, 1436, 2323, 1409, 1423, 1356, 1357, 1352, 1354, 533079040, 516301824, 1445, 1446, 1366, 1426, 1454, 1456, 1455, 1308, 3962};
-        MEDIA_LISTENER_IDS = new int[]{8, 3520, 124, 125, 138, 2849, 58};
-        TV_TUNER_LISTENER_IDS = new int[]{2314};
-        SMARTPHONE_INTEGRATION_LISTENER_IDS = new int[]{1114057728};
-        NAVIGATION_LISTENER_IDS = new int[]{2389, 2388};
-        SOUND_LISTENER_IDS = new int[]{1470};
-        EXBOX_LISTENER_IDS = new int[]{-1995243392};
+        RADIO_LISTENER_IDS = new int[] { 1410, 1339, 1324, 1320, 1321, 1371, 1372, 3404, 3403, 1443, 1436, 2323, 1409,
+                1423, 1356, 1357, 1352, 1354, 533079040, 516301824, 1445, 1446, 1366, 1426, 1454, 1456, 1455, 1308,
+                3962 };
+        MEDIA_LISTENER_IDS = new int[] { 8, 3520, 124, 125, 138, 2849, 58 };
+        TV_TUNER_LISTENER_IDS = new int[] { 2314 };
+        SMARTPHONE_INTEGRATION_LISTENER_IDS = new int[] { 1114057728 };
+        NAVIGATION_LISTENER_IDS = new int[] { 2389, 2388 };
+        SOUND_LISTENER_IDS = new int[] { 1470 };
+        EXBOX_LISTENER_IDS = new int[] { -1995243392 };
     }
 }
-

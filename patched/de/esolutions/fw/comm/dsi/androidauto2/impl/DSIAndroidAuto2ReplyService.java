@@ -23,13 +23,15 @@ import org.dsi.ifc.androidauto2.TrackData;
 import org.dsi.ifc.global.ResourceLocator;
 
 public class DSIAndroidAuto2ReplyService
-extends AbstractReplyService {
-    private static /*final*/ CallContext context = CallContext.getContext("STUB.dsi.androidauto2.DSIAndroidAuto2");
+        extends AbstractReplyService {
+    private static /* final */ CallContext context = CallContext.getContext("STUB.dsi.androidauto2.DSIAndroidAuto2");
     private static int dynamicHandle = 0;
     private DSIAndroidAuto2Reply p_DSIAndroidAuto2Reply;
 
     public DSIAndroidAuto2ReplyService(DSIAndroidAuto2Reply dSIAndroidAuto2Reply) {
-        super(new ServiceInstanceID("1109a8e3-3caa-5724-b33f-de936bc4e076", DSIAndroidAuto2ReplyService.nextDynamicHandle(), "3c1002ff-1bb7-599d-83c3-6670b394036e", "dsi.androidauto2.DSIAndroidAuto2"));
+        super(new ServiceInstanceID("1109a8e3-3caa-5724-b33f-de936bc4e076",
+                DSIAndroidAuto2ReplyService.nextDynamicHandle(), "3c1002ff-1bb7-599d-83c3-6670b394036e",
+                "dsi.androidauto2.DSIAndroidAuto2"));
         this.p_DSIAndroidAuto2Reply = dSIAndroidAuto2Reply;
     }
 
@@ -38,12 +40,12 @@ extends AbstractReplyService {
         return n;
     }
 
-   // @Override
+    // @Override
     public CallContext getCallContext() {
         return context;
     }
 
-   // @Override
+    // @Override
     public void handleCallMethod(short s, IDeserializer iDeserializer, IProxyFrontend iProxyFrontend) {
         try {
             switch (s) {
@@ -121,7 +123,8 @@ extends AbstractReplyService {
                     break;
                 }
                 case 24: {
-                    ResourceLocator resourceLocator = ResourceLocatorSerializer.getOptionalResourceLocator(iDeserializer);
+                    ResourceLocator resourceLocator = ResourceLocatorSerializer
+                            .getOptionalResourceLocator(iDeserializer);
                     int n = iDeserializer.getInt32();
                     this.p_DSIAndroidAuto2Reply.updateCoverArtUrl(resourceLocator, n);
                     break;
@@ -175,10 +178,9 @@ extends AbstractReplyService {
                     throw new MethodException(new StringBuffer().append("Invalid Method Id ").append(s).toString());
                 }
             }
-        }
-        catch (SerializerException serializerException) {
-            throw new MethodException(new StringBuffer().append("Deserialization failed: method=").append(s).append(", error=").append(serializerException.getMessage()).toString());
+        } catch (Exception serializerException) {
+            throw new MethodException(new StringBuffer().append("Deserialization failed: method=").append(s)
+                    .append(", error=").append(serializerException.getMessage()).toString());
         }
     }
 }
-

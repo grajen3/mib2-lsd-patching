@@ -14,6 +14,7 @@ de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
 "
 
 FILES="\
+de/esolutions/fw/comm/dsi/androidauto2/impl/DSIAndroidAuto2ReplyService.java \
 de/esolutions/fw/comm/dsi/carplay/impl/DSICarplayProxy.java \
 de/vw/mib/asl/internal/androidauto/target/RequestHandler.java \
 de/vw/mib/asl/internal/androidauto/target/NavigationListener.java \
@@ -21,6 +22,7 @@ de/vw/mib/asl/internal/navigation/api/impl/ASLNavigationServices.java \
 de/vw/mib/asl/internal/exboxm/api/impl/guidance/ExboxGuidanceManagerImpl.java \
 de/esolutions/fw/dsi/androidauto/DSIAndroidAutoDispatcher.java \
 de/esolutions/fw/dsi/androidauto2/DSIAndroidAuto2Dispatcher.java \
+de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
 "
 
 for j in $FILES; do
