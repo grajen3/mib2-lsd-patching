@@ -1,0 +1,878 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package org.dsi.ifc.carparkingsystem;
+
+import org.dsi.ifc.base.DSIBase;
+import org.dsi.ifc.carparkingsystem.DisplayContent;
+import org.dsi.ifc.carparkingsystem.PDCPLASystemState;
+import org.dsi.ifc.carparkingsystem.PDCPiloPaSystemState;
+import org.dsi.ifc.carparkingsystem.PDCSound;
+import org.dsi.ifc.carparkingsystem.PDCSoundReproduction;
+import org.dsi.ifc.carparkingsystem.VPSCameraCleaning;
+import org.dsi.ifc.carparkingsystem.VPSDefaultMode;
+import org.dsi.ifc.carparkingsystem.VPSDynParkingMode;
+import org.dsi.ifc.carparkingsystem.VPSOPSOverlay;
+import org.dsi.ifc.global.CarArrayListUpdateInfo;
+
+public interface DSICarParkingSystem
+extends DSIBase {
+    public static final String VERSION;
+    public static final int ATTR_PARKINGSYSTEMVIEWOPTIONS;
+    public static final int ATTR_PDCDEFAULTPARKINGMODE;
+    public static final int ATTR_PDCFREQUENCEFRONT;
+    public static final int ATTR_PDCFREQUENCEREAR;
+    public static final int ATTR_PDCVOLUMEFRONT;
+    public static final int ATTR_PDCVOLUMEREAR;
+    public static final int ATTR_PDCMUTE;
+    public static final int ATTR_PDCSYSTEMONOFF;
+    public static final int ATTR_PDCTRAILERHITCHED;
+    public static final int ATTR_PDCDISTANCEVALUESFRONT;
+    public static final int ATTR_PDCDISTANCEVALUESREAR;
+    public static final int ATTR_PDCFREQUENCERIGHT;
+    public static final int ATTR_PDCFREQUENCELEFT;
+    public static final int ATTR_PDCVOLUMERIGHT;
+    public static final int ATTR_PDCVOLUMELEFT;
+    public static final int ATTR_PDCINFO;
+    public static final int ATTR_PDCFAILURE;
+    public static final int ATTR_PDCDISTANCEVALUESRIGHT;
+    public static final int ATTR_PDCDISTANCEVALUESLEFT;
+    public static final int ATTR_PDCSTATUSLEVELFRONT;
+    public static final int ATTR_PDCSTATUSLEVELREAR;
+    public static final int ATTR_PDCSTATUSLEVELRIGHT;
+    public static final int ATTR_PDCSTATUSLEVELLEFT;
+    public static final int ATTR_PDCCRASHWARNING;
+    public static final int ATTR_PDCSTEERINGINFORMATION;
+    public static final int ATTR_PDCOPSAUTOACTIVATION;
+    public static final int ATTR_PDCFLANKGUARD;
+    public static final int ATTR_PDCSOUNDREPRODUCTION;
+    public static final int ATTR_PDCSTATUSLEVELFRONTEXT;
+    public static final int ATTR_PDCSTATUSLEVELREAREXT;
+    public static final int ATTR_PDCDISTANCEVALUESFRONTEXT;
+    public static final int ATTR_PDCDISTANCEVALUESREAREXT;
+    public static final int ATTR_PDCWALLDETECTION;
+    public static final int ATTR_PDCPLAMESSAGE;
+    public static final int ATTR_PDCSOUNDFRONT;
+    public static final int ATTR_PDCSOUNDREAR;
+    public static final int ATTR_PDCSOUNDLEFT;
+    public static final int ATTR_PDCSOUNDRIGHT;
+    public static final int ATTR_PDCPLASTATUS;
+    public static final int ATTR_PDCPLABARGRAPH;
+    public static final int ATTR_PDCPLAPARKMODESELECTION;
+    public static final int ATTR_PDCPLASYSTEMSTATE;
+    public static final int ATTR_PDCOFFROADMODE;
+    public static final int ATTR_PDCPARKBOXVISUALISATION;
+    public static final int ATTR_PDCOPSVISUALISATIONPOSITION;
+    public static final int ATTR_PDCMANEUVERASSISTCONFIG;
+    public static final int ATTR_PDCMANEUVERASSIST;
+    public static final int ATTR_PDCMANEUVERASSISTSTATE;
+    public static final int ATTR_PDCMANEUVERASSISTMESSAGE;
+    public static final int ATTR_PDCIPAMESSAGE;
+    public static final int ATTR_PDCCONTINUEDRIVINGASSIST;
+    public static final int ATTR_PDCIPACONFIG;
+    public static final int ATTR_PDCPILOPASYSTEMSTATE;
+    public static final int ATTR_VPSFOLLOWUPTIME;
+    public static final int ATTR_VPSVIDEOINFO;
+    public static final int ATTR_VPSCOLOR;
+    public static final int ATTR_VPSCONTRAST;
+    public static final int ATTR_VPSBRIGHTNESS;
+    public static final int ATTR_VPSDEFAULTMODERV;
+    public static final int ATTR_VPSDEFAULTMODESV;
+    public static final int ATTR_VPSDEFAULTMODEFV;
+    public static final int ATTR_VPSDEFAULTMODEBV;
+    public static final int ATTR_VPSDEFAULTVIEW;
+    public static final int ATTR_VPSDYNAMICPARKINGMODE;
+    public static final int ATTR_VPSOPSOVERLAY;
+    public static final int ATTR_VPSSYSTEMONOFF;
+    public static final int ATTR_VPSFAILURE;
+    public static final int ATTR_VPSEXTCAMCONFIG;
+    public static final int ATTR_VPSEXTCAMMANACTIVATION;
+    public static final int ATTR_VPS3DBIRDVIEW;
+    public static final int ATTR_VPSSYSTEMSTATE;
+    public static final int ATTR_VPSCAMERASTATES;
+    public static final int ATTR_VPSCAMERACLEANING;
+    public static final int ATTR_VPSRIMPROTECTION;
+    public static final int ATTR_ARAFAILURE;
+    public static final int ATTR_ARAINFO;
+    public static final int ATTR_ARACURRENTTRAILERANGLE;
+    public static final int ATTR_ARATARGETTRAILERANGLE;
+    public static final int ATTR_PARKINGPOPUPCONTENT;
+    public static final int ATTR_WCSYSTEMONOFF;
+    public static final int ATTR_WCAUTOACTIVATION;
+    public static final int ATTR_WCPOPUPCONTENT;
+    public static final int ATTR_WCMESSAGE;
+    public static final int ATTR_WCPANELPOSITION;
+    public static final int ATTR_WCVEHICLEPANELINFO;
+    public static final int ATTR_WCPINPUKSTATE;
+    public static final int ATTR_WCPANELLISTUPDATEINFO;
+    public static final int ATTR_WCPANELLISTTOTALNUMBEROFELEMENTS;
+    public static final int ATTR_WCSCANNINGPROGRESS;
+    public static final int ATTR_WCSOFTWAREUPDATEPROGRESS;
+    public static final int ATTR_WCVIEWOPTIONS;
+    public static final int POPUP_NONE;
+    public static final int POPUP_OPS;
+    public static final int POPUP_VPS;
+    public static final int POPUP_VPSOPS;
+    public static final int POPUP_OPSAUTOACTIVATION;
+    public static final int POPUP_SETTINGS;
+    public static final int POPUP_GENERAL;
+    public static final int POPUP_OPSFLANKGUARD;
+    public static final int POPUP_VPSOPSFLANKGUARD;
+    public static final int POPUP_ARA;
+    public static final int POPUP_ARAOPS;
+    public static final int POPUP_ARAOPSFLANKGUARD;
+    public static final int POPUP_ARAVPS;
+    public static final int POPUP_ARAVPSOPS;
+    public static final int POPUP_ARAVPSOPSFLANKGUARD;
+    public static final int POPUP_OPSFLANKGUARDPLA;
+    public static final int POPUP_VPSOPSFLANKGUARDPLA;
+    public static final int POPUP_OPSOFFROAD;
+    public static final int POPUP_VPSOPSOFFROAD;
+    public static final int PDCDEFAULTPARKINGMODE_OFF;
+    public static final int PDCDEFAULTPARKINGMODE_OPS;
+    public static final int PDCDEFAULTPARKINGMODE_OPS_AUTOACTIVATION;
+    public static final int PDCDEFAULTPARKINGMODE_OPS_FLANKGUARD;
+    public static final int PDCDEFAULTPARKINGMODE_LASTUSED;
+    public static final int PDCTRACKDISPLAY_NONE;
+    public static final int PDCTRACKDISPLAY_FRONT;
+    public static final int PDCTRACKDISPLAY_REAR;
+    public static final int PDCSTATUSLEVEL_NOWARNING;
+    public static final int PDCSTATUSLEVEL_LOW;
+    public static final int PDCSTATUSLEVEL_MEDIUM;
+    public static final int PDCSTATUSLEVEL_HARD;
+    public static final int PDCSTATUSLEVEL_EXTERNAL_VALUE;
+    public static final int PDCSTATUSLEVEL_EXTERNAL_VALUE_PDC_NOT_INITIALIZED;
+    public static final int PDCSTATUSLEVEL_LOW_PDC_NOT_INITIALIZED;
+    public static final int PDCSTATUSLEVEL_MEDIUM_PDC_NOT_INITIALIZED;
+    public static final int PDCSTATUSLEVEL_HARD_PDC_NOT_INITIALIZED;
+    public static final int PDCSTATUSLEVEL_SPEED_OUT_OF_RANGE;
+    public static final int PDCSTATUSLEVEL_AFFECTED_BY_FAILURE;
+    public static final int PDCSTATUSLEVEL_TEMPNOTAVAILABLE;
+    public static final int PDCSTATUSLEVEL_NOTINITIALIZED;
+    public static final int PDCSTATUSLEVEL_ERROR;
+    public static final int PDCIPAMESSAGES_NO_MESSAGE;
+    public static final int IPA_PARKING_PILOT_WATCH_TRAFFIC;
+    public static final int IPA_PARKING_PILOT_ACTIVE_WATCH_TRAFFIC_AND_BRAKE;
+    public static final int IPA_PARKING_PILOT_SPEED_LIMITED;
+    public static final int IPA_PARKING_PILOT_CANCELED_STEERING_INTERVENTION_OF_THE_DRIVER_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_INTERVENTION_OF_ESC_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_CANCELED_TIME_LIMIT_EXCEEDED_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_PARKING_NOT_POSSIBLE_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_CANCELED_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_INTERRUPTED_BRAKE;
+    public static final int IPA_PARKING_PILOT_TEMPORARY_NOT_AVAILABLE;
+    public static final int IPA_PARKING_PILOT_SYSTEM_ERROR_PLEASE_CONTACT_A_SERVICE_CENTER;
+    public static final int IPA_PARKING_PILOT_PARK_OUT_NOT_POSSIBLE_PARKING_SLOT_TOO_SMALL;
+    public static final int IPA_PARKING_PILOT_INTERVENTION_OF_ESC_CONTINUE_DRIVING;
+    public static final int IPA_PARKING_PILOT_TIME_LIMIT_EXCEEDED_CONTINUE_DRIVING;
+    public static final int IPA_PARKING_PILOT_NOT_POSSIBLE_IF_TRAILER_HITCHED;
+    public static final int IPA_PARKING_PILOT_CANCELED_PARKING_NOT_POSSIBLE;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE_CLOSE_DOOR;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE_APPLY_SEATBELT;
+    public static final int IPA_PARKING_PILOT_POSOK_PLEASE_PRESS_BUTTON_AND_RELEASE_BRAKE;
+    public static final int IPA_PARKING_PILOT_POSOK_PLEASE_STOP;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE_TO_CONTINUE_BRAKE_AND_RELEASE_EPB_BRAKE;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE_SIDE_MIRROR_RETRACTED;
+    public static final int IPA_PARKING_PILOT_NOT_POSSIBLE_IF_SIDE_MIRROR_RETRACTED;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_GRADIENT_TOO_HIGH;
+    public static final int IPA_PARKING_PILOT_TEMPORARY_NOT_AVAILABLE_ESC_OFF;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_NO_CAMERA_IMAGE;
+    public static final int IPA_PARKING_PILOT_BE_CAREFUL_OF_TRAFFIC;
+    public static final int IPA_PARKING_PILOT_EMERGENCY_BRAKE_BUTTON_NOT_HOLD;
+    public static final int IPA_PARKING_PILOT_CANCELED_EMERGENCY_BRAKE_GEAR_MANUALLY_SHIFTED;
+    public static final int IPA_PARKING_PILOT_CANCELED_BRAKING_NOT_POSSIBLE_PLEASE_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PARKING_PILOT_DRIVING_OVER_THE_CURB;
+    public static final int IPA_PARKING_PILOT_INTERRUPTED_TO_CONTINUE_HOLD_THE_BUTTON;
+    public static final int IPA_PARKING_PILOT_CANCELED_TO_CONTINUE_PRESS_THE_BUTTON_AGAIN;
+    public static final int IPA_PARKING_PILOT_FOR_PARKING_OUT_PLEASE_SELECT_DIRECTION_USING_THE_TURN_INDICATOR;
+    public static final int IPA_PARKING_PILOT_INTERRUPTED_EMERGENCY_BRAKE_PLEASE_REMOVE_THE_OBSTACLE;
+    public static final int IPA_PARKING_PILOT_CANCELED_ACCELERATION_FROM_DRIVER_TAKE_OVER_THE_VEHICLE;
+    public static final int IPA_PP_PARKING_PILOT_PLEASE_START_YOUR_PARK_APPLICATION_TAKE_YOUR_KEY_AND_LEAVE_THE_VEHICLE;
+    public static final int IPA_PP_PARKING_PILOT_PLEASE_TAKEOVER_THE_VEHICLE_TO_CONTINUE_DRIVING;
+    public static final int IPA_PP_PARKING_PILOT_ERROR_TAKEOVER_KEY_NOT_FOUND;
+    public static final int IPA_PP_PARKING_PILOT_TIME_LIMIT_FOR_TAKEOVER_EXCEEDED;
+    public static final int IPA_PARKING_PILOT_ACTIVATION_NOT_POSSIBLE_ANOTHER_FAS_IS_ACTIVE;
+    public static final int IPA_PARKING_PILOT_PRESS_BRAKE_AND_THEN_DEADMAN_SWITCH_UNTIL_END_OF_PARKING_CYCLE;
+    public static final int IPA_PARKING_PILOT_OPPOSITE_SIDE_IS_BARRED;
+    public static final int IPA_PARKING_PILOT_PARK_IN_ACTIVE_STEERING_INTERVENTION_ACTIVE_LOOK_SAFE_TO_MOVE_RELEASE_BRAKE_TO_START_MANEUVERING;
+    public static final int IPA_PARKING_PILOT_USE_DIRECTION_INDICATORS_SWITCH_GEAR_AND_HOLD_DEADMAN_SWITCH_RELEASE_BRAKE_TO_START_MANEUVERING;
+    public static final int IPA_PARKING_PILOT_PARK_OUT_ACTIVE_STEERING_INTERVENTION_ACTIVE_LOOK_SAFE_TO_MOVE_RELEASE_BRAKE_TO_START_MANEUVERING;
+    public static final int IPA_PARKING_PILOT_PARK_IN_ACTIVE_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_DRIVINGDIRECTION_WILL_CHANGE;
+    public static final int IPA_PARKING_PILOT_PARK_OUT_ACTIVE_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_CANCELED_KEY_IS_STILL_IN_THE_CAR;
+    public static final int IPA_PARKING_PILOT_CANCELED_SLIDING_DOOR_OPEN;
+    public static final int IPA_PARKING_PILOT_CANCELED_SPEED_TOO_HIGH;
+    public static final int IPA_PARKING_PILOT_PARKING_NOT_POSSIBLE_OPPOSITE_SIDE_BARRED;
+    public static final int IPA_PARKING_PILOT_INTERVENTION_OF_TRACTION_CONTROL_ASR;
+    public static final int IPA_PARKING_PILOT_STOPPED_CANCELED;
+    public static final int IPA_PARKING_PILOT_PROBLEM_WITH_CAMERA_SENSOR_PLA_FUNCTION_AVAILABLE_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_ESCOFF_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_SYSTEM_ERROR_PLEASE_CONTACT_A_SERVICE_CENTER_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CONVERTIBLE_TOP_ACTIVE_PARK_ASSIST_STOPPED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_TIMEOUT_REACHED_PARK_ASSIST_CANCELED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_TEMP_NOT_AVAILABLE_PARK_ASSIST_CANCELED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_TRUNK_OPEN_CLOSE_TRUNK_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_SLIDING_DOOR_OPEN_CLOSE_SLIDING_DOOR_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_MOTOR_NOT_READY_START_MOTOR_PRESS_BRAKE_TAKEOVER;
+    public static final int IPA_PARKING_PILOT_FRONT_LID_OPEN_CLOSE_FRONT_LID_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_DRIVER_DOOR_OPEN_CLOSE_DRIVER_DOOR_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_PDC_IS_DEACTIVATED_PARK_ASSIST_STOPPED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_STARTS_MOTOR;
+    public static final int IPA_PARKING_PILOT_RELEASE_PARKING_BRAKE;
+    public static final int IPA_PARK_ASSIST_STOPPED_SLIDING_DOOR_OPEN;
+    public static final int IPA_PARKING_PILOT_PRESS_BRAKE_FOR_AUTOMATIC_PARK_IN;
+    public static final int IPA_PARKING_PILOT_UNSUFFICIENT_STANDSTILL_PRESS_BRAKE;
+    public static final int IPA_PARKING_PILOT_ERROR_ON_KEY_AUTHENTICATION_DO_PARKING_MANUALLY_OR_ACTIVATE_PARK_ASSIST_AGAIN;
+    public static final int IPA_PARKING_PILOT_DRIVER_STILL_IN_THE_CAR_LEAVE_THE_CAR_TO_START_PP;
+    public static final int IPA_PARKING_PILOT_EPB_ACTIVE_PARK_ASSIST_CANCELED;
+    public static final int IPA_PARKING_PILOT_MAX_AMOUNT_OF_MANEUVRE_MOVES_REACHED_PARKING_NOT_POSSIBLE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_LEAVE_RADIO_RANGE_OF_REMOTE_CONTROL_CAR_BACKED;
+    public static final int IPA_PARKING_PILOT_CANCELED_DISTURBANCE_OF_RADIO_CONTROL_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_INTERVENTION_ESC_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_AUTOMATIV_PARK_IN_NOT_POSSIBLE_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_OBSTACLE_DETECTED_IN_MANEUVER_AREA_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_AUTOMATIC_PARK_OUT_NOT_POSSIBLE_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_SLIPPING_DETECTED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_DRIVING_RESISTANCE_TOO_HIGH_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_BRAKING_INTERVENTION_BY_ANOTHER_FAS_SYSTEM_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_ERROR_ON_CAMERA_SENSOR_SYSTEM_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_STEERING_INTERVENTION_BY_DRIVER_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_GEAR_SWITCHED_MANUALLY_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_MOTOR_NOT_READY_START_MOTOR_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_PARK_BUTTON_PRESSED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_PDC_ACTIVATED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_CANCELED_DOOR_OPEN_CLOSE_DOOR_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_DRIVING_RESISTANCE_RECOGNIZED_PARK_ASSIST_STANDBY_TO_PASS_OVER_ACTIVATE_DEAD_MAN_SWITCH_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_HOLD_DEAD_MAN_SWITCH_UNTIL_PARKING_IS_FINISHED_OR_DRIVER_LEAVES_CAR_FOR_PP;
+    public static final int IPA_PARKING_PILOT_DRIVING_SPEED_INCREASED_AUTOMATIC_SPEEDCONTROL_ACTIVE;
+    public static final int IPA_PARKING_PILOT_HOLDING_SPEED;
+    public static final int IPA_PARKING_PILOT_OBSTACLE_DETECTED_IN_DRIVING_DIRECTION_DRIVING_DIRECTION_WILL_CHANGE_ACTIVATE_DEAD_MAN_SWITCH_TO_CONTINUE;
+    public static final int IPA_PARKING_PILOT_RELEASE_BRAKE_TO_MAKE_CAR_MOVING_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_REDUCING_SPEED;
+    public static final int IPA_PARKING_PILOT_CURBLIFTING_UNSUCCESSFUL_NEXT_TRY;
+    public static final int IPA_PARKING_PILOT_CANCELED_OBSTACLE_CAN_NOT_BE_OVERDRIVEN_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_PP_STILL_NOT_POSSIBLE_CLOSE_DOOR_AND_PRESS_DEADMAN_SWITCH_TO_CONTINUE_PARKING_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_PP_POSSIBLE_LEAVE_CAR_TO_PROCEED_PARKING_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PARKING_PILOT_PLA_POSSIBLE_ONLY_STEERING_INTERVENTION_MANUALLY_CHANGE_GEAR_BRAKE_AND_ACCELERATE_ENGAGE_RGEAR;
+    public static final int IPA_PARKING_PILOT_NOT_AVAILABLE_RIGHT_CAMERA_POLLUTED;
+    public static final int IPA_PARKING_PILOT_NOT_AVAILABLE_LEFT_CAMERA_POLLUTED;
+    public static final int IPA_PARKING_PILOT_NOT_AVAILABLE_FRONT_CAMERA_POLLUTED;
+    public static final int IPA_PARKING_PILOT_NOT_AVAILABLE_REAR_CAMERA_POLLUTED;
+    public static final int IPA_PARKING_PILOT_PARKING_IN_FINISHED_PRESS_BRAKE_TAKE_OVER;
+    public static final int IPA_PARKING_PILOT_PARKING_OUT_FINISHED_TAKE_OVER_CONTINUE_DRIVING;
+    public static final int IPA_PP_PARKING_PILOT_PP_ACTIVE_CAR_CAN_ONLY_BE_CONTROLLED_FROM_OUTSIDE;
+    public static final int IPA_PP_PARKING_PILOT_AUTHORISATION_ERROR_RETRY_AUTORISATION;
+    public static final int IPA_PP_PARKING_PILOT_PRESS_BRAKE_PRESS_SWITCH_UNTIL_PARKING_IS_FINISHED_OR_LEAVE_CAR_FOR_PPR;
+    public static final int IPA_PP_PARKING_PILOT_LEAVE_CAR_FOR_PP;
+    public static final int IPA_PP_PARKING_PILOT_TO_START_PRESS_DEAD_MAN_SWITCH;
+    public static final int IPA_PP_PARKING_PILOT_PARK_IN_IS_ACTIVE_STEERING_INTERVENTION_ACTIV_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_IS_ACTIVE_STEERING_INTERVENTION_ACTIVE_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_ACTIVE_LOOK_SAFE_TO_MOVE;
+    public static final int IPA_PP_PARKING_PILOT_GP_IN_FRONT_SELECTED_TO_START_PRESS_SWITCH;
+    public static final int IPA_PP_PARKING_PILOT_GP_OUT_SELECTED_TO_START_PRESS_SWITCH;
+    public static final int IPA_PP_PARKING_PILOT_GP_SELECTED_LEAVE_CAR_START_PARKING_FROM_OUTSIDE_PLEASE_DO_NOT_BOX_OTHER_CARS;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_ACTIVE_DRIVING_DIRECTION_FORWARD;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_ACTIVE_DRIVING_DIRECTION_WILL_CHANGE;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_ACTIVE_DRIVING_DIRECTION_BACKWARD;
+    public static final int IPA_PP_PARKING_PILOT_PARK_IN_ACTIVE_DRIVING_DIRECTION_WILL_CHANGE;
+    public static final int IPA_PP_PARKING_PILOT_PARK_IN_DRIVING_DIRECTION_BACKWARD;
+    public static final int IPA_PP_PARKING_PILOT_OBSTACLE_IN_MANEUVER_AREA_PARK_OUT_MANUALLY_TAKE_OVER;
+    public static final int IPA_PP_PARKING_PILOT_AUTHORISATION_ERROR_FUNCTION_STOPPED_TAKE_OVER;
+    public static final int IPA_PP_PARKING_PILOT_DEAD_MAN_SWITCH_RELEASED_PLEASE_PRESS_SWITCH_CONTINOUSLY;
+    public static final int IPA_PP_PARKING_PILOT_CAR_HAS_LEFT_THE_PERMITTED_RADIO_RANGE_PLEASE_FOLLOW_THE_CAR;
+    public static final int IPA_PP_PARKING_PILOT_CAR_IS_LEAVING_THE_PERMITTED_RADIO_RANGE_PLEASE_FOLLOW_THE_CAR;
+    public static final int IPA_PP_PARKING_PILOT_PP_IS_ACTIVE_CAR_WITHIN_THE_PERMITTED_RADIO_RANGE;
+    public static final int IPA_PP_PARKING_PILOT_PP_IS_ACTIVE_CAR_IS_LEAVING_THE_PERMITTED_RADIO_RANGE;
+    public static final int IPA_PP_PARKING_PILOT_PP_CANCELED_CAR_HAS_LEFT_THE_PERMITTED_RADIO_RANGE;
+    public static final int IPA_PP_PARKING_PILOT_FUNCTION_COMPLETED;
+    public static final int IPA_PP_PARKING_PILOT_UNDO_LAST_MANEUVER_MOVEMENT;
+    public static final int IPA_PP_PARKING_PILOT_PP_CANCELED;
+    public static final int IPA_PP_PARKING_PILOT_PARKING_FINISHED_MANUALLY;
+    public static final int IPA_PP_PARKING_PILOT_PARK_IN_FINISHED_CAR_WILL_BE_LOCKED_EPB_ACTIVE_MOTOR_OFF;
+    public static final int IPA_PP_PARKING_PILOT_PARK_OUT_FINISHED_PLEASE_ENTER_CAR_TAKE_OVER;
+    public static final int PDCMANEUVERASSISTMESSAGES_NO_MESSAGE;
+    public static final int PDCMANEUVERASSISTMESSAGES_EMERGENCY_BRAKE;
+    public static final int PDCMANEUVERASSISTMESSAGES_SYSTEM_ERROR;
+    public static final int PDCMANEUVERASSISTMESSAGES_TEMP_NOT_AVAILABLE;
+    public static final int PDCMANEUVERASSISTMESSAGES_TEMP_OFF;
+    public static final int PDCMANEUVERASSISTMESSAGES_OFF;
+    public static final int PDCMANEUVERASSISTMESSAGES_ON;
+    public static final int PDCMESSAGES_NO_MESSAGE;
+    public static final int PDCMESSAGES_STEERINGASSIST_ACTIVE_SLOW_DOWN_AND_BRAKE;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_STEERING_INTERVENTION_OF_DRIVER_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_SPEED_TO_HIGH;
+    public static final int PDCMESSAGES_PARKINGASSIST_COMPLETED_ASSUME_CONTROL;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_SYSTEM_ERROR_ASSUME_STEERING_CONTACT_SERVICE_CENTER;
+    public static final int PDCMESSAGES_PARKINGASSIST_TEMPORARY_NOT_AVAILABLE_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_ESP_INTERVENTION_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_TIME_LIMIT_EXCEEDED_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_PARKING_NOT_POSSIBLE_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKINGASSIST_COMPLETED;
+    public static final int PDCMESSAGES_PARKINGASSIST_TEMPORARY_NOT_AVAILABLE;
+    public static final int PDCMESSAGES_PARKINGASSIST_SYSTEM_ERROR_CONTACT_SERVICE_CENTER;
+    public static final int PDCMESSAGES_PARKINGASSIST_PARK_OUT_NOT_POSSIBLE_PARKING_SLOT_TO_SMALL;
+    public static final int PDCMESSAGES_FOR_PARKING_OUT_SELECT_DIRECTION_USING_TURN_INDICATOR;
+    public static final int PDCMESSAGES_START_AUTOMATIC_PARKING_OUT;
+    public static final int PDCMESSAGES_PARKINGASSIST_COMPLETED_ASSUME_STEERING_AND_CONTINUE_DRIVING;
+    public static final int PDCMESSAGES_PARKINGASSIST_SPEED_TO_HIGH;
+    public static final int PDCMESSAGES_PARKINGASSIST_ESP_INTERVENTION_CONTINUE_DRIVING;
+    public static final int PDCMESSAGES_PARKINGASSIST_TIME_LIMIT_EXCEEDED_CONTINUE_DRIVING;
+    public static final int PDCMESSAGES_PARKINGASSIST_NOT_POSSIBLE_IF_TRAILER_HITCHED;
+    public static final int PDCMESSAGES_PARKINGASSIST_STANDSTILL_TIME_NOT_LONG_ENOUGH;
+    public static final int PDCMESSAGES_PARKINGASSIST_CANCELED_PARKING_NOT_POSSIBLE;
+    public static final int PDCMESSAGES_SPEED_ICON;
+    public static final int PDCMESSAGES_LIMITED_SPEED_BRAKE;
+    public static final int PDCMESSAGES_TO_RESUME_PRESS_PARKING_BUTTON_AGAIN;
+    public static final int PDCMESSAGES_OPERATION_DURING_STEERINGWHEEL_INTERVENTION_IS_ACTIVE_NOT_POSSIBLE;
+    public static final int PDCMESSAGES_PARKING_SYSTEM_SYSTEM_ERROR_CONTACT_SERVICE_CENTER;
+    public static final int PDCMESSAGES_PARKING_SYSTEM_TEMPORARY_NOT_AVAILABLE_NO_SENSOR_DATA;
+    public static final int PDCMESSAGES_PARKING_ASSIST_TEMPORARY_NOT_AVAILABLE_ESP_OFF;
+    public static final int PDCMESSAGES_PARKING_ASSIST_SHIFT_TO_R_GEAR;
+    public static final int PDCMESSAGES_PARKING_ASSIST_SHIFT_TO_FORWARD_GEAR;
+    public static final int PDCMESSAGES_PARKING_ASSIST_POSOK_SHIFT_TO_R_GEAR;
+    public static final int PDCMESSAGES_PARKING_ASSIST_POSOK_STOP;
+    public static final int PDCMESSAGES_PARKING_ASSIST_POSOK_NOT_REACHED_GO_ON;
+    public static final int PDCMESSAGES_PARKING_ASSIST_NOT_AVAILABLE_IN_OFFROADMODE;
+    public static final int PDCMESSAGES_PARKING_ASSIST_CANCELED_NOT_AVAILABLE_IN_OFFROADMODE;
+    public static final int PDCMESSAGES_PARKING_ASSIST_CANCELED_OBSTACLE_DETECTED_ASSUME_STEERING;
+    public static final int PDCMESSAGES_PARKING_ASSIST_DRIVING_FORWARD_AND_BRAKE_BY_YOURSELF;
+    public static final int PDCMESSAGES_PARKING_ASSIST_DRIVING_BACKWARD_AND_BRAKE_BY_YOURSELF;
+    public static final int PDCMESSAGES_START_AUTOMATIC_PARKING_IN;
+    public static final int PDCPLASTATUS_IDLE;
+    public static final int PDCPLASTATUS_SEARCH_MODE_ACTIVE;
+    public static final int PDCPLASTATUS_PARK_IN_MODE_SELECTION_ACTIVE;
+    public static final int PDCPLASTATUS_PARK_OUT_MODE_SELECTION_ACTIVE;
+    public static final int PDCPLASTATUS_PARK_IN_ACTIVE;
+    public static final int PDCPLASTATUS_PARK_OUT_ACTIVE;
+    public static final int PDCPLASTATUS_PLA_STANDBY;
+    public static final int PDCPLASTATUS_PLA_RESUME;
+    public static final int PDCPLASTATUS_PP_PARK_IN_ACTIVE;
+    public static final int PDCPLASTATUS_PP_PARK_OUT_ACTIVE;
+    public static final int PDCPLASTATUS_GP_PARK_IN_SELECTION_ACTIVE;
+    public static final int PDCPLASTATUS_GP_PARK_IN_ACTIVE;
+    public static final int PDCPLASTATUS_GP_PARK_OUT_ACTIVE;
+    public static final int PDCPLADRIVINGDIRECTION_NO_DIRECTION;
+    public static final int PDCPLADRIVINGDIRECTION_PLA_POS_OK;
+    public static final int PDCPLADRIVINGDIRECTION_IPA_POS_OK;
+    public static final int PDCPLADRIVINGDIRECTION_FORWARD;
+    public static final int PDCPLADRIVINGDIRECTION_BACKWARD;
+    public static final int PDCPLADRIVINGDIRECTION_IPA_PP_POS_OK;
+    public static final int PDCPLADRIVINGDIRECTION_GP_POS_OK;
+    public static final int PDCPLAPRESELECTION_NO_PRESELECTION;
+    public static final int PDCPLAPRESELECTION_BACKWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPRESELECTION_BACKWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPRESELECTION_FORWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPRESELECTION_FORWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPRESELECTION_BACKWARD_PARALLEL_TO_ROAD_LEFT;
+    public static final int PDCPLAPRESELECTION_BACKWARD_PARALLEL_TO_ROAD_RIGHT;
+    public static final int PDCPLAPRESELECTION_FORWARD_PARKBOX_MIDDLE;
+    public static final int PDCPLAARROWINDICATION_NOT_DISPLAYED;
+    public static final int PDCPLAARROWINDICATION_DISPLAYED;
+    public static final int PDCPLAARROWINDICATION_INIT;
+    public static final int PDCPLAPARKMODES_PARK_IN_BACKWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_IN_BACKWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_IN_FORWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_IN_FORWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_IN_BACKWARD_PARALLEL_TO_ROAD_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_IN_BACKWARD_PARALLEL_TO_ROAD_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_BACKWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_BACKWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_FORWARD_PARKBOX_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_FORWARD_PARKBOX_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_BACKWARD_PARALLEL_TO_ROAD_LEFT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_BACKWARD_PARALLEL_TO_ROAD_RIGHT;
+    public static final int PDCPLAPARKMODES_PARK_IN_FORWARD_PARKBOX_MIDDLE;
+    public static final int PDCPLAPARKMODES_PARK_OUT_FORWARD_PARKBOX_STRAIGHT;
+    public static final int PDCPLAPARKMODES_PARK_OUT_BACKWARD_PARKBOX_STRAIGHT;
+    public static final int PDCPLAPARKMODES_NO_PARKMODE_SELECTED;
+    public static final int PDCOPSVISUALISATIONPOSITION_LEFT;
+    public static final int PDCOPSVISUALISATIONPOSITION_RIGHT;
+    public static final int VPSSCREEN_NOSCREEN;
+    public static final int VPSSCREEN_FULLSCREEN;
+    public static final int VPSSCREEN_SPLITSCREEN;
+    public static final int VPSSCREEN_LEGALSCREEN;
+    public static final int VPSSCREEN_LASTSCREEN;
+    public static final int VPSMODE_NOMODE;
+    public static final int VPSMODE_PARKBOX;
+    public static final int VPSMODE_PARALLELTOROAD;
+    public static final int VPSMODE_OFFROAD;
+    public static final int VPSMODE_RIGHTSIDEVIEW;
+    public static final int VPSMODE_LEFTSIDEVIEW;
+    public static final int VPSMODE_LEFTRIGHTSIDEVIEW;
+    public static final int VPSMODE_CROSSING;
+    public static final int VPSMODE_TRAILERASSIST;
+    public static final int VPSMODE_BIRDVIEW;
+    public static final int VPSMODE_ONLYSIDEVIEW;
+    public static final int VPSMODE_3DBIRDVIEW;
+    public static final int VPSMODE_TRAILERASSIST_ARA;
+    public static final int VPSMODE_OFFROAD_KOG;
+    public static final int VPSMODE_LASTMODE;
+    public static final int VPSDEFAULTVIEW_REARVIEW;
+    public static final int VPSDEFAULTVIEW_FRONTVIEW;
+    public static final int VPSDEFAULTVIEW_SIDEVIEW;
+    public static final int VPSDEFAULTVIEW_BIRDVIEW;
+    public static final int VPSDEFAULTVIEW_AUTO;
+    public static final int VPSDEFAULTVIEW_EXTCAM;
+    public static final int VPSDEFAULTVIEW_LASTVIEW;
+    public static final int VPSDEFAULTVIEW_UNKNOWN;
+    public static final int VPSCURRENTVIEW_NOVIEW;
+    public static final int VPSCURRENTVIEW_REARVIEW;
+    public static final int VPSCURRENTVIEW_FRONTVIEW;
+    public static final int VPSCURRENTVIEW_SIDEVIEW;
+    public static final int VPSCURRENTVIEW_BIRDVIEW;
+    public static final int VPSCURRENTVIEW_EXTCAM;
+    public static final int VPSCAMERASTATE_OK;
+    public static final int VPSCAMERASTATE_DEFECT;
+    public static final int VPSCAMERASTATE_TEMPNOTAVAILABLE;
+    public static final int VPSCAMERASTATE_SPEEDTOHIGH;
+    public static final int VPSCAMERASTATE_NOTCALIBRATED;
+    public static final int VPSCAMERASTATE_TRAILERHITCHED;
+    public static final int VPSCAMERASTATE_EXTMIRROR_FOLDED;
+    public static final int VPSCAMERASTATE_TRUNKOPEN;
+    public static final int VPSCAMERASTATE_ENGINEHOOD_OPEN;
+    public static final int VPSCAMERASTATE_FRONTDOOR_OPEN;
+    public static final int VPSCAMERASTATE_REARDOOR_OPEN;
+    public static final int VPSCAMERASTATE_FRONT_AND_REARDOOR_OPEN;
+    public static final int VPSCAMERASTATE_FRONTDOOR_OPEN_AND_EXTMIRROR_FOLDED;
+    public static final int VPSCAMERASTATE_REARDOOR_OPEN_AND_EXTMIRROR_FOLDED;
+    public static final int VPSCAMERASTATE_FRONT_AND_REARDOOR_OPEN_AND_EXTMIRROR_FOLDED;
+    public static final int VPSCAMERASTATE_NOTEXISTING;
+    public static final int VPSEXTCAMCONFIG_NONE;
+    public static final int VPSEXTCAMCONFIG_REARCAMERA;
+    public static final int VPSEXTCAMCONFIG_INTERIORCAMERA;
+    public static final int VPSRIMPROTECTIONTIRESTATE_NO_WARNING;
+    public static final int VPSRIMPROTECTIONTIRESTATE_LOW_WARNING;
+    public static final int VPSRIMPROTECTIONTIRESTATE_HIGH_WARNING;
+    public static final int VPSRIMPROTECTIONTIRESTATE_NOT_DISPLAYED;
+    public static final int VPSRIMPROTECTIONTIRESTATE_NOT_AVAILABLE;
+    public static final int ARAMESSAGES_NO_WARNING_TIP;
+    public static final int ARAMESSAGES_STEERING_ASSIST_IS_ACTIVE_BRAKING_BY_YOURSELF;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_TEMP_NOT_AVAILABLE;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_FINISHED;
+    public static final int ARAMESSAGES_STEERING_INTERVENTION_BY_DRIVER_EMERGENCY_BRAKE_IS_ACTIVE;
+    public static final int ARAMESSAGES_STABILITY_CONTROL_EMERGENCY_BRAKE_IS_ACTIVE;
+    public static final int ARAMESSAGES_MAXIMUM_ANGLE_IS_EXCEEDED_EMERGENCY_BRAKE_IS_ACTIVE;
+    public static final int ARAMESSAGES_SYSTEM_ERROR_EMERGENCY_BRAKE_IS_ACTIVE;
+    public static final int ARAMESSAGES_SYSTEM_ERROR_CONTACT_SERVICE_DEPARTMENT;
+    public static final int ARAMESSAGES_PRESS_BRAKE_TO_RELEASE_PARKING_BRAKE;
+    public static final int ARAMESSAGES_TRAILER_DETECTION_IS_NOT_FINISHED_MOVE_TRAILER_STRAIGHT_FORWARD;
+    public static final int ARAMESSAGES_TRAILER_DETECTION_IS_NOT_FINISHED_REDUCED_FUNCTIONALITY;
+    public static final int ARAMESSAGES_PARK_ASSIST_IS_NOT_FUNCTIONAL_BY_RACK_ON_TRAILER_TOW_HITCH;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_NOT_AVAILABLE_BY_RACK_ON_TRAILER_TOW_HITCH;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_ABORTED_TRAILER_IS_NOT_DETECTED_EMERGENCY_BRAKE_IS_ACTIVE;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_ABORTED_TRAILER_IS_NOT_DETECTED;
+    public static final int ARAMESSAGES_TRAILER_ASSIST_IS_ABORTED_TRAILER_IS_NOT_DETECTED_RESUME_STEERING;
+    public static final int ARAMESSAGES_STANDSTILL_TO_ACTIVATE_TRAILER_ASSIST;
+    public static final int ARAMESSAGES_DURING_AUTOMATIC_STEERING_THE_ACTIVITY_IS_NOT_AVAILABLE;
+    public static final int ARAMESSAGES_STANDSTILL_IS_NOT_LONG_ENOUGH;
+    public static final int ARAMESSAGES_SYSTEM_ERROR_BRAKING_BY_YOURSELF;
+    public static final int ARAMESSAGES_ACTIVATION_TRAILERASSIST_PRESS_PLA_BUTTON;
+    public static final int ARAMESSAGES_PARKING_ASSIST_TEMP_NOT_AVAILABLE_ESP_OFF;
+    public static final int PDCMANEUVERASSISTCONFIGMODE_NOTACTIVE;
+    public static final int PDCMANEUVERASSISTCONFIGMODE_ACTIVE;
+    public static final int PDCMANEUVERASSISTCONFIGMODE_ACTIVE_BRAKING;
+    public static final int PDCMANEUVERASSISTCONFIGMODE_ACTIVE_STEERING;
+    public static final int PDCMANEUVERASSISTCONFIGMODE_ACTIVE_BRAKING_STEERING;
+    public static final int PDCCONTINUEDRIVINGASSISTMODE_OFF;
+    public static final int PDCCONTINUEDRIVINGASSISTMODE_ON;
+    public static final int PDCCONTINUEDRIVINGASSISTMODE_EARLY;
+    public static final int PDCCONTINUEDRIVINGASSISTMODE_MEDIUM;
+    public static final int PDCCONTINUEDRIVINGASSISTMODE_LATE;
+    public static final int PDCIPACONFIG_SLOW;
+    public static final int PDCIPACONFIG_MEDIUM;
+    public static final int PDCIPACONFIG_FAST;
+    public static final int WCPOPUPCONTENT_NONE;
+    public static final int WCPOPUPCONTENT_PANELPOSITION;
+    public static final int WCMESSAGE_NO_MESSAGE;
+    public static final int WCMESSAGE_NO_CHARGING_AUTORISATION;
+    public static final int WCMESSAGE_INFRASTRUCTURE_INCOMPATIBLE;
+    public static final int WCMESSAGE_METAL_DETECTION_ON_BASE_PANEL;
+    public static final int WCMESSAGE_POSITIONING_SUCCESSFUL;
+    public static final int WCMESSAGE_ERROR_ON_VEHICLE_PANEL;
+    public static final int WCMESSAGE_ERROR_ON_BASE_PANEL;
+    public static final int WCMESSAGE_TEMP_NOT_AVAILABLE;
+    public static final int WCMESSAGE_WAITING_START_AGAIN;
+    public static final int WCMESSAGE_TEMPERATURE_ERROR;
+    public static final int WCMESSAGE_VEHICLE_FLOOR_MODIFIED;
+    public static final int WCMESSAGE_ERROR_POWER_SUPPLY;
+    public static final int WCMESSAGE_ERROR_POWER_SUPPLY_CONTACT_ELECTRICIAN;
+    public static final int WCMESSAGE_MOVE_DOWN_VEHICLE;
+    public static final int WCMESSAGE_MOVE_VEHICLE_PANEL_CONGRUENT_WITH_BASE_PANEL;
+    public static final int WCMESSAGE_VEHICLE_PANEL_NOT_CONGRUENT_WITH_BASE_PANEL;
+    public static final int WCMESSAGE_ZMOVER_ERROR;
+    public static final int WCMESSAGE_SOFTWARE_UPDATE_ACTIVE;
+    public static final int WCMESSAGE_RESIDUAL_CURRENT_DEVICE_ACTIVE;
+    public static final int WCPANELSTATE_INIT_NO_PANEL;
+    public static final int WCPANELSTATE_PANEL_FOUND_POS_NOT_REACHED;
+    public static final int WCPANELSTATE_PANEL_FOUND_POS_REACHED_ZMOVER_DOWN;
+    public static final int WCPANELSTATE_PANEL_FOUND_POS_REACHED_ZMOVER_MOVING;
+    public static final int WCPANELSTATE_PANEL_FOUND_POS_REACHED_ZMOVER_UP;
+    public static final int WCPANELSTATE_ERROR_ON_BASE_PANEL;
+    public static final int WCPANELSTATE_ERROR_ON_VEHICLE_PANEL;
+    public static final int WCPANELINFO_NO_INFO;
+    public static final int WCPANELINFO_NOT_CONNECTED;
+    public static final int WCPANELINFO_CONNECTED;
+    public static final int WCPANELINFO_WRONG_PIN;
+    public static final int WCPANELINFO_PANEL_NOT_COMPATIBLE;
+    public static final int WCPANELINFO_METALL_DETECTION;
+    public static final int WCPANELINFO_ERROR_VEHICLE_PANEL;
+    public static final int WCPANELINFO_PANEL_SYSTEM_ERROR;
+    public static final int WCPANELINFO_TEMP_PANEL_ERROR;
+    public static final int WCPANELINFO_PLAY_PROTECTION;
+    public static final int WCPANELINFO_TEMPERATURE_ERROR;
+    public static final int WCPANELINFO_UNDERSURFACE_MODIFIED;
+    public static final int WCPANELINFO_POWER_SUPPLY_ERROR;
+    public static final int WCPANELINFO_POWER_SUPPLY_ERROR_CONTACT_SERVICE;
+    public static final int WCPANELINFO_RESIDUAL_CURRENT_DEVICE_ACTIVE;
+    public static final int WCPANELINFO_UNKNOWN;
+    public static final int WCPINPUKSTATE_NOT_LOCKED;
+    public static final int WCPINPUKSTATE_LOCKED_ENTER_PINPUK;
+    public static final int WCPINPUKSTATE_LOCKED_ENTER_PIN;
+    public static final int WCPINPUKSTATE_LOCKED_ENTER_PUK;
+    public static final int WCPINPUKSTATE_LOCKED_WRONG_PINPUK;
+    public static final int WCPINPUKSTATE_LOCKED_WRONG_PIN;
+    public static final int WCPINPUKSTATE_LOCKED_WRONG_PUK;
+    public static final int WCPINPUKSTATE_UNKNOWN;
+    public static final int WCENTERPINPUKRESULT_SUCCESSFUL;
+    public static final int WCENTERPINPUKRESULT_ABORT_SUCCESSFUL;
+    public static final int WCENTERPINPUKRESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCENTERPINPUKRESULT_NOT_SUCCESSFUL;
+    public static final int WCENTERPINPUKRESULT_NOT_SUCCESSFUL_WRONG_PINPUK;
+    public static final int WCSCANNINGRESULT_SUCCESSFUL;
+    public static final int WCSCANNINGRESULT_ABORT_SUCCESSFUL;
+    public static final int WCSCANNINGRESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCSCANNINGRESULT_NOT_SUCCESSFUL;
+    public static final int WCSCANNINGRESULT_NOT_SUCCESSFUL_NO_PANELS_FOUND;
+    public static final int WCPAIRINGRESULT_SUCCESSFUL;
+    public static final int WCPAIRINGRESULT_ABORT_SUCCESSFUL;
+    public static final int WCPAIRINGRESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCPAIRINGRESULT_NOT_SUCCESSFUL;
+    public static final int WCPAIRINGRESULT_NOT_SUCCESSFUL_WRONG_PINPUK;
+    public static final int WCSOFTWAREUPDATERESULT_SUCCESSFUL;
+    public static final int WCSOFTWAREUPDATERESULT_ABORT_SUCCESSFUL;
+    public static final int WCSOFTWAREUPDATERESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCSOFTWAREUPDATERESULT_NOT_SUCCESSFUL;
+    public static final int WCSOFTWAREUPDATERESULT_NOT_SUCCESSFUL_WRONG_PUK;
+    public static final int WCSOFTWAREUPDATERESULT_NOT_SUCCESSFUL_ABORTED;
+    public static final int WCCHANGEPINRESULT_SUCCESSFUL;
+    public static final int WCCHANGEPINRESULT_ABORT_SUCCESSFUL;
+    public static final int WCCHANGEPINRESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCCHANGEPINRESULT_NOT_SUCCESSFUL;
+    public static final int WCCHANGEPANELNAMERESULT_SUCCESSFUL;
+    public static final int WCCHANGEPANELNAMERESULT_ABORT_SUCCESSFUL;
+    public static final int WCCHANGEPANELNAMERESULT_ABORT_NOT_SUCCESSFUL;
+    public static final int WCCHANGEPANELNAMERESULT_NOT_SUCCESSFUL;
+    public static final int PANELLISTRACONTENT_POS;
+    public static final int PANELLISTRACONTENT_SERIALNUMBER;
+    public static final int PANELLISTRACONTENT_NAME;
+    public static final int PANELLISTRACONTENT_PIN;
+    public static final int PANELLISTRACONTENT_SOFTWARE;
+    public static final int PANELLISTRACONTENT_HARDWARE;
+    public static final int PANELLISTRACONTENT_STATES;
+    public static final int PANELLISTRACONTENT_INFO;
+    public static final int RT_SETHMISTATEISREADY;
+    public static final int RT_SETPDCDEFAULTPARKINGMODE;
+    public static final int RT_SETPDCMUTE;
+    public static final int RT_SETPDCFREQUENCEFRONT;
+    public static final int RT_SETPDCFREQUENCEREAR;
+    public static final int RT_SETPDCVOLUMEFRONT;
+    public static final int RT_SETPDCVOLUMEREAR;
+    public static final int RT_SETPDCAUTOACTIVATION;
+    public static final int RT_SETPDCSYSTEMONOFF;
+    public static final int RT_SETPDCFREQUENCERIGHT;
+    public static final int RT_SETPDCFREQUENCELEFT;
+    public static final int RT_SETPDCVOLUMERIGHT;
+    public static final int RT_SETPDCVOLUMELEFT;
+    public static final int RT_SETPDCFLANKGUARD;
+    public static final int RT_SETPDCSOUNDREPRODUCTION;
+    public static final int RT_SETPDCSETFACTORYDEFAULT;
+    public static final int RT_SETPDCSOUNDFRONT;
+    public static final int RT_SETPDCSOUNDREAR;
+    public static final int RT_SETPDCSOUNDLEFT;
+    public static final int RT_SETPDCSOUNDRIGHT;
+    public static final int RT_SETPDCPLAPRESELECTION;
+    public static final int RT_SETPDCPLAPARKMODE;
+    public static final int RT_SETPDCPLASYSTEMSTATE;
+    public static final int RT_SETPDCOFFROADMODE;
+    public static final int RT_SETPDCVISUALISATIONPARKBOX;
+    public static final int RT_SETPDCOPSVISUALISATIONPOSITION;
+    public static final int RT_SETPDCMANEUVERASSISTCONFIG;
+    public static final int RT_SETPDCMANEUVERASSIST;
+    public static final int RT_SETPDCCONTINUEDRIVINGASSIST;
+    public static final int RT_SETPDCIPACONFIG;
+    public static final int RT_SETPDCPILOPASYSTEMSTATE;
+    public static final int RT_SETVPSFOLLOWUPTIME;
+    public static final int RT_SETVPSCOLOR;
+    public static final int RT_SETVPSCONTRAST;
+    public static final int RT_SETVPSBRIGHTNESS;
+    public static final int RT_SETVPSDEFAULTMODERV;
+    public static final int RT_SETVPSDEFAULTMODEFV;
+    public static final int RT_SETVPSDEFAULTMODESV;
+    public static final int RT_SETVPSDEFAULTMODEBV;
+    public static final int RT_SETVPSDEFAULTVIEW;
+    public static final int RT_SETVPSOPSOVERLAY;
+    public static final int RT_SETVPSDYNAMICPARKINGMODE;
+    public static final int RT_SETVPSSYSTEMONOFF;
+    public static final int RT_SETVPSSETFACTORYDEFAULT;
+    public static final int RT_SETVPSEXTCAMCONFIG;
+    public static final int RT_SETVPSEXTCAMMANACTIVATION;
+    public static final int RT_SETVPS3DBIRDVIEW;
+    public static final int RT_SETVPSSYSTEMSTATE;
+    public static final int RT_SETVPSCAMERACLEANING;
+    public static final int RT_SHOWPARKINGPOPUP;
+    public static final int RT_CANCELPARKINGPOPUP;
+    public static final int RT_REQUESTLIFEMONITORING;
+    public static final int RT_SETARATARGETTRAILERANGLE;
+    public static final int RT_SETWCSYSTEMONOFF;
+    public static final int RT_SETWCAUTOACTIVATION;
+    public static final int RT_SETWCSETFACTORYDEFAULT;
+    public static final int RT_SHOWWCPOPUP;
+    public static final int RT_CANCELWCPOPUP;
+    public static final int RT_REQUESTWCPANELLIST;
+    public static final int RT_ENTERWCPINPUK;
+    public static final int RT_ABORTWCENTERPINPUK;
+    public static final int RT_STARTWCSCANNING;
+    public static final int RT_ABORTWCSCANNING;
+    public static final int RT_STARTWCPAIRING;
+    public static final int RT_ABORTWCPAIRING;
+    public static final int RT_STARTWCSOFTWAREUPDATE;
+    public static final int RT_ABORTWCSOFTWAREUPDATE;
+    public static final int RT_CHANGEWCPIN;
+    public static final int RT_ABORTWCCHANGEPIN;
+    public static final int RT_CHANGEWCPANELNAME;
+    public static final int RT_ABORTWCCHANGEPANELNAME;
+    public static final int RP_ACKNOWLEDGEPARKINGPOPUP;
+    public static final int RP_ACKNOWLEDGEPDCSETFACTORYDEFAULT;
+    public static final int RP_ACKNOWLEDGEVPSSETFACTORYDEFAULT;
+    public static final int RP_ACKNOWLEDGEWCSETFACTORYDEFAULT;
+    public static final int RP_ACKNOWLEDGEWCPOPUP;
+    public static final int RP_ACKNOWLEDGEWCENTERPINPUK;
+    public static final int RP_ACKNOWLEDGEWCSCANNING;
+    public static final int RP_ACKNOWLEDGEWCPAIRING;
+    public static final int RP_ACKNOWLEDGEWCSOFTWAREUPDATE;
+    public static final int RP_ACKNOWLEDGEWCCHANGEPIN;
+    public static final int RP_ACKNOWLEDGEWCCHANGEPANELNAME;
+    public static final int IN_REQUESTPARKINGPOPUP;
+    public static final int IN_RESPONSELIFEMONITORING;
+    public static final int IN_REQUESTWCPOPUP;
+    public static final int IN_RESPONSEWCPANELLIST;
+
+    default public void setHMIStateIsReady(boolean bl) {
+    }
+
+    default public void setPDCDefaultParkingMode(int n) {
+    }
+
+    default public void setPDCMute(boolean bl) {
+    }
+
+    default public void setPDCFrequenceFront(int n) {
+    }
+
+    default public void setPDCFrequenceRear(int n) {
+    }
+
+    default public void setPDCVolumeFront(int n) {
+    }
+
+    default public void setPDCVolumeRear(int n) {
+    }
+
+    default public void setPDCAutoActivation(boolean bl) {
+    }
+
+    default public void setPDCSystemOnOff(boolean bl) {
+    }
+
+    default public void setPDCFrequenceRight(int n) {
+    }
+
+    default public void setPDCFrequenceLeft(int n) {
+    }
+
+    default public void setPDCVolumeRight(int n) {
+    }
+
+    default public void setPDCVolumeLeft(int n) {
+    }
+
+    default public void setPDCFlankGuard(boolean bl) {
+    }
+
+    default public void setPDCSoundReproduction(PDCSoundReproduction pDCSoundReproduction) {
+    }
+
+    default public void setPDCSoundFront(PDCSound pDCSound) {
+    }
+
+    default public void setPDCSoundRear(PDCSound pDCSound) {
+    }
+
+    default public void setPDCSoundLeft(PDCSound pDCSound) {
+    }
+
+    default public void setPDCSoundRight(PDCSound pDCSound) {
+    }
+
+    default public void setPDCPLAPreSelection(int n) {
+    }
+
+    default public void setPDCPLAParkMode(int n) {
+    }
+
+    default public void setPDCPLASystemState(PDCPLASystemState pDCPLASystemState) {
+    }
+
+    default public void setPDCOffroadMode(boolean bl) {
+    }
+
+    default public void setPDCVisualisationParkbox(boolean bl) {
+    }
+
+    default public void setPDCOPSVisualisationPosition(int n) {
+    }
+
+    default public void setVPSFollowUpTime(int n) {
+    }
+
+    default public void setVPSColor(int n) {
+    }
+
+    default public void setVPSContrast(int n) {
+    }
+
+    default public void setVPSBrightness(int n) {
+    }
+
+    default public void setVPSDefaultModeRV(VPSDefaultMode vPSDefaultMode) {
+    }
+
+    default public void setVPSDefaultModeFV(VPSDefaultMode vPSDefaultMode) {
+    }
+
+    default public void setVPSDefaultModeSV(VPSDefaultMode vPSDefaultMode) {
+    }
+
+    default public void setVPSDefaultModeBV(VPSDefaultMode vPSDefaultMode) {
+    }
+
+    default public void setVPSDefaultView(int n) {
+    }
+
+    default public void setVPSOPSOverlay(VPSOPSOverlay vPSOPSOverlay) {
+    }
+
+    default public void setVPSDynamicParkingMode(VPSDynParkingMode vPSDynParkingMode) {
+    }
+
+    default public void setVPSSystemOnOff(boolean bl) {
+    }
+
+    default public void setVPSExtCamConfig(int n) {
+    }
+
+    default public void setVPSExtCamManActivation(boolean bl) {
+    }
+
+    default public void setVPS3DBirdview(int n, int n2) {
+    }
+
+    default public void setVPSSystemState(boolean bl) {
+    }
+
+    default public void showParkingPopup(DisplayContent displayContent) {
+    }
+
+    default public void cancelParkingPopup(DisplayContent displayContent, int n) {
+    }
+
+    default public void requestLifeMonitoring(boolean bl) {
+    }
+
+    default public void setPdcSetFactoryDefault() {
+    }
+
+    default public void setVpsSetFactoryDefault() {
+    }
+
+    default public void setARATargetTrailerAngle(int n) {
+    }
+
+    default public void setPDCManeuverAssistConfig(int n) {
+    }
+
+    default public void setPDCManeuverAssist(boolean bl) {
+    }
+
+    default public void setPDCContinueDrivingAssist(int n) {
+    }
+
+    default public void setPDCIpaConfig(int n) {
+    }
+
+    default public void setPDCPiloPaSystemState(PDCPiloPaSystemState pDCPiloPaSystemState) {
+    }
+
+    default public void setVPSCameraCleaning(VPSCameraCleaning vPSCameraCleaning) {
+    }
+
+    default public void setWCAutoActivation(boolean bl) {
+    }
+
+    default public void setWCSystemOnOff(boolean bl) {
+    }
+
+    default public void setWCSetFactoryDefault() {
+    }
+
+    default public void showWCPopup(int n) {
+    }
+
+    default public void cancelWCPopup(int n, int n2) {
+    }
+
+    default public void requestWCPanelList(CarArrayListUpdateInfo carArrayListUpdateInfo) {
+    }
+
+    default public void enterWCPinPuk(String string, String string2) {
+    }
+
+    default public void abortWCEnterPinPuk() {
+    }
+
+    default public void startWCScanning() {
+    }
+
+    default public void abortWCScanning() {
+    }
+
+    default public void startWCPairing(String string, String string2) {
+    }
+
+    default public void abortWCPairing() {
+    }
+
+    default public void startWCSoftwareUpdate(String string) {
+    }
+
+    default public void abortWCSoftwareUpdate() {
+    }
+
+    default public void changeWCPin(String string, String string2) {
+    }
+
+    default public void abortWCChangePin() {
+    }
+
+    default public void changeWCPanelName(String string, String string2) {
+    }
+
+    default public void abortWCChangePanelName() {
+    }
+}
+

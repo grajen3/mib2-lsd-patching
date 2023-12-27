@@ -1,0 +1,26 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.esolutions.fw.comm.dsi.tmc;
+
+public class Consts {
+    public static final int ATTRIBUTE_ID_DSITMC_EVENTSONROUTE;
+    public static final int ATTRIBUTE_ID_DSITMC_EVENTSTOTAL;
+    public static final int ATTRIBUTE_ID_DSITMC_TMCSTATE;
+    public static final int ATTRIBUTE_ID_DSITMC_ISENGINEERINGMODE;
+    public static final int ATTRIBUTE_ID_DSITMC_CURRENTLANGUAGE;
+    public static final int ATTRIBUTE_ID_DSITMC_ISTMCPROAVAILABLE;
+    public static final int ATTRIBUTE_ID_DSITMC_ACTIVETRAFFICSOURCES;
+    public static final int ATTRIBUTE_ID_DSITMC_AREAWARNING;
+    public static final int ATTRIBUTE_ID_DSITMC_AREAWARNINGS;
+    public static final int ATTRIBUTE_ID_DSITMC_LOCALHAZARDINFORMATION;
+    public static final int ATTRIBUTE_ID_DSITMC_TRAFFICFLOWSTATISTICSSTATUS;
+    public static final int ATTRIBUTE_ID_DSITMC_TRAFFICSOURCEINFORMATION;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_TMCMESSAGESAHEAD;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_URGENTMESSAGES;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_TMCMESSAGESAHEADCALCULATIONHORIZON;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_NAVICOREAVAILABLETOCHANGETMCBLOCKINGS;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_CURRENTLYBLOCKEDTMCMESSAGES;
+    public static final int ATTRIBUTE_ID_DSITMCONROUTE_SPEEDANDFLOWAHEAD;
+}
+

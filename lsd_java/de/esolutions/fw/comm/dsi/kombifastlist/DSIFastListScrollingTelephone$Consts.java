@@ -1,0 +1,81 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.esolutions.fw.comm.dsi.kombifastlist;
+
+public interface DSIFastListScrollingTelephone$Consts {
+    public static final String VERSION;
+    public static final int FUNCTIONAVAILABILITY_PHONEBOOK;
+    public static final int FUNCTIONAVAILABILITY_GETINITIALS;
+    public static final int FUNCTIONAVAILABILITY_FAVORITELISTPUSH;
+    public static final int FUNCTIONAVAILABILITY_COMBINEDNUMBERSPUSH;
+    public static final int FUNCTIONAVAILABILITY_PHONEBOOKJOBS;
+    public static final int OPSTATE_NORMAL;
+    public static final int OPSTATE_OFFSTBY;
+    public static final int OPSTATE_INITIALISING;
+    public static final int OPSTATE_DEFECTIVE;
+    public static final int ASGID_DEFAULT;
+    public static final int ASGID_INSTRUMENTCLUSTER;
+    public static final int ASGID_HEADUPDISPLAY;
+    public static final int RECORDADDRESSPHONEBOOK_FULL;
+    public static final int RECORDADDRESSPHONEBOOK_PBNAMESTORAGEANYVOICETAGTELNUMBERQUANTITYADDRESSINDICATION;
+    public static final int RECORDADDRESSPHONEBOOK_TELNUMBERNVOICETAGNRESERVENNUMBERTYPEN;
+    public static final int RECORDADDRESSPHONEBOOK_PBNAMEANYVOICETAGTELNUMBERQUANTITYVOICETAGNRESERVENNUMBERTYPEN;
+    public static final int RECORDADDRESSPHONEBOOK_ANYVOICETAGTELNUMBERQUANTITYTELNUMBERNVOICETAGNRESERVENNUMBERTYPEN;
+    public static final int RECORDADDRESSPHONEBOOK_POS;
+    public static final int JOBMODIFICATION_NEW;
+    public static final int JOBMODIFICATION_CHANGE;
+    public static final int JOBMODIFICATION_CANCEL;
+    public static final int REQUESTEDLIST_PHONEBOOK;
+    public static final int REQUESTEDLIST_COMBINEDNUMBERS;
+    public static final int REQUESTEDLIST_DIALEDNUMBERS;
+    public static final int REQUESTEDLIST_FAVORITELIST;
+    public static final int REQUESTEDLIST_MISSEDCALLS;
+    public static final int REQUESTEDLIST_RECEIVEDCALLS;
+    public static final int MODE_SHIFT;
+    public static final int MODE_ARRAYDIRECTION;
+    public static final int MODE_ARRAYPOSTRANSMITTED;
+    public static final int MODE_INDEXSIZE;
+    public static final int MODE_CENTERPOSITION;
+    public static final int MODE_INDEXSIZE64BIT;
+    public static final int SENDREASON_REQUESTED;
+    public static final int SENDREASON_CHANGEDARRAY;
+    public static final int SENDREASON_JOBLIST;
+    public static final int JOBSRESULT_JOBEXECUTEDSUCCESSFULLY;
+    public static final int JOBSRESULT_JOBCANCELLEDDUETOERRORSINREQUEST;
+    public static final int JOBSRESULT_JOBCANCELLEDBYFSG;
+    public static final int JOBSRESULT_JOBCANCELLEDSUCCESSFULLYBZASG;
+    public static final int JOBSRESULT_JOBCANCELLEDUNSUCCESSFULLYALREADYINEXECUTION;
+    public static final int JOBSRESULT_ALLJOBSEXECUTEDSUCCESSFULLY;
+    public static final int JOBSRESULT_ALLJOBSCANCELLED;
+    public static final int STORAGEPB_UNDEFINED;
+    public static final int STORAGEPB_SIM;
+    public static final int STORAGEPB_MOBILEEQUIPMENT;
+    public static final int STORAGEPB_LOCALPUBLIC;
+    public static final int STORAGEPB_LOCALPRIVATE;
+    public static final int ANYVOICETAG_AVAILABILITY;
+    public static final int ANYVOICETAG_AVAILABLEFORSTANDARDNUMBER;
+    public static final int VOICETAG_AVAILABLE;
+    public static final int NUMBERTYPE_UNKNOWNNUMBERTYPE;
+    public static final int NUMBERTYPE_GENERAL;
+    public static final int NUMBERTYPE_MOBILE;
+    public static final int NUMBERTYPE_OFFICE;
+    public static final int NUMBERTYPE_HOME;
+    public static final int NUMBERTYPE_FAX;
+    public static final int NUMBERTYPE_PAGER;
+    public static final int NUMBERTYPE_CAR;
+    public static final int NUMBERTYPE_SIM;
+    public static final int NUMBERTYPE_MAINOFFICE;
+    public static final int NUMBERTYPE_MAINHOME;
+    public static final int NUMBERTYPE_CELLOFFICE;
+    public static final int NUMBERTYPE_CELLHOME;
+    public static final int NUMBERTYPE_FAXOFFICE;
+    public static final int NUMBERTYPE_FAXHOME;
+    public static final int CALLMODE_UNKNOWNCALLMODE;
+    public static final int CALLMODE_MISSEDCALL;
+    public static final int CALLMODE_RECEIVEDCALL;
+    public static final int CALLMODE_DIALEDNUMBER;
+    public static final String DEVICE_NAME;
+    public static final String DEVICE_INSTANCE;
+}
+

@@ -1,0 +1,79 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.testmode;
+
+public interface ASLTestmodeListConstants {
+    public static final int CURRENT_DAB_FADER;
+    public static final int S_DARS__AGC__COFDM;
+    public static final int S_DARS__AGC__TDM;
+    public static final int S_DARS__AGC__TDM_IF;
+    public static final int S_DARS_CHANNEL_PARAMETER_DEC_ALG;
+    public static final int S_DARS_CHANNEL_VECTOR;
+    public static final int S_DARS_DEMOD_SNR;
+    public static final int S_DARS_GLOBAL_INFO_SERVICE_CHANNEL_MODE;
+    public static final int S_DARSTDMAGC_LOCK;
+    public static final int S_DARSTDMCAZAC_LOCK;
+    public static final int S_DARSTDM_CLUSTER_LOCK;
+    public static final int S_DARSTDM_DEMOD_LOCK;
+    public static final int S_DARSTDM_LOST_LOCK;
+    public static final int S_DARSTDM_QUAD_LOCK;
+    public static final int S_DARSTDM_TIMING_LOCK;
+    public static final int AF_LIST__INFORMATION;
+    public static final int TMC_STATION_INFO;
+    public static final int DAB_LINK_LIST;
+    public static final int DABTII_LIST;
+    public static final int PLUGGED_DEVICES;
+    public static final int AMPLIFIER;
+    public static final int VOLUME_LEVEL_SOURCES;
+    public static final int DATA_BASE_COMPONENTS_GROUP;
+    public static final int NAV_TRAVEL_GUIDE_GROUP;
+    public static final int CONNECTED_USB_DEVICE_GROUP;
+    public static final int CLAMPS_GROUP;
+    public static final int DAB_DATA_SERVICE_LIST;
+    public static final int MOST_TEMPERATURE;
+    public static final int HARD_KEYS_COUNTER;
+    public static final int MOST_REGISTRY_INFORMATIONS;
+    public static final int AMFM_GROUP1;
+    public static final int AMFM_GROUP2;
+    public static final int AMFM_GROUP3;
+    public static final int AMFM_GROUP_TMC;
+    public static final int TRACES_HMI_CATEGORY;
+    public static final int TRACES_HMI_SUB;
+    public static final int TRACES_SYSTEM;
+    public static final int SOUNDSETTINGS;
+    public static final int HARDWARE_INFO;
+    public static final int AUDIO_USER_CONNECTIONS;
+    public static final int BLUETOOTH_DEVICES_SUPPORTED_SERVICE;
+    public static final int MICROPHONES;
+    public static final int CAR_VIEW_OPTIONS;
+    public static final int CAR_DEVICE_LISTS;
+    public static final int MEDIA_FILE_INFO;
+    public static final int PHONE_MICROPHONE_LISTS;
+    public static final int IBOC_GROUP;
+    public static final int FEAT_FLAGS_GROUP;
+    public static final int CONST_GROUP;
+    public static final int LANGUAGE_CODINGS_GROUP;
+    public static final int PERSISTED_PROFILE;
+    public static final int BLUETOOTH_DEVICES_IN_RANGE;
+    public static final int HWR_MATCH_LIST;
+    public static final int TMC_MESSAGES_LIST;
+    public static final int DVD_REGION_SYSTEM_SETTINGS;
+    public static final int USERS;
+    public static final int BLUETOOTH_ERROR_LOG;
+    public static final int AUDIO_DEVICES;
+    public static final int AUDIO_SUBSTATES;
+    public static final int AUDIO_SOURCE_LIST;
+    public static final int KERN_INFO_STRING1;
+    public static final int TOP_TWENTY_SPEECH_COMMANDS;
+    public static final int MOST_STEUERGERAETE_LIST;
+    public static final int MOST_STEUERGERAETE_INFORMATION_LIST;
+    public static final int MOST_STEUERGERAETE_FBLOCK_LIST;
+    public static final int MOST_SHUT_DOWN_DEVICE;
+    public static final int SDS_STATISTICS;
+    public static final int AMFM_TIMER_VALUES;
+    public static final int AVAILABLE_SYSTEM_LANGUAGES;
+    public static final int DP_COUNT_LIST_GENERICASLLIST;
+    public static final int DP_COUNT_LIST;
+}
+

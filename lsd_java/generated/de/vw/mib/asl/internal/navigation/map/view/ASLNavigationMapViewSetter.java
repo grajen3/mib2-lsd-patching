@@ -1,0 +1,82 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.navigation.map.view;
+
+public interface ASLNavigationMapViewSetter {
+    public static final int SET_DAY_NIGHT_MODE;
+    public static final int SET_DAY_NIGHT_MODE__P0_MODE__INT;
+    public static final int SET_DAY_NIGHT_MODE__MODE__C0_DAY;
+    public static final int SET_DAY_NIGHT_MODE__MODE__C1_NIGHT;
+    public static final int SET_DAY_NIGHT_MODE__MODE__C2_AUTOMATIC;
+    public static final int START_SEARCH_TMC_MESSAGES_ON_MAP;
+    public static final int ACTIVATE_DESTINATION_ZOOM;
+    public static final int ACTIVATE_SURROUNDING_ZOOM;
+    public static final int ACTIVATE_ALTERNATIVE_ROUTE_MAP;
+    public static final int ACTIVATE_WAYPOINT_TOUR_OVERVIEW_MAP;
+    public static final int CENTER_MAP_TO_CCP;
+    public static final int RESET_CLICKED_STATUS;
+    public static final int SET_CLICK_IN_MAIN_MAP;
+    public static final int SET_CLICK_IN_MAIN_MAP__P0_ACTIONTYPE__INT;
+    public static final int SET_CLICK_IN_MAIN_MAP__ACTIONTYPE__C0_PRESSED;
+    public static final int SET_CLICK_IN_MAIN_MAP__ACTIONTYPE__C1_DRAGGED;
+    public static final int SET_CLICK_IN_MAIN_MAP__ACTIONTYPE__C2_RELEASED;
+    public static final int SET_CLICK_IN_MAIN_MAP__ACTIONTYPE__C3_CLICKED;
+    public static final int SET_CLICK_IN_MAIN_MAP__ACTIONTYPE__C4_SELECTED;
+    public static final int SET_CLICK_IN_MAIN_MAP__P1_XCOORDINATE__INT;
+    public static final int SET_CLICK_IN_MAIN_MAP__P2_YCOORDINATE__INT;
+    public static final int SET_TO_OVERVIEW_ZOOM;
+    public static final int SET_ZOOM_LEVEL_SLIDER;
+    public static final int SET_ZOOM_LEVEL_SLIDER__P0_ZOOMLEVELSLIDER__INT;
+    public static final int SET_SCOPE;
+    public static final int SET_SCOPE__P0_SETSCOPE__INT;
+    public static final int SET_SCOPE__SETSCOPE__C0_UNUSED;
+    public static final int SET_SCOPE__SETSCOPE__C1_DESTINATION;
+    public static final int SET_SCOPE__SETSCOPE__C2_POI;
+    public static final int SET_SCOPE__SETSCOPE__C3_SEARCHAREA;
+    public static final int SET_SCOPE__SETSCOPE__C4_MAPREFINE;
+    public static final int SET_CARSUR_POSITION;
+    public static final int SET_CARSUR_POSITION__P0_POSITIONX__INT;
+    public static final int SET_CARSUR_POSITION__P1_POSITIONY__INT;
+    public static final int SET_HOT_POINT_POSITION;
+    public static final int SET_HOT_POINT_POSITION__P0_POSITIONX__INT;
+    public static final int SET_HOT_POINT_POSITION__P1_POSITIONY__INT;
+    public static final int TOGGLE_OVERVIEW_ZOOM;
+    public static final int TOGGLE_PREFERRED_BRANDS;
+    public static final int TOGGLE_ROCKET_ZOOM;
+    public static final int TRANSFER_CLICKED_POI_TO_POI_RESULT;
+    public static final int ZOOM_IN;
+    public static final int SELECT_TMC_FILTER_ON_MAP;
+    public static final int SELECT_TMC_FILTER_ON_MAP__P0_VALUE__INT;
+    public static final int SELECT_TMC_FILTER_ON_MAP__VALUE__C0_CLICKEDPOSITION;
+    public static final int SELECT_TMC_FILTER_ON_MAP__VALUE__C1_WHOLEMAP;
+    public static final int ZOOM_OUT;
+    public static final int ZOOM_TO_MINIMUM_ZOOM_LEVEL;
+    public static final int SET_ZOOM_LIMIT;
+    public static final int SET_ZOOM_LIMIT__P0_LIMIT__INT;
+    public static final int SET_RANGE_VIEW_ENABLED;
+    public static final int SET_RANGE_VIEW_ENABLED__P0_VALUE__BOOLEAN;
+    public static final boolean SET_RANGE_VIEW_ENABLED__VALUE__C0_OFF;
+    public static final boolean SET_RANGE_VIEW_ENABLED__VALUE__C1_ON;
+    public static final int ACTIVATE_COUNTRY_OVERVIEW;
+    public static final int TWO_FINGER_ZOOMED;
+    public static final int TWO_FINGER_ZOOMED__P0_POSX__INT;
+    public static final int TWO_FINGER_ZOOMED__P1_POSY__INT;
+    public static final int TWO_FINGER_ZOOMED__P2_ZDELTA__INT;
+    public static final int TWO_FINGER_ZOOMED__P3_ZDISTANCE__INT;
+    public static final int TWO_FINGER_DRAGGED;
+    public static final int TWO_FINGER_DRAGGED__P0_POSX__INT;
+    public static final int TWO_FINGER_DRAGGED__P1_POSY__INT;
+    public static final int TWO_FINGER_DRAGGED__P2_ZDELTAX__INT;
+    public static final int TWO_FINGER_DRAGGED__P3_ZDELTAY__INT;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__P0_ACTIONTYPE__INT;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__ACTIONTYPE__C0_PRESSED;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__ACTIONTYPE__C1_DRAGGED;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__ACTIONTYPE__C2_RELEASED;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__ACTIONTYPE__C3_CLICKED;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__ACTIONTYPE__C4_SELECTED;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__P1_XCOORDINATE__INT;
+    public static final int SET_CLICK_IN_DETAIL_SCREEN_MAP__P2_YCOORDINATE__INT;
+}
+

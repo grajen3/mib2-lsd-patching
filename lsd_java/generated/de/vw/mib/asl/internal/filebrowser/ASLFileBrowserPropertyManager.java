@@ -1,0 +1,125 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.filebrowser;
+
+import org.dsi.ifc.global.ResourceLocator;
+
+public interface ASLFileBrowserPropertyManager {
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_NAME;
+    public static final String FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_NAME__DEFAULT_VALUE;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__DEFAULT_VALUE;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C0_TYPE_FOLDER;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C1_TYPE_FILE_GENERIC;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C2_TYPE_FILE_MUSIC;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C3_TYPE_FILE_VIDEO;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C4_TYPE_FILE_PICTURE;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C5_TYPE_FILE_VCARD;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__FOLDERAND_FILE_INDEX__C6_TYPE_FILE_WPM;
+    public static final int FILE_BROWSER_FILE_INFO__FILE_BROWSER__IMAGE_PREVIEW;
+    public static final ResourceLocator FILE_BROWSER_FILE_INFO__FILE_BROWSER__IMAGE_PREVIEW__DEFAULT_VALUE;
+    public static final int FILE_BROWSER_FOLDER_INFO__FILE_BROWSER__FOLDER_NAME;
+    public static final String FILE_BROWSER_FOLDER_INFO__FILE_BROWSER__FOLDER_NAME__DEFAULT_VALUE;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__DEFAULT_VALUE;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C0_PICTURE_SOURCE_NO_SOURCE;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C1_PICTURE_SOURCE_CD_DVD;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C2_PICTURE_SOURCE_SD_CARD;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C3_PICTURE_SOURCE_USB;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C4_PICTURE_SOURCE_IPOD;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C5_PICTURE_SOURCE_BT_DEVICE;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C6_PICTURE_SOURCE_SD_CARD_2;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C7_PICTURE_SOURCE_INTERNAL_MEMORY;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C8_PICTURE_SOURCE_HDD;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C9_PICTURE_SOURCE_USB_2;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C10_PICTURE_SOURCE_NAVI_SD_1;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C11_PICTURE_SOURCE_NAVI_SD_2;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C12_PICTURE_SOURCE_USB_3;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ID__C13_PICTURE_SOURCE_USB_4;
+    public static final int AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ENABLED;
+    public static final boolean AVAILABLE_SOURCEV2__AVAILABLE_SOURCE_ENABLED__DEFAULT_VALUE;
+    public static final int AVAILABLE_SOURCES;
+    public static final int AVAILABLE_SOURCES__DEFAULT_VALUE;
+    public static final int AVAILABLE_SOURCES__C0_NO_SOURCE;
+    public static final int AVAILABLE_SOURCES__C1_CD_DVD;
+    public static final int AVAILABLE_SOURCES__C2_SD;
+    public static final int AVAILABLE_SOURCES__C3_USB;
+    public static final int AVAILABLE_SOURCES__C4_IPOD;
+    public static final int AVAILABLE_SOURCES__C5_BT;
+    public static final int AVAILABLE_SOURCES__C6_SD2;
+    public static final int AVAILABLE_SOURCES__C7_INT_MEMORY;
+    public static final int AVAILABLE_SOURCES__C8_HDD;
+    public static final int AVAILABLE_SOURCES__C9_USB2;
+    public static final int AVAILABLE_SOURCES__C10_NAVI_SD1;
+    public static final int AVAILABLE_SOURCES__C11_NAVI_SD2;
+    public static final int AVAILABLE_SOURCES__C12_USB3;
+    public static final int AVAILABLE_SOURCES__C13_USB4;
+    public static final int FILE_BROWSER__ABSOLUT_PATH;
+    public static final ResourceLocator FILE_BROWSER__ABSOLUT_PATH__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__CURRENT_FOLDER_NAME;
+    public static final String FILE_BROWSER__CURRENT_FOLDER_NAME__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__CURRENT_SOURCE;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C0_NO_SOURCE;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C1_CD_DVD;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C2_SD;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C3_USB;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C4_IPOD;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C5_BT;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C6_SD2;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C7_INT_MEMORY;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C8_HDD;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C9_USB2;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C10_USB3;
+    public static final int FILE_BROWSER__CURRENT_SOURCE__C11_USB4;
+    public static final int FILE_BROWSER__INTERNAL_MEMORY_FREE_SPACE;
+    public static final int FILE_BROWSER__INTERNAL_MEMORY_FREE_SPACE__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__LAST_BUT_ONE_LEVEL_INDEX;
+    public static final int FILE_BROWSER__LAST_BUT_ONE_LEVEL_INDEX__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__LAST_LEVEL_INDEX;
+    public static final int FILE_BROWSER__LAST_LEVEL_INDEX__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE__DEFAULT_VALUE;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE__C0_IDLE;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE__C1_CHECKING;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE__C2_FINISHED_SUCCESS;
+    public static final int FILE_BROWSER__PATH_CHECKING_STATE__C3_FINISHED_FAILED;
+    public static final int GPS_PICS_BROWSER_STATE;
+    public static final int GPS_PICS_BROWSER_STATE__DEFAULT_VALUE;
+    public static final int GPS_PICS_BROWSER_STATE__C0_READY;
+    public static final int GPS_PICS_BROWSER_STATE__C1_LOADING;
+    public static final int GPS_PICS_BROWSER_STATE__C2_NO_FILES;
+    public static final int IMAGE_BROWSER_INTERNAL_MEMORY_STATE;
+    public static final boolean IMAGE_BROWSER_INTERNAL_MEMORY_STATE__DEFAULT_VALUE;
+    public static final int IMAGE_BROWSER_SD_CARD_STATE;
+    public static final boolean IMAGE_BROWSER_SD_CARD_STATE__DEFAULT_VALUE;
+    public static final int IMAGE_BROWSER_USB_STATE;
+    public static final boolean IMAGE_BROWSER_USB_STATE__DEFAULT_VALUE;
+    public static final int NUMBER_OF_V_CARDS_IN_CURRENT_FOLDER;
+    public static final int NUMBER_OF_V_CARDS_IN_CURRENT_FOLDER__DEFAULT_VALUE;
+    public static final int CD_ACCESSIBLE;
+    public static final boolean CD_ACCESSIBLE__DEFAULT_VALUE;
+    public static final int SD_CARD1ACCESSIBLE;
+    public static final boolean SD_CARD1ACCESSIBLE__DEFAULT_VALUE;
+    public static final int SD_CARD1ACCESSIBLE2;
+    public static final boolean SD_CARD1ACCESSIBLE2__DEFAULT_VALUE;
+    public static final int SD_CARD2ACCESSIBLE;
+    public static final boolean SD_CARD2ACCESSIBLE__DEFAULT_VALUE;
+    public static final int SD_CARD2ACCESSIBLE2;
+    public static final boolean SD_CARD2ACCESSIBLE2__DEFAULT_VALUE;
+    public static final int TUNER_PRESET_LOGO_PATH_AVAILABLE;
+    public static final boolean TUNER_PRESET_LOGO_PATH_AVAILABLE__DEFAULT_VALUE;
+    public static final int USB2ACCESSIBLE;
+    public static final boolean USB2ACCESSIBLE__DEFAULT_VALUE;
+    public static final int USB_ACCESSIBLENEW;
+    public static final boolean USB_ACCESSIBLENEW__DEFAULT_VALUE;
+    public static final int USB_ACCESSIBLE2;
+    public static final boolean USB_ACCESSIBLE2__DEFAULT_VALUE;
+
+    static {
+        FILE_BROWSER_FILE_INFO__FILE_BROWSER__IMAGE_PREVIEW__DEFAULT_VALUE = null;
+        FILE_BROWSER__ABSOLUT_PATH__DEFAULT_VALUE = null;
+    }
+}
+

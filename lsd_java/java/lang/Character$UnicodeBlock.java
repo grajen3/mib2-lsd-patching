@@ -1,0 +1,198 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package java.lang;
+
+import com.ibm.oti.util.BinarySearch;
+
+public final class Character$UnicodeBlock
+extends Character$Subset {
+    public static final Character$UnicodeBlock ALPHABETIC_PRESENTATION_FORMS = new Character$UnicodeBlock("ALPHABETIC_PRESENTATION_FORMS");
+    public static final Character$UnicodeBlock ARABIC = new Character$UnicodeBlock("ARABIC");
+    public static final Character$UnicodeBlock ARABIC_PRESENTATION_FORMS_A = new Character$UnicodeBlock("ARABIC_PRESENTATION_FORMS_A");
+    public static final Character$UnicodeBlock ARABIC_PRESENTATION_FORMS_B = new Character$UnicodeBlock("ARABIC_PRESENTATION_FORMS_B");
+    public static final Character$UnicodeBlock ARMENIAN = new Character$UnicodeBlock("ARMENIAN");
+    public static final Character$UnicodeBlock ARROWS = new Character$UnicodeBlock("ARROWS");
+    public static final Character$UnicodeBlock BASIC_LATIN = new Character$UnicodeBlock("BASIC_LATIN");
+    public static final Character$UnicodeBlock BENGALI = new Character$UnicodeBlock("BENGALI");
+    public static final Character$UnicodeBlock BLOCK_ELEMENTS = new Character$UnicodeBlock("BLOCK_ELEMENTS");
+    public static final Character$UnicodeBlock BOPOMOFO = new Character$UnicodeBlock("BOPOMOFO");
+    public static final Character$UnicodeBlock BOX_DRAWING = new Character$UnicodeBlock("BOX_DRAWING");
+    public static final Character$UnicodeBlock CJK_COMPATIBILITY = new Character$UnicodeBlock("CJK_COMPATIBILITY");
+    public static final Character$UnicodeBlock CJK_COMPATIBILITY_FORMS = new Character$UnicodeBlock("CJK_COMPATIBILITY_FORMS");
+    public static final Character$UnicodeBlock CJK_COMPATIBILITY_IDEOGRAPHS = new Character$UnicodeBlock("CJK_COMPATIBILITY_IDEOGRAPHS");
+    public static final Character$UnicodeBlock CJK_SYMBOLS_AND_PUNCTUATION = new Character$UnicodeBlock("CJK_SYMBOLS_AND_PUNCTUATION");
+    public static final Character$UnicodeBlock CJK_UNIFIED_IDEOGRAPHS = new Character$UnicodeBlock("CJK_UNIFIED_IDEOGRAPHS");
+    public static final Character$UnicodeBlock COMBINING_DIACRITICAL_MARKS = new Character$UnicodeBlock("COMBINING_DIACRITICAL_MARKS");
+    public static final Character$UnicodeBlock COMBINING_HALF_MARKS = new Character$UnicodeBlock("COMBINING_HALF_MARKS");
+    public static final Character$UnicodeBlock COMBINING_MARKS_FOR_SYMBOLS = new Character$UnicodeBlock("COMBINING_MARKS_FOR_SYMBOLS");
+    public static final Character$UnicodeBlock CONTROL_PICTURES = new Character$UnicodeBlock("CONTROL_PICTURES");
+    public static final Character$UnicodeBlock CURRENCY_SYMBOLS = new Character$UnicodeBlock("CURRENCY_SYMBOLS");
+    public static final Character$UnicodeBlock CYRILLIC = new Character$UnicodeBlock("CYRILLIC");
+    public static final Character$UnicodeBlock DEVANAGARI = new Character$UnicodeBlock("DEVANAGARI");
+    public static final Character$UnicodeBlock DINGBATS = new Character$UnicodeBlock("DINGBATS");
+    public static final Character$UnicodeBlock ENCLOSED_ALPHANUMERICS = new Character$UnicodeBlock("ENCLOSED_ALPHANUMERICS");
+    public static final Character$UnicodeBlock ENCLOSED_CJK_LETTERS_AND_MONTHS = new Character$UnicodeBlock("ENCLOSED_CJK_LETTERS_AND_MONTHS");
+    public static final Character$UnicodeBlock GENERAL_PUNCTUATION = new Character$UnicodeBlock("GENERAL_PUNCTUATION");
+    public static final Character$UnicodeBlock GEOMETRIC_SHAPES = new Character$UnicodeBlock("GEOMETRIC_SHAPES");
+    public static final Character$UnicodeBlock GEORGIAN = new Character$UnicodeBlock("GEORGIAN");
+    public static final Character$UnicodeBlock GREEK = new Character$UnicodeBlock("GREEK");
+    public static final Character$UnicodeBlock GREEK_EXTENDED = new Character$UnicodeBlock("GREEK_EXTENDED");
+    public static final Character$UnicodeBlock GUJARATI = new Character$UnicodeBlock("GUJARATI");
+    public static final Character$UnicodeBlock GURMUKHI = new Character$UnicodeBlock("GURMUKHI");
+    public static final Character$UnicodeBlock HALFWIDTH_AND_FULLWIDTH_FORMS = new Character$UnicodeBlock("HALFWIDTH_AND_FULLWIDTH_FORMS");
+    public static final Character$UnicodeBlock HANGUL_COMPATIBILITY_JAMO = new Character$UnicodeBlock("HANGUL_COMPATIBILITY_JAMO");
+    public static final Character$UnicodeBlock HANGUL_JAMO = new Character$UnicodeBlock("HANGUL_JAMO");
+    public static final Character$UnicodeBlock HANGUL_SYLLABLES = new Character$UnicodeBlock("HANGUL_SYLLABLES");
+    public static final Character$UnicodeBlock HEBREW = new Character$UnicodeBlock("HEBREW");
+    public static final Character$UnicodeBlock HIRAGANA = new Character$UnicodeBlock("HIRAGANA");
+    public static final Character$UnicodeBlock IPA_EXTENSIONS = new Character$UnicodeBlock("IPA_EXTENSIONS");
+    public static final Character$UnicodeBlock KANBUN = new Character$UnicodeBlock("KANBUN");
+    public static final Character$UnicodeBlock KANNADA = new Character$UnicodeBlock("KANNADA");
+    public static final Character$UnicodeBlock KATAKANA = new Character$UnicodeBlock("KATAKANA");
+    public static final Character$UnicodeBlock LAO = new Character$UnicodeBlock("LAO");
+    public static final Character$UnicodeBlock LATIN_1_SUPPLEMENT = new Character$UnicodeBlock("LATIN_1_SUPPLEMENT");
+    public static final Character$UnicodeBlock LATIN_EXTENDED_A = new Character$UnicodeBlock("LATIN_EXTENDED_A");
+    public static final Character$UnicodeBlock LATIN_EXTENDED_ADDITIONAL = new Character$UnicodeBlock("LATIN_EXTENDED_ADDITIONAL");
+    public static final Character$UnicodeBlock LATIN_EXTENDED_B = new Character$UnicodeBlock("LATIN_EXTENDED_B");
+    public static final Character$UnicodeBlock LETTERLIKE_SYMBOLS = new Character$UnicodeBlock("LETTERLIKE_SYMBOLS");
+    public static final Character$UnicodeBlock MALAYALAM = new Character$UnicodeBlock("MALAYALAM");
+    public static final Character$UnicodeBlock MATHEMATICAL_OPERATORS = new Character$UnicodeBlock("MATHEMATICAL_OPERATORS");
+    public static final Character$UnicodeBlock MISCELLANEOUS_SYMBOLS = new Character$UnicodeBlock("MISCELLANEOUS_SYMBOLS");
+    public static final Character$UnicodeBlock MISCELLANEOUS_TECHNICAL = new Character$UnicodeBlock("MISCELLANEOUS_TECHNICAL");
+    public static final Character$UnicodeBlock NUMBER_FORMS = new Character$UnicodeBlock("NUMBER_FORMS");
+    public static final Character$UnicodeBlock OPTICAL_CHARACTER_RECOGNITION = new Character$UnicodeBlock("OPTICAL_CHARACTER_RECOGNITION");
+    public static final Character$UnicodeBlock ORIYA = new Character$UnicodeBlock("ORIYA");
+    public static final Character$UnicodeBlock PRIVATE_USE_AREA = new Character$UnicodeBlock("PRIVATE_USE_AREA");
+    public static final Character$UnicodeBlock SMALL_FORM_VARIANTS = new Character$UnicodeBlock("SMALL_FORM_VARIANTS");
+    public static final Character$UnicodeBlock SPACING_MODIFIER_LETTERS = new Character$UnicodeBlock("SPACING_MODIFIER_LETTERS");
+    public static final Character$UnicodeBlock SPECIALS = new Character$UnicodeBlock("SPECIALS");
+    public static final Character$UnicodeBlock SUPERSCRIPTS_AND_SUBSCRIPTS = new Character$UnicodeBlock("SUPERSCRIPTS_AND_SUBSCRIPTS");
+    public static final Character$UnicodeBlock SURROGATES_AREA = new Character$UnicodeBlock("SURROGATES_AREA");
+    public static final Character$UnicodeBlock TAMIL = new Character$UnicodeBlock("TAMIL");
+    public static final Character$UnicodeBlock TELUGU = new Character$UnicodeBlock("TELUGU");
+    public static final Character$UnicodeBlock THAI = new Character$UnicodeBlock("THAI");
+    public static final Character$UnicodeBlock TIBETAN = new Character$UnicodeBlock("TIBETAN");
+    public static final Character$UnicodeBlock SYRIAC = new Character$UnicodeBlock("SYRIAC");
+    public static final Character$UnicodeBlock THAANA = new Character$UnicodeBlock("THAANA");
+    public static final Character$UnicodeBlock SINHALA = new Character$UnicodeBlock("SINHALA");
+    public static final Character$UnicodeBlock MYANMAR = new Character$UnicodeBlock("MYANMAR");
+    public static final Character$UnicodeBlock ETHIOPIC = new Character$UnicodeBlock("ETHIOPIC");
+    public static final Character$UnicodeBlock CHEROKEE = new Character$UnicodeBlock("CHEROKEE");
+    public static final Character$UnicodeBlock UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS = new Character$UnicodeBlock("UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS");
+    public static final Character$UnicodeBlock OGHAM = new Character$UnicodeBlock("OGHAM");
+    public static final Character$UnicodeBlock RUNIC = new Character$UnicodeBlock("RUNIC");
+    public static final Character$UnicodeBlock KHMER = new Character$UnicodeBlock("KHMER");
+    public static final Character$UnicodeBlock MONGOLIAN = new Character$UnicodeBlock("MONGOLIAN");
+    public static final Character$UnicodeBlock BRAILLE_PATTERNS = new Character$UnicodeBlock("BRAILLE_PATTERNS");
+    public static final Character$UnicodeBlock CJK_RADICALS_SUPPLEMENT = new Character$UnicodeBlock("CJK_RADICALS_SUPPLEMENT");
+    public static final Character$UnicodeBlock KANGXI_RADICALS = new Character$UnicodeBlock("KANGXI_RADICALS");
+    public static final Character$UnicodeBlock IDEOGRAPHIC_DESCRIPTION_CHARACTERS = new Character$UnicodeBlock("IDEOGRAPHIC_DESCRIPTION_CHARACTERS");
+    public static final Character$UnicodeBlock BOPOMOFO_EXTENDED = new Character$UnicodeBlock("BOPOMOFO_EXTENDED");
+    public static final Character$UnicodeBlock CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A = new Character$UnicodeBlock("CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A");
+    public static final Character$UnicodeBlock YI_SYLLABLES = new Character$UnicodeBlock("YI_SYLLABLES");
+    public static final Character$UnicodeBlock YI_RADICALS = new Character$UnicodeBlock("YI_RADICALS");
+    static final Character$UnicodeBlock[] blocks;
+    static final String starts;
+
+    static {
+        Character$UnicodeBlock[] character$UnicodeBlockArray = new Character$UnicodeBlock[101];
+        character$UnicodeBlockArray[0] = BASIC_LATIN;
+        character$UnicodeBlockArray[1] = LATIN_1_SUPPLEMENT;
+        character$UnicodeBlockArray[2] = LATIN_EXTENDED_A;
+        character$UnicodeBlockArray[3] = LATIN_EXTENDED_B;
+        character$UnicodeBlockArray[4] = IPA_EXTENSIONS;
+        character$UnicodeBlockArray[5] = SPACING_MODIFIER_LETTERS;
+        character$UnicodeBlockArray[6] = COMBINING_DIACRITICAL_MARKS;
+        character$UnicodeBlockArray[7] = GREEK;
+        character$UnicodeBlockArray[8] = CYRILLIC;
+        character$UnicodeBlockArray[10] = ARMENIAN;
+        character$UnicodeBlockArray[11] = HEBREW;
+        character$UnicodeBlockArray[12] = ARABIC;
+        character$UnicodeBlockArray[13] = SYRIAC;
+        character$UnicodeBlockArray[15] = THAANA;
+        character$UnicodeBlockArray[17] = DEVANAGARI;
+        character$UnicodeBlockArray[18] = BENGALI;
+        character$UnicodeBlockArray[19] = GURMUKHI;
+        character$UnicodeBlockArray[20] = GUJARATI;
+        character$UnicodeBlockArray[21] = ORIYA;
+        character$UnicodeBlockArray[22] = TAMIL;
+        character$UnicodeBlockArray[23] = TELUGU;
+        character$UnicodeBlockArray[24] = KANNADA;
+        character$UnicodeBlockArray[25] = MALAYALAM;
+        character$UnicodeBlockArray[26] = SINHALA;
+        character$UnicodeBlockArray[27] = THAI;
+        character$UnicodeBlockArray[28] = LAO;
+        character$UnicodeBlockArray[29] = TIBETAN;
+        character$UnicodeBlockArray[30] = MYANMAR;
+        character$UnicodeBlockArray[31] = GEORGIAN;
+        character$UnicodeBlockArray[32] = HANGUL_JAMO;
+        character$UnicodeBlockArray[33] = ETHIOPIC;
+        character$UnicodeBlockArray[35] = CHEROKEE;
+        character$UnicodeBlockArray[36] = UNIFIED_CANADIAN_ABORIGINAL_SYLLABICS;
+        character$UnicodeBlockArray[37] = OGHAM;
+        character$UnicodeBlockArray[38] = RUNIC;
+        character$UnicodeBlockArray[40] = KHMER;
+        character$UnicodeBlockArray[41] = MONGOLIAN;
+        character$UnicodeBlockArray[43] = LATIN_EXTENDED_ADDITIONAL;
+        character$UnicodeBlockArray[44] = GREEK_EXTENDED;
+        character$UnicodeBlockArray[45] = GENERAL_PUNCTUATION;
+        character$UnicodeBlockArray[46] = SUPERSCRIPTS_AND_SUBSCRIPTS;
+        character$UnicodeBlockArray[47] = CURRENCY_SYMBOLS;
+        character$UnicodeBlockArray[48] = COMBINING_MARKS_FOR_SYMBOLS;
+        character$UnicodeBlockArray[49] = LETTERLIKE_SYMBOLS;
+        character$UnicodeBlockArray[50] = NUMBER_FORMS;
+        character$UnicodeBlockArray[51] = ARROWS;
+        character$UnicodeBlockArray[52] = MATHEMATICAL_OPERATORS;
+        character$UnicodeBlockArray[53] = MISCELLANEOUS_TECHNICAL;
+        character$UnicodeBlockArray[54] = CONTROL_PICTURES;
+        character$UnicodeBlockArray[55] = OPTICAL_CHARACTER_RECOGNITION;
+        character$UnicodeBlockArray[56] = ENCLOSED_ALPHANUMERICS;
+        character$UnicodeBlockArray[57] = BOX_DRAWING;
+        character$UnicodeBlockArray[58] = BLOCK_ELEMENTS;
+        character$UnicodeBlockArray[59] = GEOMETRIC_SHAPES;
+        character$UnicodeBlockArray[60] = MISCELLANEOUS_SYMBOLS;
+        character$UnicodeBlockArray[61] = DINGBATS;
+        character$UnicodeBlockArray[63] = BRAILLE_PATTERNS;
+        character$UnicodeBlockArray[65] = CJK_RADICALS_SUPPLEMENT;
+        character$UnicodeBlockArray[66] = KANGXI_RADICALS;
+        character$UnicodeBlockArray[68] = IDEOGRAPHIC_DESCRIPTION_CHARACTERS;
+        character$UnicodeBlockArray[69] = CJK_SYMBOLS_AND_PUNCTUATION;
+        character$UnicodeBlockArray[70] = HIRAGANA;
+        character$UnicodeBlockArray[71] = KATAKANA;
+        character$UnicodeBlockArray[72] = BOPOMOFO;
+        character$UnicodeBlockArray[73] = HANGUL_COMPATIBILITY_JAMO;
+        character$UnicodeBlockArray[74] = KANBUN;
+        character$UnicodeBlockArray[75] = BOPOMOFO_EXTENDED;
+        character$UnicodeBlockArray[77] = ENCLOSED_CJK_LETTERS_AND_MONTHS;
+        character$UnicodeBlockArray[78] = CJK_COMPATIBILITY;
+        character$UnicodeBlockArray[79] = CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A;
+        character$UnicodeBlockArray[81] = CJK_UNIFIED_IDEOGRAPHS;
+        character$UnicodeBlockArray[82] = YI_SYLLABLES;
+        character$UnicodeBlockArray[83] = YI_RADICALS;
+        character$UnicodeBlockArray[85] = HANGUL_SYLLABLES;
+        character$UnicodeBlockArray[87] = SURROGATES_AREA;
+        character$UnicodeBlockArray[88] = PRIVATE_USE_AREA;
+        character$UnicodeBlockArray[89] = CJK_COMPATIBILITY_IDEOGRAPHS;
+        character$UnicodeBlockArray[90] = ALPHABETIC_PRESENTATION_FORMS;
+        character$UnicodeBlockArray[91] = ARABIC_PRESENTATION_FORMS_A;
+        character$UnicodeBlockArray[93] = COMBINING_HALF_MARKS;
+        character$UnicodeBlockArray[94] = CJK_COMPATIBILITY_FORMS;
+        character$UnicodeBlockArray[95] = SMALL_FORM_VARIANTS;
+        character$UnicodeBlockArray[96] = ARABIC_PRESENTATION_FORMS_B;
+        character$UnicodeBlockArray[97] = SPECIALS;
+        character$UnicodeBlockArray[98] = HALFWIDTH_AND_FULLWIDTH_FORMS;
+        character$UnicodeBlockArray[99] = SPECIALS;
+        blocks = character$UnicodeBlockArray;
+    }
+
+    Character$UnicodeBlock(String string) {
+        super(string);
+    }
+
+    public static Character$UnicodeBlock of(char c2) {
+        int n = BinarySearch.binarySearchRange("\u0000\u0080\u0100\u0180\u0250\u02b0\u0300\u0370\u0400\u0500\u0530\u0590\u0600\u0700\u0750\u0780\u07c0\u0900\u0980\u0a00\u0a80\u0b00\u0b80\u0c00\u0c80\u0d00\u0d80\u0e00\u0e80\u0f00\u1000\u10a0\u1100\u1200\u1380\u13a0\u1400\u1680\u16a0\u1700\u1780\u1800\u18b0\u1e00\u1f00\u2000\u2070\u20a0\u20d0\u2100\u2150\u2190\u2200\u2300\u2400\u2440\u2460\u2500\u2580\u25a0\u2600\u2700\u27c0\u2800\u2900\u2e80\u2f00\u2fe0\u2ff0\u3000\u3040\u30a0\u3100\u3130\u3190\u31a0\u31c0\u3200\u3300\u3400\u4db6\u4e00\ua000\ua490\ua4d0\uac00\ud7a4\ud800\ue000\uf900\ufb00\ufb50\ufe00\ufe20\ufe30\ufe50\ufe70\ufeff\uff00\ufff0\ufffe", c2);
+        return blocks[n];
+    }
+}
+

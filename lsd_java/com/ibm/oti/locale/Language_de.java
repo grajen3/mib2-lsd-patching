@@ -1,0 +1,16 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.ibm.oti.locale;
+
+import java.util.ListResourceBundle;
+
+public class Language_de
+extends ListResourceBundle {
+    @Override
+    protected Object[][] getContents() {
+        Object[][] objectArray = new Object[][]{{"ab", "Abchasisch"}, {"am", "Amharisch"}, {"an", "Aragonesisch"}, {"ar", "Arabisch"}, {"as", "Assamesisch"}, {"av", "Avarisch"}, {"az", "Aserbaidschanisch"}, {"ba", "Baschkirisch"}, {"be", "Wei\u00dfrussisch"}, {"bg", "Bulgarisch"}, {"bh", "Biharisch"}, {"bi", "Bislamisch"}, {"bn", "Bengalisch"}, {"bo", "Tibetanisch"}, {"br", "Bretonisch"}, {"bs", "Bosnisch"}, {"ca", "Katalanisch"}, {"ce", "Tschetschenisch"}, {"co", "Korsisch"}, {"cs", "Tschechisch"}, {"cu", "Kirchenslawisch"}, {"cy", "Walisisch"}, {"da", "D\u00e4nisch"}, {"de", "Deutsch"}, {"el", "Griechisch"}, {"en", "Englisch"}, {"es", "Spanisch"}, {"et", "Estnisch"}, {"eu", "Baskisch"}, {"fa", "Persisch"}, {"fi", "Finnisch"}, {"fj", "Fidschianisch"}, {"fo", "Far\u00f6isch"}, {"fr", "Franz\u00f6sisch"}, {"fy", "Friesisch"}, {"ga", "Irisch"}, {"gd", "Schottisches G\u00e4lisch"}, {"gl", "Galizisch"}, {"gu", "Gujaratisch"}, {"ha", "Haussa"}, {"he", "Hebr\u00e4isch"}, {"hr", "Kroatisch"}, {"ht", "Haitianisch"}, {"hu", "Ungarisch"}, {"hy", "Armenisch"}, {"id", "Indonesisch"}, {"in", "Indonesisch"}, {"is", "Isl\u00e4ndisch"}, {"it", "Italienisch"}, {"iw", "Hebr\u00e4isch"}, {"ja", "Japanisch"}, {"ji", "Jiddish"}, {"jv", "Javanisch"}, {"ka", "Georgisch"}, {"kk", "Kasachisch"}, {"kl", "Gr\u00f6nl\u00e4ndisch"}, {"ko", "Koreanisch"}, {"ks", "Kaschmirisch"}, {"ku", "Kurdisch"}, {"kw", "Kornisch"}, {"ky", "Kirgisisch"}, {"la", "Lateinisch"}, {"lb", "Luxemburgisch"}, {"li", "Limburgisch"}, {"lo", "Laotisch"}, {"lt", "Litauisch"}, {"lv", "Lettisch"}, {"mg", "Malagasisch"}, {"mh", "Marshallisch"}, {"mi", "Maorisch"}, {"mk", "Mazedonisch"}, {"ml", "Malajalam"}, {"mn", "Mongolisch"}, {"mo", "Moldawisch"}, {"ms", "Malaysisch"}, {"mt", "Maltesisch"}, {"my", "Burmesisch"}, {"na", "Nauruisch"}, {"nb", "Bokm\u00e5l-Norwegisch"}, {"nd", "N\u00f6rdliches Ndebele"}, {"ne", "Nepalisch"}, {"nl", "Niederl\u00e4ndisch"}, {"nn", "Nynorsk-Norwegisch"}, {"no", "Norwegisch"}, {"nr", "S\u00fcdliches Ndebele"}, {"oc", "Okzitanisch"}, {"or", "Orija"}, {"os", "Ossetisch"}, {"pa", "Pandschabi"}, {"pl", "Polnisch"}, {"ps", "Paschtu"}, {"pt", "Portugiesisch"}, {"rm", "R\u00e4toromanisch"}, {"ro", "Rom\u00e4nisch"}, {"ru", "Russisch"}, {"rw", "Kijarwanda"}, {"sc", "Sardinisch"}, {"sd", "Zinti"}, {"se", "N\u00f6rdliches Samisch"}, {"si", "Singhalesisch"}, {"sk", "Slowakisch"}, {"sl", "Slowenisch"}, {"sm", "Samoanisch"}, {"sn", "Schonisch"}, {"so", "Somalisch"}, {"sq", "Albanisch"}, {"sr", "Serbisch"}, {"ss", "Siswati"}, {"st", "S\u00fcdsotho"}, {"su", "Sundanesisch"}, {"sv", "Schwedisch"}, {"sw", "Suaheli"}, {"ta", "Tamilisch"}, {"te", "Tegulu"}, {"tg", "Tadschikisch"}, {"ti", "Tigrinja"}, {"tk", "Turkmenisch"}, {"to", "Tongaisch"}, {"tr", "T\u00fcrkisch"}, {"ts", "Tsongaisch"}, {"tt", "Tatarisch"}, {"ty", "Tahitianisch"}, {"ug", "Uigur"}, {"uk", "Ukrainisch"}, {"uz", "Usbekisch"}, {"vi", "Vietnamesisch"}, {"wa", "Wallonisch"}, {"yi", "Jiddish"}, {"zh", "Chinesisch"}};
+        return objectArray;
+    }
+}
+

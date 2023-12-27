@@ -1,0 +1,103 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.framework.api.diagnosis.config;
+
+import de.vw.mib.asl.framework.api.diagnosis.config.Access;
+
+public interface EcoHmi
+extends Access {
+    public static final int ID_CORRECT_GEAR_RATING;
+    public static final int ID_CORRECT_GEAR_TIMEOUT_RATING;
+    public static final int ID_WRONG_GEAR_RATING_RATING;
+    public static final int ID_FREE_WHEEL_NO_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_PEDAL_RATING;
+    public static final int ID_FREE_WHEEL_CLUTCH_NO_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_CLUTCH_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_CLUTCH_PEDAL_RATING;
+    public static final int ID_FUEL_CUTOFF_NO_BRAKE_RATING;
+    public static final int ID_FUEL_CUTOFF_BRAKE_RATING;
+    public static final int ID_KICKDOWN_RATING;
+    public static final int ID_RECUP_NO_BRAKE_RATING;
+    public static final int ID_RECUP_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_IN_D_WITHOUT_BRAKE_RATING;
+    public static final int ID_FREE_WHEEL_IN_D_WITH_BRAKE_RATING;
+    public static final int ID_CORRECT_GEAR_WEIGHT;
+    public static final int ID_CORRECT_GEAR_TIMEOUT_WEIGHT;
+    public static final int ID_WRONG_GEAR_WEIGHT;
+    public static final int ID_FREE_WHEEL_NO_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_PEDAL_WEIGHT;
+    public static final int ID_FREE_WHEEL_CLUTCH_NO_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_CLUTCH_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_CLUTCH_PEDAL_WEIGHT;
+    public static final int ID_FUEL_CUTOFF_NO_BRAKE_WEIGHT;
+    public static final int ID_FUEL_CUTOFF_BRAKE_WEIGHT;
+    public static final int ID_KICKDOWN_WEIGHT;
+    public static final int ID_RECUP_NO_BRAKE_WEIGHT;
+    public static final int ID_RECUP_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_IN_D_WITHOUT_BRAKE_WEIGHT;
+    public static final int ID_FREE_WHEEL_IN_D_WITH_BRAKE_WEIGHT;
+    public static final int ID_V_SPEED_2;
+    public static final int ID_V_SPEED_3;
+    public static final int ID_V_SPEED_4;
+    public static final int ID_V_RATING_1;
+    public static final int ID_V_RATING_2;
+    public static final int ID_V_RATING_3;
+    public static final int ID_V_RATING_4;
+    public static final int ID_ACC_SPEED_1;
+    public static final int ID_ACC_SPEED_2;
+    public static final int ID_ACC_SPEED_3;
+    public static final int ID_ACC_RATING_1;
+    public static final int ID_ACC_RATING_2;
+    public static final int ID_ACC_RATING_3;
+    public static final int ID_ACC_RATING_4;
+    public static final int ID_ACC_RATING_1_NEG;
+    public static final int ID_ACC_RATING_2_NEG;
+    public static final int ID_ACC_RATING_3_NEG;
+    public static final int ID_ACC_RATING_4_NEG;
+    public static final int ID_ACC_SPEED_1_AEFF;
+    public static final int ID_ACC_SPEED_1_AMOD;
+    public static final int ID_ACC_SPEED_1_AINEFF;
+    public static final int ID_ACC_SPEED_2_AEFF;
+    public static final int ID_ACC_SPEED_2_AMOD;
+    public static final int ID_ACC_SPEED_2_AINEFF;
+    public static final int ID_ACC_SPEED_3_AEFF;
+    public static final int ID_ACC_SPEED_3_AMOD;
+    public static final int ID_ACC_SPEED_3_AINEFF;
+    public static final int ID_ACC_SPEED_1_AEFF_NEG;
+    public static final int ID_ACC_SPEED_1_AMOD_NEG;
+    public static final int ID_ACC_SPEED_1_AINEFF_NEG;
+    public static final int ID_ACC_SPEED_2_AEFF_NEG;
+    public static final int ID_ACC_SPEED_2_AMOD_NEG;
+    public static final int ID_ACC_SPEED_2_AINEFF_NEG;
+    public static final int ID_ACC_SPEED_3_AEFF_NEG;
+    public static final int ID_ACC_SPEED_3_AMOD_NEG;
+    public static final int ID_ACC_SPEED_3_AINEFF_NEG;
+    public static final int ID_ACC_MIN;
+    public static final int ID_ACC_MAX;
+    public static final int ID_LAEUFER_MAX;
+    public static final int ID_LAEUFER_MIN;
+    public static final int ID_BP_REDUCE;
+    public static final int ID_FACTOR_HYBRID_CHARGE;
+    public static final int ID_LOAD_CHANGES;
+    public static final int ID_T_BP_TREND;
+    public static final int ID_T_BP_TREND_SHORT;
+    public static final int ID_T_BP_TREND_LONG;
+    public static final int ID_T_ICON_VISIBLE;
+    public static final int ID_T_LAST_INTERVALL;
+    public static final int ID_T_CORRECT_GEAR_CONSTANT;
+    public static final int ID_CAR_INFO;
+    public static final int ID_HINT_ICON_SPEED;
+    public static final int ID_MAX_VAL_HISTORY_1;
+    public static final int ID_MAX_VAL_HISTORY_2;
+    public static final int ID_MAX_VAL_HISTORY_3;
+    public static final int ID_MAX_VAL_HISTORY_4;
+    public static final int ID_MAX_VAL_HISTORY_5;
+    public static final int ID_MAX_VAL_HISTORY_6;
+    public static final int ID_MAX_VAL_HISTORY_7;
+    public static final int ID_MAX_VAL_HISTORY_8;
+    public static final int ID_MAX_VAL_HISTORY_9;
+}
+

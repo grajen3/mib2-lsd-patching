@@ -1,0 +1,23 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.car.offroad;
+
+public interface ASLCarOffroadSetter {
+    public static final int SET_CURRENT_ALTITUDE_UPDATE_ENABLED;
+    public static final int SET_CURRENT_ALTITUDE_UPDATE_ENABLED__P0_VALUE__BOOLEAN;
+    public static final boolean SET_CURRENT_ALTITUDE_UPDATE_ENABLED__VALUE__C0_FALSE;
+    public static final boolean SET_CURRENT_ALTITUDE_UPDATE_ENABLED__VALUE__C1_TRUE;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__P0_TUBE__INT;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__TUBE__C0_LEFT;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__TUBE__C1_MIDDLE;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__TUBE__C2_RIGHT;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__P1_INSTRUMENT__INT;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__INSTRUMENT__C0_COMPASS;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__INSTRUMENT__C1_ALTIMETER;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__INSTRUMENT__C2_STEERING_ANGLE;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__INSTRUMENT__C3_COOLANT_TEMPERATURE;
+    public static final int SET_OFFROAD_DISPLAY_TUBES_PERSISTENCE__INSTRUMENT__C4_OIL_TEMPERATURE;
+}
+

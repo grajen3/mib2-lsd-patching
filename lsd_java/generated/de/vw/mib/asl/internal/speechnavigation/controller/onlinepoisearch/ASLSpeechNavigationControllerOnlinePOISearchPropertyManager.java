@@ -1,0 +1,53 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.speechnavigation.controller.onlinepoisearch;
+
+import org.dsi.ifc.global.ResourceLocator;
+
+public interface ASLSpeechNavigationControllerOnlinePOISearchPropertyManager {
+    public static final int ONLINE_POI_LIST__ONLINE_POI_ID;
+    public static final long ONLINE_POI_LIST__ONLINE_POI_ID__DEFAULT_VALUE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_ICON;
+    public static final ResourceLocator ONLINE_POI_LIST__ONLINE_POI_ICON__DEFAULT_VALUE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_NAME;
+    public static final String ONLINE_POI_LIST__ONLINE_POI_NAME__DEFAULT_VALUE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DISTANCE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DISTANCE__DEFAULT_VALUE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__DEFAULT_VALUE;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C0_0;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C1_1;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C2_2;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C3_3;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C4_4;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C5_5;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C6_6;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C7_7;
+    public static final int ONLINE_POI_LIST__ONLINE_POI_DIRECTION_ARROW_INDEX__C8_255;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_ID;
+    public static final long SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_ID__DEFAULT_VALUE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_ICON;
+    public static final ResourceLocator SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_ICON__DEFAULT_VALUE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_NAME;
+    public static final String SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_NAME__DEFAULT_VALUE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DISTANCE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DISTANCE__DEFAULT_VALUE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__DEFAULT_VALUE;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C0_0;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C1_1;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C2_2;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C3_3;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C4_4;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C5_5;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C6_6;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C7_7;
+    public static final int SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_DIRECTION_ARROW_INDEX__C8_255;
+
+    static {
+        ONLINE_POI_LIST__ONLINE_POI_ICON__DEFAULT_VALUE = null;
+        SELECTED_ONLINE_POI__SELECTED_ONLINE_POI_ICON__DEFAULT_VALUE = null;
+    }
+}
+

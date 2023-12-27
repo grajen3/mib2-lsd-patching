@@ -1,0 +1,17 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.ibm.oti.locale;
+
+import com.ibm.oti.locale.Locale;
+import com.ibm.oti.util.ExtendedResourceBundle;
+
+public class Locale_pa_IN
+extends ExtendedResourceBundle {
+    @Override
+    protected Object[][] getContents() {
+        Object[][] objectArray = new Object[][]{{Locale.MONTHS, new String[]{"\u0a1c\u0a28\u0a35\u0a30\u0a40", "\u0a2b\u0a3c\u0a30\u0a35\u0a30\u0a40", "\u0a2e\u0a3e\u0a30\u0a1b", "\u0a05\u0a2a\u0a3c\u0a48\u0a32", "\u0a2e\u0a72\u0a40", "\u0a1c\u0a42\u0a28", "\u0a1c\u0a41\u0a32\u0a3e\u0a72\u0a40", "\u0a05\u0a17\u0a38\u0a24", "\u0a38\u0a3f\u0a24\u0a70\u0a2c\u0a30", "\u0a05\u0a15\u0a24\u0a42\u0a2c\u0a30", "\u0a28\u0a35\u0a70\u0a2c\u0a30", "\u0a26\u0a3f\u0a38\u0a70\u0a2c\u0a30", ""}}, {Locale.SHORT_MONTHS, new String[]{"\u0a1c\u0a28\u0a35\u0a30\u0a40", "\u0a2b\u0a3c\u0a30\u0a35\u0a30\u0a40", "\u0a2e\u0a3e\u0a30\u0a1b", "\u0a05\u0a2a\u0a3c\u0a48\u0a32", "\u0a2e\u0a72\u0a40", "\u0a1c\u0a42\u0a28", "\u0a1c\u0a41\u0a32\u0a3e\u0a72\u0a40", "\u0a05\u0a17\u0a38\u0a24", "\u0a38\u0a3f\u0a24\u0a70\u0a2c\u0a30", "\u0a05\u0a15\u0a24\u0a42\u0a2c\u0a30", "\u0a28\u0a35\u0a70\u0a2c\u0a30", "\u0a26\u0a3f\u0a38\u0a70\u0a2c\u0a30", ""}}, {Locale.WEEK_DAYS, new String[]{"", "\u0a06\u0a48\u0a24\u0a35\u0a3e\u0a30 ", "\u0a38\u0a4b\u0a2e\u0a35\u0a3e\u0a30 ", "\u0a2e\u0a70\u0a17\u0a32\u0a35\u0a3e\u0a30 ", "\u0a2c\u0a41\u0a71\u0a27\u0a35\u0a3e\u0a30 ", "\u0a35\u0a40\u0a30\u0a35\u0a3e\u0a30 ", "\u0a36\u0a41\u0a15\u0a30\u0a35\u0a3e\u0a30 ", "\u0a36\u0a28\u0a40\u0a35\u0a3e\u0a30 "}}, {Locale.SHORT_WEEK_DAYS, new String[]{"", "\u0a06\u0a48\u0a24 ", "\u0a38\u0a4b\u0a2e ", "\u0a2e\u0a70\u0a17\u0a32 ", "\u0a2c\u0a41\u0a71\u0a27 ", "\u0a35\u0a40\u0a30 ", "\u0a36\u0a41\u0a15\u0a30 ", "\u0a36\u0a28\u0a40 "}}, {Locale.CURRENCY_SYMBOL, "\u0a30\u0a41"}, {Locale.INTL_CURRENCY_SYMBOL, "INR"}};
+        return objectArray;
+    }
+}
+

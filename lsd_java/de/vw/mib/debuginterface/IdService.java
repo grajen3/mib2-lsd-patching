@@ -1,0 +1,90 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.debuginterface;
+
+public interface IdService
+extends de.vw.mib.genericevents.id.IdService {
+    public static final int KEYPANEL_TARGET;
+    public static final int KEYPANEL_TOUCH_PRESS;
+    public static final int KEYPANEL_TOUCH_RELEASE;
+    public static final int KEYPANEL_TOUCH_MOVE;
+    public static final int KEYPANEL_PROXIMITY_ON;
+    public static final int KEYPANEL_PROXIMITY_OFF;
+    public static final int KEYPANEL_UPDATEKEY;
+    public static final int KEYPANEL_UPDATEENCODER;
+    public static final int EVENTDISPATCHER_SEND_HMIEVENT;
+    public static final int EVENTDISPATCHER_SEND_HMIEVENT_HARDKEY;
+    public static final int EVENTDISPATCHER_SEND_HMIEVENT_ROTATION;
+    public static final int EVENTDISPATCHER_SEND_HMIEVENT_SYSTEM;
+    public static final int EVENTDISPATCHER_SEND_VIEWCHANGEEVENT;
+    public static final int EVENTDISPATCHER_SEND_DYNAMICSTATEEVENT;
+    public static final int EVENTDISPATCHER_SEND_POPUPVIEWEVENT;
+    public static final int EVENTDISPATCHER_NF_SEND_HMIEVENT_RESULT;
+    public static final int EVENTDISPATCHER_NF_SEND_POWERSTATEEVENT_RESULT;
+    public static final int EVENTDISPATCHER_NF_SEND_ROTATIONEVENT_RESULT;
+    public static final int EVENTDISPATCHER_NF_SEND_VIEWCHANGEEVENT_RESULT;
+    public static final int EVENTDISPATCHER_NF_SEND_DYNAMICSTATEEVENT_RESULT;
+    public static final int EVENTDISPATCHER_NF_SEND_POPUPVIEWEVENT_RESULT;
+    public static final int DATAPOOLMONITOR_GET_PROPERTY_VALUE;
+    public static final int DATAPOOLMONITOR_SET_PROPERTY_VALUE;
+    public static final int DATAPOOLMONITOR_IX_ID;
+    public static final int DATAPOOLMONITOR_IX_TYPE;
+    public static final int DATAPOOLMONITOR_IX_VALUE_AS_STRING;
+    public static final int DATAPOOLMONITOR_IX_TIME;
+    public static final int DSICONSOLE_INIT;
+    public static final int DSICONSOLE_GET_DSIPROVIDERS;
+    public static final int DSICONSOLE_INVOKE_METHOD;
+    public static final int DSICONSOLE_NF_DSIPROVIDERS;
+    public static final int DSICONSOLE_NF_DSIPROVIDERS_DONE;
+    public static final int TESTER_INIT;
+    public static final int TESTER_GETWIDGETCOORDINATES;
+    public static final int TESTER_GETWIDGETPROPERTY;
+    public static final int TESTER_SETPROBECONFIG;
+    public static final int SCREENSHOT_TAKE_SCREENSHOT;
+    public static final int SCREENSHOT_GET_SCREENSHOT;
+    public static final int SCREENSHOT_START_SCREENSHOT_ALL_SCREENS;
+    public static final int SCREENSHOT_STOP_SCREENSHOT_ALL_SCREENS;
+    public static final int HMIDUMP_TAKE_HMIDUMP;
+    public static final int HMIDUMP_TAKE_THREADDUMP;
+    public static final int IC_REQUEST_DEBUG_FILE_SERVER_CONNECTION;
+    public static final int IC_REQUEST_DEBUG_FILE_CONNECTION;
+    public static final int IC_REQUEST_DEBUG_INFO_FILES_ARCHIVE;
+    public static final int IC_GETTARGETPROTOCOLVERSION;
+    public static final int IC_GETTARGETMAP;
+    public static final int IC_GETSERVICEMAP;
+    public static final int IC_GETEVENTMAP;
+    public static final int IC_GETSKIN_SHORT_VERSION;
+    public static final int IC_GETLANGUAGE;
+    public static final int IC_GETVERSIONSTRING;
+    public static final int IC_GETBASEVERSIONSTRING;
+    public static final int IC_GETVIRTUALEVENTMAP;
+    public static final int IC_GETMINIMODEL;
+    public static final int IC_GETSTATEMACHINEMAP;
+    public static final int IC_GETDSIEVENTMAP;
+    public static final int IC_GETDSIINFOMAP;
+    public static final int IC_GETHMIEVENTMAP;
+    public static final int IC_IS_TESTINTERFACE_AVAILABLE;
+    public static final int IC_GET_TARGET_DATAPOOLMAP;
+    public static final int IC_GET_NON_TARGET_DYNAMIC_DATAPOOLMAP;
+    public static final int IC_GET_NON_TARGET_STATIC_DATAPOOLMAP;
+    public static final int IC_GET_ASLLISTMAP;
+    public static final int IC_GET_DATAPOOL_ENUMMAP;
+    public static final int IC_REQUEST_MAP_FILE;
+    public static final int IC_UPDATE_LANGUAGE_AND_SKIN_SHORT_VERSION;
+    public static final int DSI_TESTER_TARGET_PROXY_SERVICE_INV_EV_ID;
+    public static final int DSI_TESTER_TARGET_PROXY_RESPONSE_INV_EV_ID;
+    public static final int DSI_TESTER_TARGET_PROXY_NOTIFICATION_INV_EV_ID;
+    public static final int CMDLINE_ATTACHED;
+    public static final int CMDLINE_DETACHED;
+    public static final int CMDLINE_START;
+    public static final int CMDLINE_STOP;
+    public static final int CMDLINE_CMD;
+    public static final int CMDLINE_ADD_CONTEXT;
+    public static final int CMDLINE_OUT;
+    public static final int CMDLINE_ADD_COMMANDS;
+    public static final int CMDLINE_ADD_USER;
+    public static final int CMDLINE_WORKS;
+    public static final int CMDLINE_PARSED_CMD;
+}
+

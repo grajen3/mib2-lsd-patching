@@ -1,0 +1,61 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.internal.media.controller.commands.recording;
+
+import de.vw.mib.asl.internal.media.browser.Selection;
+import de.vw.mib.asl.internal.media.browser.headunit.MediaRecorderBrowser;
+import de.vw.mib.asl.internal.media.controller.commands.AbstractCommand;
+import de.vw.mib.asl.internal.media.recorder.MediaRecorder;
+
+public class CmdResetSelection
+extends AbstractCommand {
+    private static int TIMEOUT = 8000;
+    private static final int EXECUTION_STEP_1_SELECT;
+    private static final int EXECUTION_STEP_2_PASS_TO_RECORDER;
+    private final MediaRecorderBrowser mBrowser;
+    private final MediaRecorder mRecorder;
+    private Selection mSelection;
+
+    public CmdResetSelection(MediaRecorderBrowser mediaRecorderBrowser, MediaRecorder mediaRecorder) {
+        super(1032, 1, 2, TIMEOUT);
+        this.mBrowser = mediaRecorderBrowser;
+        this.mRecorder = mediaRecorder;
+    }
+
+    @Override
+    public void execute(int n) {
+        switch (n) {
+            case 1: {
+                this.mSelection = this.mBrowser.createResetSelection();
+                this.mBrowser.rqAddSelection(this.mSelection, this.NEXT_STEP);
+                return;
+            }
+            case 2: {
+                this.mBrowser.refetch();
+                this.mRecorder.notifyFileSelectionDone(this.mSelection);
+                this.nextStep();
+                break;
+            }
+        }
+    }
+
+    @Override
+    protected String getStepStr(int n) {
+        switch (n) {
+            case 1: {
+                return "SELECT";
+            }
+            case 2: {
+                return "PASS_TO_RECORDER";
+            }
+        }
+        return null;
+    }
+
+    @Override
+    protected String getParameterStr() {
+        return "no parameters";
+    }
+}
+

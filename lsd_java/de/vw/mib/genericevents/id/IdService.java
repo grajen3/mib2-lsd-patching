@@ -1,0 +1,84 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.genericevents.id;
+
+public interface IdService {
+    public static final int INVALID;
+    public static final int REGISTER_SERVICE;
+    public static final int P_REGISTER_SERVICE_SID;
+    public static final int P_REGISTER_SERVICE_TID;
+    public static final int P_REGISTER_SERVICE_EID;
+    public static final int UNREGISTER_SERVICE;
+    public static final int P_UNREGISTER_SERVICE_SID;
+    public static final int ADD_OBSERVER;
+    public static final int P_ADD_OBSERVER_SID;
+    public static final int P_ADD_OBSERVER_TID;
+    public static final int P_ADD_OBSERVER_EID;
+    public static final int REMOVE_OBSERVER;
+    public static final int P_REMOVE_OBSERVER_SID;
+    public static final int P_REMOVE_OBSERVER_TID;
+    public static final int GET_SERVICE_INFO;
+    public static final int P_EXIST_SERVICE_SID;
+    public static final int P_EXIST_SERVICE_EXIST;
+    public static final int P_EXIST_SERVICE_TID;
+    public static final int P_EXIST_SERVICE_EID;
+    public static final int P_EXIST_SERVICE_RID;
+    public static final int P_EXIST_SERVICE_SAVELAST;
+    public static final int P_EXIST_SERVICE_OWNERWANTEVENT;
+    public static final int P_EXIST_SERVICE_OBS_COUNT;
+    public static final int P_EXIST_SERVICE_OBS_RID1;
+    public static final int P_EXIST_SERVICE_OBS_TID1;
+    public static final int P_EXIST_SERVICE_OBS_EID1;
+    public static final int ADD_SERVICE_MONITOR;
+    public static final int P_ADD_SERVICE_MONITOR_SID;
+    public static final int P_ADD_SERVICE_MONITOR_TID;
+    public static final int REMOVE_SERVICE_MONITOR;
+    public static final int P_REMOVE_SERVICE_MONITOR_SID;
+    public static final int P_REMOVE_SERVICE_MONITOR_OBSERVER;
+    public static final int GET_TASK_LIST;
+    public static final int P_GET_TASK_LIST_COUNT;
+    public static final int P_GET_TASK_LIST_TASK1;
+    public static final int GET_TASK_INFO;
+    public static final int P_GET_TASK_INFO_TASKID;
+    public static final int P_GET_TASK_INFO_EXIST;
+    public static final int P_GET_TASK_INFO_TARGETCOUNT;
+    public static final int P_GET_TASK_INFO_SYNC;
+    public static final int P_GET_TASK_INFO_PRIORITY;
+    public static final int P_GET_TASK_INFO_THREADNAME;
+    public static final int P_GET_TASK_INFO_TARGET1;
+    public static final int GET_TARGET_INFO;
+    public static final int P_GET_TARGET_INFO_ID;
+    public static final int P_GET_TARGET_INFO_EXIST;
+    public static final int P_GET_TARGET_INFO_TASKID;
+    public static final int P_GET_TARGET_INFO_CLASSNAME;
+    public static final int P_GET_TARGET_INFO_SERVICECOUNT;
+    public static final int P_GET_TARGET_INFO_OBSERVERCOUNT;
+    public static final int P_GET_TARGET_INFO_SERVICE1;
+    public static final int P_GET_TARGET_INFO_OBSERVER1;
+    public static final int ADD_TARGET_MONITOR;
+    public static final int P_ADD_TARGET_MONITOR_OBSERVABLETID;
+    public static final int P_ADD_TARGET_MONITOR_OBSERVERTID;
+    public static final int REMOVE_TARGET_MONITOR;
+    public static final int P_REMOVE_TARGET_MONITOR_OBSERVABLE;
+    public static final int P_REMOVE_TARGET_MONITOR_OBSERVERTID;
+    public static final int CMDLINE_WORKS;
+    public static final int AUDIOPLAYER_CONNECTED;
+    public static final int CMDLINE_ADD_USER;
+    public static final int TRIGGER_LAST_EVENT;
+    public static final int P_TRIGGER_LAST_EVENT_SID;
+    public static final int REGISTER_EVENT_HOOK;
+    public static final int P_REGISTER_EVENT_HOOK_HOOKID;
+    public static final int UNREGISTER_EVENT_HOOK;
+    public static final int P_UNREGISTER_EVENT_HOOK_HOOKID;
+    public static final int REGISTER_NULL_OBSERVER_HOOK;
+    public static final int P_REGISTER_NULL_OBSERVER_HOOK_HOOKID;
+    public static final int UNREGISTER_NULL_OBSERVER_HOOK;
+    public static final int P_UNREGISTER_NULL_OBSERVER_HOOK_HOOKID;
+    public static final int REGISTER_TIMER_HOOK;
+    public static final int P_REGISTER_TIMER_HOOK_HOOKID;
+    public static final int UNREGISTER_TIMER_HOOK;
+    public static final int P_UNREGISTER_TIMER_HOOK_HOOKID;
+    public static final int DEBUG;
+}
+

@@ -1,0 +1,125 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.ugdo;
+
+import de.vw.mib.properties.values.SpellerData;
+
+public interface ASLUGDOPropertyManager {
+    public static final int VERSION_INFORMATION__SOFTWARE_VERSION;
+    public static final int VERSION_INFORMATION__SOFTWARE_VERSION__DEFAULT_VALUE;
+    public static final int VERSION_INFORMATION__STATE;
+    public static final int VERSION_INFORMATION__STATE__DEFAULT_VALUE;
+    public static final int VERSION_INFORMATION__COUNTRY_CODE;
+    public static final int VERSION_INFORMATION__COUNTRY_CODE__DEFAULT_VALUE;
+    public static final int KEY_LIST__UGDO_KEY_NAME;
+    public static final String KEY_LIST__UGDO_KEY_NAME__DEFAULT_VALUE;
+    public static final int KEY_LIST__LEARNED_STATE;
+    public static final int KEY_LIST__LEARNED_STATE__DEFAULT_VALUE;
+    public static final int KEY_LIST__LEARNED_STATE__C0_RESERVED;
+    public static final int KEY_LIST__LEARNED_STATE__C1_LEARNED_WITH_POSITION;
+    public static final int KEY_LIST__LEARNED_STATE__C2_LEARNED_WITHOUT_POSITION;
+    public static final int KEY_LIST__LEARNED_STATE__C3_LEARNED_WITH_LATER_SAVED_POSITION;
+    public static final int KEY_LIST__LEARNED_STATE__C4_LEARNED_WITHOUT_SYNCHRONISED_DOOR;
+    public static final int KEY_LIST__POSITION_LATITUDE;
+    public static final long KEY_LIST__POSITION_LATITUDE__DEFAULT_VALUE;
+    public static final int KEY_LIST__POSITION_LONGITUDE;
+    public static final long KEY_LIST__POSITION_LONGITUDE__DEFAULT_VALUE;
+    public static final int KEY_LIST__NAME_STATE;
+    public static final int KEY_LIST__NAME_STATE__DEFAULT_VALUE;
+    public static final int KEY_LIST__NAME_STATE__C0_FREE;
+    public static final int KEY_LIST__NAME_STATE__C1_NONAME;
+    public static final int KEY_LIST__NAME_STATE__C2_NAMED;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__DEFAULT_VALUE;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C0_TEACH_IN_KEYS;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C1_DELETE_ALL_KEYS;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C2_VERSION_INFORMATION;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C3_RENAME_KEY;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C4_TEACH_IN_KEY;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C5_SYNCHRONIZE_KEY;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_IDUGDO__C6_DELETE_KEY;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_GROUP_ASSIGNMENT_UGDO;
+    public static final int[] DEVICE_INFO_UGDO__FUNCTION_GROUP_ASSIGNMENT_UGDO__DEFAULT_VALUE;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_EXISTENCE_UGDO;
+    public static final boolean[] DEVICE_INFO_UGDO__FUNCTION_EXISTENCE_UGDO__DEFAULT_VALUE;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_AVAILABILITY_UGDO;
+    public static final boolean[] DEVICE_INFO_UGDO__FUNCTION_AVAILABILITY_UGDO__DEFAULT_VALUE;
+    public static final int DEVICE_INFO_UGDO__FUNCTION_AVAILABLE_REASON_UGDO;
+    public static final int[] DEVICE_INFO_UGDO__FUNCTION_AVAILABLE_REASON_UGDO__DEFAULT_VALUE;
+    public static final int GROUP_INFO__GROUP_ID;
+    public static final int GROUP_INFO__GROUP_ID__DEFAULT_VALUE;
+    public static final int GROUP_INFO__GROUP_ID__C0_UNKNOWN;
+    public static final int GROUP_INFO__GROUP_ID__C1_UGDO_SETUP;
+    public static final int GROUP_INFO__GROUP_EXISTENCE;
+    public static final boolean[] GROUP_INFO__GROUP_EXISTENCE__DEFAULT_VALUE;
+    public static final int GROUP_INFO__GROUP_AVAILABILITY;
+    public static final boolean[] GROUP_INFO__GROUP_AVAILABILITY__DEFAULT_VALUE;
+    public static final int GROUP_INFO__GROUP_AVAILABLE_REASON;
+    public static final int[] GROUP_INFO__GROUP_AVAILABLE_REASON__DEFAULT_VALUE;
+    public static final int UGDO_FUNCTION_AVAILABLE__FUNCTION_AVAILABLE_STATE;
+    public static final boolean UGDO_FUNCTION_AVAILABLE__FUNCTION_AVAILABLE_STATE__DEFAULT_VALUE;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__DEFAULT_VALUE;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C0_NORMAL;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C1_ERROR;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C2_IGNITION;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C3_SPEED;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C4_ENGINE;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C5_TRAILER;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C6_UNDEFINED;
+    public static final int UGDO_FUNCTION_AVAILABLE__UGDO_FUNCTION_AVAILABLE_REASON__C7_STANDSTILL;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR__DEFAULT_VALUE;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR__C0_NO_KEY_SELECTED;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR__C1_KEY_1;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR__C2_KEY_2;
+    public static final int SELECTED_UGDO_KEY_NR__HARD_KEY_NR__C3_KEY_3;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR__DEFAULT_VALUE;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR__C0_NO_KEY_SELECTED;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR__C1_KEY_1;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR__C2_KEY_2;
+    public static final int SELECTED_UGDO_KEY_NR__SOFT_KEY_NR__C3_KEY_3;
+    public static final int SELECTED_UGDO_KEY_NR__UGDO_SELECTED_HARDKEY_LEARNED_STATE;
+    public static final int SELECTED_UGDO_KEY_NR__UGDO_SELECTED_HARDKEY_LEARNED_STATE__DEFAULT_VALUE;
+    public static final int SELECTED_UGDO_KEY_NR__UGDO_SELECTED_HARDKEY_LEARNED_STATE__C0_LEARN_NEW_DOOR;
+    public static final int SELECTED_UGDO_KEY_NR__UGDO_SELECTED_HARDKEY_LEARNED_STATE__C1_RELEARN_DOOR;
+    public static final int SELECTED_UGDO_KEY_NR__UGDO_SELECTED_HARDKEY_LEARNED_STATE__C2_SYNCHRIONIZE;
+    public static final int UGDO_FUNCTION_ID;
+    public static final int UGDO_FUNCTION_ID__DEFAULT_VALUE;
+    public static final int UGDO_FUNCTION_ID__C0_RENAME_KEY;
+    public static final int UGDO_FUNCTION_ID__C1_TEACH_IN_KEY;
+    public static final int UGDO_FUNCTION_ID__C2_SYNCHRONIZE_KEY;
+    public static final int UGDO_FUNCTION_ID__C3_DELETE_KEY;
+    public static final int UGDO_FUNCTION_ID__C4_STANDARD_KEY;
+    public static final int UGDO_FUNCTION_ID__C5_UNIVERSAL_KEY;
+    public static final int UGDO_FUNCTION_ID__C6_DEFAULT_KEY;
+    public static final int AVAILABLE_REASON;
+    public static final int AVAILABLE_REASON__DEFAULT_VALUE;
+    public static final int AVAILABLE_REASON__C0_NORMAL;
+    public static final int AVAILABLE_REASON__C1_ERROR;
+    public static final int AVAILABLE_REASON__C2_IGNITION;
+    public static final int AVAILABLE_REASON__C3_SPEED;
+    public static final int AVAILABLE_REASON__C4_ENGINE;
+    public static final int AVAILABLE_REASON__C5_TRAILER;
+    public static final int AVAILABLE_REASON__C6_UNDEFINED;
+    public static final int AVAILABLE_REASON__C7_STANDSTILL;
+    public static final int UGDO_FUNCTION_EXISTENT_STATE;
+    public static final boolean[] UGDO_FUNCTION_EXISTENT_STATE__DEFAULT_VALUE;
+    public static final int SPELLER_DATA;
+    public static final SpellerData SPELLER_DATA__DEFAULT_VALUE;
+
+    static {
+        DEVICE_INFO_UGDO__FUNCTION_GROUP_ASSIGNMENT_UGDO__DEFAULT_VALUE = new int[]{1, 1, 1, 1, 1, 1, 1};
+        DEVICE_INFO_UGDO__FUNCTION_EXISTENCE_UGDO__DEFAULT_VALUE = new boolean[]{false, false, false, false, false, false, false};
+        DEVICE_INFO_UGDO__FUNCTION_AVAILABILITY_UGDO__DEFAULT_VALUE = new boolean[]{false, false, false, false, false, false, false};
+        DEVICE_INFO_UGDO__FUNCTION_AVAILABLE_REASON_UGDO__DEFAULT_VALUE = new int[]{0, 0, 0, 0, 0, 0, 0};
+        GROUP_INFO__GROUP_EXISTENCE__DEFAULT_VALUE = new boolean[]{false, false};
+        GROUP_INFO__GROUP_AVAILABILITY__DEFAULT_VALUE = new boolean[]{false, false};
+        GROUP_INFO__GROUP_AVAILABLE_REASON__DEFAULT_VALUE = new int[]{0, 0};
+        UGDO_FUNCTION_EXISTENT_STATE__DEFAULT_VALUE = new boolean[]{false, false, false, false, false, false, false};
+        SPELLER_DATA__DEFAULT_VALUE = new SpellerData();
+    }
+}
+

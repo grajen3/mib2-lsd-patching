@@ -1,0 +1,84 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.tvtuner;
+
+public interface ASLTVTunerListenerConstants {
+    public static final int CURRENT_STATION_NAME;
+    public static final int CURRENT_CHANNEL_TYPE;
+    public static final int CURRENT_PROGRAM_TIME_START_HOUR;
+    public static final int CURRENT_PROGRAM_TIME_START_MINUTE;
+    public static final int CURRENT_PROGRAM_TIME_END_HOUR;
+    public static final int CURRENT_PROGRAM_TIME_END_MINUTE;
+    public static final int CURRENT_PROGRAM_NAME;
+    public static final int TV_BRIGHTNESS;
+    public static final int TV_CONTRAST;
+    public static final int TV_SATURATION;
+    public static final int SETUP_OPTION_TV_NORM_AREAS_VISIBILITY;
+    public static final int SETUP_OPTION_AUDIO_CHANNEL_VISIBILITY;
+    public static final int SETUP_OPTION_TV_SERVICE_LINKING_VISIBLE;
+    public static final int SETUP_OPTION_VISUAL_AUDIO_VISIBLE;
+    public static final int SETUP_OPTION_SHOW_EWS_VISIBLE;
+    public static final int SETUP_CAS_INFO_VISIBLE;
+    public static final int SETUP_OPTION_ARROW_BUTTONS_VISIBLE;
+    public static final int SETUP_OPTION_ASPECT_RATIO_VISIBLE;
+    public static final int AV_SETUP_OPTION_ASPECT_RATIO_VISIBLE;
+    public static final int AV_SETUP_OPTION_NORM;
+    public static final int SETUP_OPTION_TV_SUBTITLE_VISIBLE;
+    public static final int SETUP_OPTION_TONE_SETTINGS_VISIBLE;
+    public static final int SERVICE_LINKING_SETUP_OPTION_STATE;
+    public static final int VISUAL_AUDIO_SHOW_PICTURES_STATE;
+    public static final int SHOW_EWS_MESSAGE_STATE;
+    public static final int SUBTITLE_SETUP_OPTION_STATE;
+    public static final int TV_INFO_SUBTITLES_AVAILABLE;
+    public static final int TMEPG_AVAILABLE;
+    public static final int TMCAS_AVAILABLE;
+    public static final int TMTXT_AVAILABLE;
+    public static final int TMSLSDLS_AVAILABLE;
+    public static final int TMBWS_AVAILABLE;
+    public static final int TM_VISUAL_AUDIO_AVAILABLE;
+    public static final int TM_TELETEXT_AVAILABLE;
+    public static final int TM_DATA_BROAD_DVB_AVAILABLE;
+    public static final int TM_DATA_BROAD_ISDB_AVAILABLE;
+    public static final int TM_DATA_BROAD_DTMB_AVAILABLE;
+    public static final int TM_DATA_BROAD_DMB_AVAILABLE;
+    public static final int TM_DATA_BROAD_ATSC_AVAILABLE;
+    public static final int TM_DATA_BROAD1AVAILABLE;
+    public static final int TM_DATA_BROAD2AVAILABLE;
+    public static final int AV_SOURCE_AVAILABLE;
+    public static final int CURRENT_DTV_MAIN_SCREEN_MODE;
+    public static final int CURRENT_TV_MUTE_STATE;
+    public static final int TV_INFO_MULTIPLE_AUDIO_CHANNELS_AVAILABLE;
+    public static final int CURRENT_CHANNEL_DESCRIPTION;
+    public static final int TV_INFO_EPG_AVAILABLE;
+    public static final int TV_INFO_TELETEXT_AVAILABLE;
+    public static final int TV_INFO_SLS_AVAILABLE;
+    public static final int TVCAS_LOCKED_ICON_VISIBLE;
+    public static final int TV_INFO_BWS_AVAILABLE;
+    public static final int TV_INFO_SUBTITLE_AVAILABLE;
+    public static final int TV_ENG_MODE_AVAILABLE;
+    public static final int CURRENT_TV_NORM_INDEX;
+    public static final int CURRENT_AUDIO_CHANNEL_INDEX;
+    public static final int CURRENT_TV_STATION_LIST_INDEX;
+    public static final int CURRENT_PRESET_LIST_INDEX;
+    public static final int SCOPE_OF_ARROW_KEY_MODE;
+    public static final int ASPECT_RATIO_MODE;
+    public static final int AV_ASPECT_RATIO_MODE;
+    public static final int AV_NORM;
+    public static final int ACTIVE_SOURCE;
+    public static final int TUNER_STATE;
+    public static final int SLEEPING_STATE;
+    public static final int CURRENT_S_TYPE;
+    public static final int CURRENT_TERMINAL_MODE;
+    public static final int CURRENT_CAS_STATUS;
+    public static final int CURRENT_TV_NORM_ID;
+    public static final int CURRENT_TV_STATION_LOGO;
+    public static final int TV_TUNE_ACTIVE;
+    public static final int BROWSER_LIST_SORTING_AVAILABLE;
+    public static final int PARENTAL_CONTROL_AVAILABLE;
+    public static final int BROWSER_LIST_SORTING_MODE;
+    public static final int PRESET_LIST_EMPTY;
+    public static final int VIDEO_FORMAT_TV;
+    public static final int VIDEO_FORMAT_AV;
+}
+

@@ -1,0 +1,116 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.car.sight;
+
+public interface ASLCarSightPropertyManager {
+    public static final int FUNCTION_INDEX;
+    public static final int FUNCTION_INDEX__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__C0_MIRROR_ADJUST_SYNCH;
+    public static final int FUNCTION_INDEX__C1_MIRROR_LOWERING;
+    public static final int FUNCTION_INDEX__C2_MIRROR_FOLD_ON;
+    public static final int FUNCTION_INDEX__C3_MIRROR_AUT_HEATING;
+    public static final int FUNCTION_INDEX__C4_MIRROR_AUT_SHADING;
+    public static final int FUNCTION_INDEX__C5_WIPER_AUT_WIPING;
+    public static final int FUNCTION_INDEX__C6_WIPER_AUT_REAR_WIPING;
+    public static final int FUNCTION_INDEX__1;
+    public static final int FUNCTION_INDEX__1__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__1__C0_MIRROR_ADJUST_SYNCH;
+    public static final int FUNCTION_INDEX__1__C1_MIRROR_LOWERING;
+    public static final int FUNCTION_INDEX__1__C2_MIRROR_FOLD_ON;
+    public static final int FUNCTION_INDEX__1__C3_MIRROR_AUT_HEATING;
+    public static final int FUNCTION_INDEX__1__C4_MIRROR_AUT_SHADING;
+    public static final int FUNCTION_INDEX__1__C5_WIPER_AUT_WIPING;
+    public static final int FUNCTION_INDEX__1__C6_WIPER_AUT_REAR_WIPING;
+    public static final int FUNCTION_EXISTENCE;
+    public static final boolean[] FUNCTION_EXISTENCE__DEFAULT_VALUE;
+    public static final int FUNCTION_EXISTENCE__1;
+    public static final boolean FUNCTION_EXISTENCE__1__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABLE_REASON;
+    public static final int[] FUNCTION_AVAILABLE_REASON__DEFAULT_VALUE;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C0_NORMAL;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C1_ERROR;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C2_IGNITION;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C3_SPEED;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C4_ENGINE;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C5_TRAILER;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C6_UNDEFINED;
+    public static final int[] FUNCTION_AVAILABLE_REASON__C7_STANDSTILL;
+    public static final int FUNCTION_AVAILABLE_REASON__1;
+    public static final int FUNCTION_AVAILABLE_REASON__1__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY;
+    public static final boolean FUNCTION_AVAILABILITY__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY__1;
+    public static final boolean FUNCTION_AVAILABILITY__1__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__2;
+    public static final int FUNCTION_INDEX__2__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__2__C0_MIRROR_ADJUST_SYNCH;
+    public static final int FUNCTION_INDEX__2__C1_MIRROR_LOWERING;
+    public static final int FUNCTION_INDEX__2__C2_MIRROR_FOLD_ON;
+    public static final int FUNCTION_INDEX__2__C3_MIRROR_AUT_HEATING;
+    public static final int FUNCTION_INDEX__2__C4_MIRROR_AUT_SHADING;
+    public static final int FUNCTION_EXISTENCE__2;
+    public static final boolean[] FUNCTION_EXISTENCE__2__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABLE_REASON__2;
+    public static final int FUNCTION_AVAILABLE_REASON__2__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY__2;
+    public static final boolean FUNCTION_AVAILABILITY__2__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__3;
+    public static final int FUNCTION_INDEX__3__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__3__C0_WIPER_AUT_WIPING;
+    public static final int FUNCTION_INDEX__3__C1_WIPER_AUT_REAR_WIPING;
+    public static final int FUNCTION_EXISTENCE__3;
+    public static final boolean[] FUNCTION_EXISTENCE__3__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABLE_REASON__3;
+    public static final int FUNCTION_AVAILABLE_REASON__3__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY__3;
+    public static final boolean FUNCTION_AVAILABILITY__3__DEFAULT_VALUE;
+    public static final int FUNCTION_EXISTENCE__4;
+    public static final boolean[] FUNCTION_EXISTENCE__4__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__4;
+    public static final int FUNCTION_INDEX__4__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__4__C0_MIRROR_ADJUST_SYNCH;
+    public static final int FUNCTION_INDEX__4__C1_MIRROR_LOWERING;
+    public static final int FUNCTION_INDEX__4__C2_MIRROR_FOLD_ON;
+    public static final int FUNCTION_INDEX__4__C3_MIRROR_AUT_HEATING;
+    public static final int FUNCTION_INDEX__4__C4_MIRROR_AUT_SHADING;
+    public static final int FUNCTION_INDEX__4__C5_WIPER_AUT_WIPING;
+    public static final int FUNCTION_INDEX__4__C6_WIPER_AUT_REAR_WIPING;
+    public static final int FUNCTION_EXISTENCE__5;
+    public static final boolean FUNCTION_EXISTENCE__5__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABLE_REASON__4;
+    public static final int FUNCTION_AVAILABLE_REASON__4__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY__4;
+    public static final boolean FUNCTION_AVAILABILITY__4__DEFAULT_VALUE;
+    public static final int MIRROR_ADJUST_SYNC;
+    public static final boolean MIRROR_ADJUST_SYNC__DEFAULT_VALUE;
+    public static final int MIRROR_LOWERING_ON;
+    public static final boolean MIRROR_LOWERING_ON__DEFAULT_VALUE;
+    public static final int MIRROR_FOLD_ON;
+    public static final boolean MIRROR_FOLD_ON__DEFAULT_VALUE;
+    public static final int RAIN_SENSOR_ON;
+    public static final boolean RAIN_SENSOR_ON__DEFAULT_VALUE;
+    public static final int REAR_WIPING_ON;
+    public static final boolean REAR_WIPING_ON__DEFAULT_VALUE;
+    public static final int AUTO_MIRROR_HEATING_ON;
+    public static final boolean AUTO_MIRROR_HEATING_ON__DEFAULT_VALUE;
+    public static final int AUTO_MIRROR_SHADING_ON;
+    public static final boolean AUTO_MIRROR_SHADING_ON__DEFAULT_VALUE;
+
+    static {
+        FUNCTION_EXISTENCE__DEFAULT_VALUE = new boolean[]{false, false, false, false, false, false, false};
+        FUNCTION_AVAILABLE_REASON__DEFAULT_VALUE = new int[]{0, 0, 0, 0, 0, 0, 0, 0};
+        FUNCTION_AVAILABLE_REASON__C0_NORMAL = new int[]{0};
+        FUNCTION_AVAILABLE_REASON__C1_ERROR = new int[]{1};
+        FUNCTION_AVAILABLE_REASON__C2_IGNITION = new int[]{2};
+        FUNCTION_AVAILABLE_REASON__C3_SPEED = new int[]{3};
+        FUNCTION_AVAILABLE_REASON__C4_ENGINE = new int[]{4};
+        FUNCTION_AVAILABLE_REASON__C5_TRAILER = new int[]{5};
+        FUNCTION_AVAILABLE_REASON__C6_UNDEFINED = new int[]{6};
+        FUNCTION_AVAILABLE_REASON__C7_STANDSTILL = new int[]{7};
+        FUNCTION_EXISTENCE__2__DEFAULT_VALUE = new boolean[]{false, false, false, false, false};
+        FUNCTION_EXISTENCE__3__DEFAULT_VALUE = new boolean[]{false, false};
+        FUNCTION_EXISTENCE__4__DEFAULT_VALUE = new boolean[]{false, false, false, false, false, false, false};
+    }
+}
+

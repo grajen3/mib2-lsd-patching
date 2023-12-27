@@ -1,0 +1,79 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.navigation.tourmode;
+
+public interface ASLNavigationTourModeSetter {
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__P0_POSITION__INT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__POSITION__C0_BEGINNING;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__POSITION__C1_END;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__POSITION__C2_UNUSED;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__P1_SOURCE__INT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C0_ADDRESS_INPUT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C1_MAP_INPUT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C2_POI_INPUT;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C3_MEMORY_DETAIL;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C4_MEMORY_FLAGDEST;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C5_MEMORY_GPSPIC;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C6_NEW_ADDRESS;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C7_UNUSED;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C8_HOME;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C9_EXTERNAL_TOUR;
+    public static final int ADD_NEW_TOUR_LIST_ELEMENT__SOURCE__C10_NAV_DETAIL;
+    public static final int CHECK_TOUR_LIST_NAME;
+    public static final int CLEAR_LAST_TOUR_LIST;
+    public static final int CLEAR_TOUR_LIST;
+    public static final int DELETE_TOUR_FROM_TOUR_MEM_LIST;
+    public static final int DELETE_TOUR_FROM_TOUR_MEM_LIST__P0_VALUE__INT;
+    public static final int DELETE_TOUR_LIST_ELEMENT;
+    public static final int DELETE_TOUR_LIST_ELEMENT__P0_VALUE__INT;
+    public static final int DISCARD;
+    public static final int DISCARD_TOUR_LIST_CHANGES;
+    public static final int INIT_TOUR_INPUT;
+    public static final int LOAD_DETAILS_OF_TOUR_LIST_ELEMENT;
+    public static final int LOAD_DETAILS_OF_TOUR_LIST_ELEMENT__P0_VALUE__INT;
+    public static final int LOAD_LAST_TOUR_LIST;
+    public static final int LOAD_TOUR_LIST;
+    public static final int LOAD_TOUR_LIST__P0_VALUE__INT;
+    public static final int LOAD_TOUR_MEM_LIST;
+    public static final int MOVE_TOUR_LIST_ELEMENT;
+    public static final int MOVE_TOUR_LIST_ELEMENT__P0_SOURCEITEM__INT;
+    public static final int MOVE_TOUR_LIST_ELEMENT__P1_NEWPOSITION__INT;
+    public static final int RECALC_TOUR;
+    public static final int REPLACE_TOUR_IN_TOUR_MEM_LIST;
+    public static final int SAVE;
+    public static final int SAVE_TOUR_LIST;
+    public static final int SET_EDIT_MODE;
+    public static final int SET_EDIT_MODE__P0_VALUE__BOOLEAN;
+    public static final boolean SET_EDIT_MODE__VALUE__C0_OFF;
+    public static final boolean SET_EDIT_MODE__VALUE__C1_ON;
+    public static final int SKIP_NEXT_STOPOVER;
+    public static final int SPELLER_DELETE_CHAR;
+    public static final int SPELLER_INIT;
+    public static final int SPELLER_SET_CHAR;
+    public static final int SPELLER_SET_CHAR__P0_CHARACTER__STRING;
+    public static final int SPELLER_SET_CURSOR_POSITION;
+    public static final int SPELLER_SET_CURSOR_POSITION__P0_VALUE__INT;
+    public static final int START_LAST_TOUR;
+    public static final int START_ROUTE_CALC;
+    public static final int START_ROUTE_CALC_DIRECT;
+    public static final int START_ROUTE_CALC_DIRECT__P0_VALUE__INT;
+    public static final int START_TOUR_FROM_TOUR_MEM_LIST;
+    public static final int START_TOUR_FROM_TOUR_MEM_LIST__P0_VALUE__INT;
+    public static final int LEAVE_TOUR_LIST;
+    public static final int SPELLER_DELETE_ALL_CHARS;
+    public static final int SPELLER_SET_CHAR_HWR;
+    public static final int SPELLER_SET_CHAR_HWR__P0_CHARACTER__STRING;
+    public static final int SPELLER_SET_CHAR_HWR__P1_CURSORPOSITION__INT;
+    public static final int SPELLER_SET_CHAR_HWR__P2_SELECTIONSTART__INT;
+    public static final int SPELLER_SET_CHAR_HWR__P3_SELECTIONEND__INT;
+    public static final int SET_HWR_SPELLER_MODE_ENABLED;
+    public static final int SET_HWR_SPELLER_MODE_ENABLED__P0_VALUE__BOOLEAN;
+    public static final boolean SET_HWR_SPELLER_MODE_ENABLED__VALUE__C0_FALSE;
+    public static final boolean SET_HWR_SPELLER_MODE_ENABLED__VALUE__C1_TRUE;
+    public static final int IMPORT_START;
+    public static final int IMPORT_ABORT;
+    public static final int IMPORT_CANCEL;
+}
+

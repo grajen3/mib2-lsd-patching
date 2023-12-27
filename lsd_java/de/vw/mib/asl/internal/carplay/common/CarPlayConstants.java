@@ -1,0 +1,83 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.internal.carplay.common;
+
+public class CarPlayConstants {
+    public static final int CARPLAY_CONTEXT_INDEX;
+    public static final int CONNECTION_STATE_DISCONNECTED;
+    public static final int CONNECTION_STATE_WAITING_FOR_DSI;
+    public static final int CONNECTION_STATE_WAITING_FOR_CONNECTION;
+    public static final int CONNECTION_STATE_CONNECTED;
+    public static final int ENTERTAINMENT_SOURCE_UNKNOWN;
+    public static final int ENTERTAINMENT_SOURCE_CARPLAY;
+    public static final int ENTERTAINMENT_SOURCE_OTHER;
+    public static final int AUDIO_SOURCE_UNKNOWN;
+    public static final int AUDIO_SOURCE_;
+    public static final int AUDIO_SOURCE_CARPLAY_PHONE;
+    public static final int AUDIO_SOURCE_CARPLAY_SPEECH;
+    public static final int AUDIO_SOURCE_CARPLAY_MEDIA;
+    public static final int AUDIO_SOURCE_HMI;
+    public static final int AUDIO_STATUS_IGNORE;
+    public static final int AUDIO_STATUS_NOT_REQUESTED;
+    public static final int AUDIO_STATUS_ENTERTAINMENT_REQUESTED;
+    public static final int AUDIO_STATUS_SOUND_REQUESTED;
+    public static final int AUDIO_STATUS_READY;
+    public static final int NAVIGATION_UNKNOWN;
+    public static final int NAVIGATION_INACTIVE;
+    public static final int NAVIGATION_CARPLAY;
+    public static final int NAVIGATION_HMI;
+    public static final int SPEECH_UNKNOWN;
+    public static final int SPEECH_INACTIVE;
+    public static final int SPEECH_CARPLAY;
+    public static final int SPEECH_HMI;
+    public static final int MAIN_SCREEN_SOURCE_UNKNOWN;
+    public static final int MAIN_SCREEN_SOURCE_HMI;
+    public static final int MAIN_SCREEN_SOURCE_DEVICE;
+    public static final int MAIN_AUDIO_SOURCE_UNKNOWN;
+    public static final int MAIN_AUDIO_SOURCE_HMI;
+    public static final int MAIN_AUDIO_SOURCE_DEVICE;
+    public static final int RESOURCE_REQUEST_UNDEFINED;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINSCREEN;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINAUDIO;
+    public static final int RESOURCE_REQUEST_CARPLAY_MAINSCREEN_AND_MAINAUDIO;
+    public static final int RESOURCE_REQUEST_REASON_UNDEFINED;
+    public static final int RESOURCE_REQUEST_REASON_DEFAULT;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_PHONECALL;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_SPEECH_SPEAK;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_SPEECH_RECOGNIZING;
+    public static final int RESOURCE_REQUEST_REASON_CARPLAY_MEDIA;
+    public static final int RESOURCE_REQUEST_REASON_HMI_PHONECALL;
+    public static final int RESOURCE_REQUEST_REASON_HMI_SPEECH;
+    public static final int SOUND_CHANNEL_IGNORE;
+    public static final boolean RELEASE_ENTERTAINMENT;
+    public static final boolean DONT_RELEASE_ENTERTAINMENT;
+    public static final boolean RELEASE_ANNOUNCEMENT;
+    public static final boolean DONT_RELEASE_ANNOUNCEMENT;
+    public static final int RINGTONE_CONNECTION_UNKNOWN;
+    public static final boolean CARPLAY_NAVIGATION_ACTIVE;
+    public static final boolean CARPLAY_NAVIGATION_INACTIVE;
+    public static final int TIMER_1000_MS;
+    public static final int TIMER_3000_MS;
+    public static final int TIMER_5000_MS;
+    public static final int TIMER_300_MS;
+    public static final int TIMER_450_MS;
+    public static final int LAST_ENTERTAINMENT_CONTEXT_UNKNOWN;
+    public static final int PTT_KEY_NONE;
+    public static final int PTT_KEY_PRESSED;
+    public static final int PTT_KEY_LONGPRESSED;
+    public static final int PTT_KEY_RELEASED;
+    public static final int PTT_KEY_LONGRELEASED;
+    public static final int NO_INPUT_SOURCE;
+    public static final boolean SET_CONNECTION_ALWAYS;
+    public static final boolean SET_CONNECTION_IF_NOT_READY;
+    public static final boolean RELEASE_CONNECTION_ALWAYS;
+    public static final boolean RELEASE_CONNECTION_IF_REQ_OR_READY;
+    public static final String OEM_ICON_TITLE_VW;
+    public static final String OEM_ICON_TITLE_SEAT;
+    public static final String OEM_ICON_TITLE_SKODA;
+    public static final String OEM_ICON_TITLE_DEFAULT;
+    public static final String DEFAULT_REASON;
+    public static final long TIMER_POPUP_UPDATE;
+}
+

@@ -1,0 +1,16 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.esolutions.fw.comm.dsi.asiatrafficinfomenu;
+
+public class Consts {
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_ACTIVEINTERRUPTS;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_TRAFFICTYPE;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_PREFECTURE;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_PROBEDATASETTING;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_FREQUENCY;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_RECEPTIONSTATUS;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_RECEIVABLESTATIONS;
+    public static final int ATTRIBUTE_ID_DSIASIATRAFFICINFOMENU_RECEPTIONDATE;
+}
+

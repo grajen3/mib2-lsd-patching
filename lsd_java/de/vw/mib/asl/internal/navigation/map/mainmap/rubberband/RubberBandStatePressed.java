@@ -1,0 +1,152 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.internal.navigation.map.mainmap.rubberband;
+
+import de.vw.mib.asl.api.navigation.util.ASLNavigationUtilFactory;
+import de.vw.mib.asl.api.navigation.util.IExtLogger;
+import de.vw.mib.asl.internal.navigation.map.mainmap.rubberband.RubberBandHsmTarget;
+import de.vw.mib.genericevents.EventGeneric;
+import de.vw.mib.genericevents.hsm.AbstractHsmState;
+import de.vw.mib.genericevents.hsm.HsmState;
+import org.dsi.ifc.global.NavLocation;
+import org.dsi.ifc.global.NavLocationWgs84;
+import org.dsi.ifc.map.Point;
+import org.dsi.ifc.map.PosInfo;
+
+public class RubberBandStatePressed
+extends AbstractHsmState {
+    private final IExtLogger logger = ASLNavigationUtilFactory.getNavigationUtilApi().getExtLogger(256, "[RubberBandStatePressed]");
+    private final RubberBandHsmTarget target;
+
+    public RubberBandStatePressed(RubberBandHsmTarget rubberBandHsmTarget, String string, HsmState hsmState) {
+        super(rubberBandHsmTarget.getHsm(), string, hsmState);
+        this.target = rubberBandHsmTarget;
+    }
+
+    private void callGetInfoForScreenPosition() {
+        this.logger.trace("callGetInfoForScreenPosition()");
+        this.target.notifierDSI.getInfoForScreenPosition(this.target, new Point(this.target.datapool.getOneFingerClickX(), this.target.datapool.getOneFingerClickY()));
+    }
+
+    @Override
+    public HsmState handle(EventGeneric eventGeneric) {
+        switch (eventGeneric.getReceiverEventId()) {
+            case 2: {
+                this.handleEntry();
+                break;
+            }
+            case 4: {
+                this.handleExit();
+                break;
+            }
+            case 3: {
+                this.handleStart();
+                break;
+            }
+            case 1074841840: {
+                return this.handleSetClickInMap(eventGeneric);
+            }
+            case 3499022: {
+                this.handleGetInfoForScreenPositionResult(eventGeneric);
+                break;
+            }
+            case 3499054: {
+                this.handleGetInfoForScreenPositionResultAsyncExcetion(eventGeneric);
+                break;
+            }
+            default: {
+                this.handleDefault(eventGeneric);
+                return this.myParent;
+            }
+        }
+        return null;
+    }
+
+    private void handleDefault(EventGeneric eventGeneric) {
+        if (this.logger.isTraceEnabled()) {
+            this.logger.makeTrace().append("handleDefault(): reveiverEventId=").append(eventGeneric.getReceiverEventId()).append(", Params: ").append(eventGeneric.getParamString()).log();
+        }
+    }
+
+    private void handleEntry() {
+        this.logger.trace("handleEntry()");
+    }
+
+    private void handleExit() {
+        this.logger.trace("handleExit()");
+    }
+
+    private void handleGetInfoForScreenPositionResult(EventGeneric eventGeneric) {
+        this.logger.trace("handleGetInfoForScreenPositionResult");
+        PosInfo[] posInfoArray = (PosInfo[])eventGeneric.getObject(0);
+        if (posInfoArray == null || posInfoArray.length == 0) {
+            return;
+        }
+        for (int i2 = 0; i2 < posInfoArray.length; ++i2) {
+            if (posInfoArray[i2].eInfoType != 13) continue;
+            this.startRubberbandManipulation(posInfoArray[i2]);
+            return;
+        }
+        this.target.datapool.setDragRoute(false);
+    }
+
+    private void handleGetInfoForScreenPositionResultAsyncExcetion(EventGeneric eventGeneric) {
+        this.logger.trace("handleGetInfoForScreenPositionResultAsyncExcetion()");
+    }
+
+    private HsmState handleSetClickInMap(EventGeneric eventGeneric) {
+        int n = eventGeneric.getInt(1);
+        int n2 = eventGeneric.getInt(2);
+        this.target.datapool.setOneFingerClickX(n);
+        this.target.datapool.setOneFingerClickY(n2);
+        HsmState hsmState = null;
+        int n3 = eventGeneric.getInt(0);
+        switch (n3) {
+            case 2: 
+            case 3: {
+                this.logger.trace("handleSetClickInMap clicked / released");
+                if (this.target.datapool.isDragRoute()) {
+                    this.target.notifierDSI.setDragRouteMarker(1);
+                    this.target.notifierDSI.rgGetRubberBandPointPosition();
+                }
+                this.target.datapool.setDragRoute(false);
+                this.target.transStateRubberBandActive();
+                break;
+            }
+            default: {
+                hsmState = this.myParent;
+            }
+        }
+        return hsmState;
+    }
+
+    private void handleStart() {
+        this.logger.trace("handleStart()");
+        this.callGetInfoForScreenPosition();
+    }
+
+    private void startRubberbandManipulation(PosInfo posInfo) {
+        long l = posInfo.objectId;
+        if (l < Integer.MIN_VALUE || l > 0) {
+            this.logger.makeError().append("startRubberbandManipulation(segmentId=").append(l).append(") is out of range! excution stopped!").log();
+            return;
+        }
+        NavLocation navLocation = posInfo.tLocation;
+        if (navLocation == null) {
+            this.logger.error("startRubberbandManipulation() - NavLocation of PosInfo is null! execution stopped");
+            return;
+        }
+        if (this.logger.isTraceEnabled()) {
+            this.logger.makeTrace().append("startRubberbandManipulation( segmentId=").append(l).append(")").log();
+        }
+        this.target.notifierModel.notifyRouteAdjustedTrue();
+        this.target.datapool.setDragRoute(true);
+        NavLocationWgs84 navLocationWgs84 = new NavLocationWgs84(navLocation.longitude, navLocation.latitude);
+        this.target.datapool.setNavLocationStartRouteDragging(navLocationWgs84);
+        this.target.notifierDSI.rgStartRubberbandManipulation((int)l);
+        this.target.notifierDSI.startRouteDragging(navLocationWgs84);
+        this.target.notifierDSI.setDragRouteMarker(2);
+    }
+}
+

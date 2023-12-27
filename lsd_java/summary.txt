@@ -1,0 +1,568 @@
+Summary for /home/misiek/dev/mib2-lsd-patching/lsd.jar
+Decompiled with CFR 0.152
+
+
+java.lang.Long
+----------------------------
+
+toBinaryString(long )
+  Unable to fully structure code
+toHexString(long )
+  Unable to fully structure code
+toOctalString(long )
+  Unable to fully structure code
+
+
+java.lang.String
+----------------------------
+
+toLowerCase(java.util.Locale )
+  Unable to fully structure code
+
+
+java.lang.Integer
+----------------------------
+
+toBinaryString(int )
+  Unable to fully structure code
+toHexString(int )
+  Unable to fully structure code
+toOctalString(int )
+  Unable to fully structure code
+
+
+java.text.CharSet
+----------------------------
+
+doUnion(java.lang.String )
+  Unable to fully structure code
+
+
+java.util.HashMap
+----------------------------
+
+findEntry(java.lang.Object int )
+  Unable to fully structure code
+
+
+java.math.BigDecimal
+----------------------------
+
+divide(java.math.BigDecimal int int )
+  Unable to fully structure code
+
+
+java.math.BigInteger
+----------------------------
+
+<init>(byte[] )
+  Handled unverifiable bytecode (illegal stack merge).
+and(java.math.BigInteger )
+  Unable to fully structure code
+or(java.math.BigInteger )
+  Unable to fully structure code
+xor(java.math.BigInteger )
+  Unable to fully structure code
+andNot(java.math.BigInteger )
+  Unable to fully structure code
+
+
+java.util.LinkedList
+----------------------------
+
+contains(java.lang.Object )
+  Unable to fully structure code
+indexOf(java.lang.Object )
+  Unable to fully structure code
+lastIndexOf(java.lang.Object )
+  Unable to fully structure code
+remove(java.lang.Object )
+  Unable to fully structure code
+
+
+java.util.AbstractMap
+----------------------------
+
+containsKey(java.lang.Object )
+  Unable to fully structure code
+containsValue(java.lang.Object )
+  Unable to fully structure code
+get(java.lang.Object )
+  Unable to fully structure code
+remove(java.lang.Object )
+  Unable to fully structure code
+
+
+java.util.Collections
+----------------------------
+
+indexOfSubList(java.util.List java.util.List )
+  Unable to fully structure code
+
+
+java.util.AbstractList
+----------------------------
+
+indexOf(java.lang.Object )
+  Unable to fully structure code
+lastIndexOf(java.lang.Object )
+  Unable to fully structure code
+
+
+java.text.MessageFormat
+----------------------------
+
+formatImpl(java.lang.Object[] java.lang.StringBuffer java.text.FieldPosition java.util.Vector )
+  Unable to fully structure code
+
+
+com.ibm.oti.locale.Locale
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+java.util.StringTokenizer
+----------------------------
+
+nextToken()
+  Unable to fully structure code
+
+
+com.ibm.j9.bluez.crypto.CL3
+----------------------------
+
+log2(int )
+  Unable to fully structure code
+dsaParamGen(int byte[] java.util.Random )
+  Unable to fully structure code
+
+
+com.ibm.j9.bluez.crypto.ASN1
+----------------------------
+
+decodeObject(int byte[] int int )
+  Unable to fully structure code
+
+
+com.ibm.oti.locale.Locale_ca
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_cs
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_de
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_es
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_fr
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_hu
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_it
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_ja
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_ko
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_pl
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_ru
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_sk
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_sl
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_sv
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_tr
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+java.util.AbstractCollection
+----------------------------
+
+contains(java.lang.Object )
+  Unable to fully structure code
+remove(java.lang.Object )
+  Unable to fully structure code
+
+
+java.util.jar.Attributes$Name
+----------------------------
+
+<init>(java.lang.String )
+  Unable to fully structure code
+
+
+com.ibm.oti.util.DefaultPolicy
+----------------------------
+
+loadKeystore(java.net.URL java.lang.String[] )
+  Loose catch block
+
+
+java.util.ListResourceBundle$1
+----------------------------
+
+findNext()
+  Unable to fully structure code
+
+
+com.ibm.oti.locale.Locale_en_CA
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_en_GB
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_en_IE
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_hi_IN
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_pt_BR
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_zh_CN
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_zh_HK
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+com.ibm.oti.locale.Locale_zh_TW
+----------------------------
+
+getContents()
+  Exception : java.lang.ArrayIndexOutOfBoundsException
+
+
+de.vw.mib.widgets.AbstractWidget
+----------------------------
+
+updateLocalTransform()
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+java.text.RuleBasedBreakIterator
+----------------------------
+
+handleNext()
+  Unable to fully structure code
+
+
+java.util.Hashtable$HashIterator
+----------------------------
+
+hasNext()
+  Unable to fully structure code
+
+
+java.util.HashMap$HashMapIterator
+----------------------------
+
+hasNext()
+  Unable to fully structure code
+
+
+com.ibm.j9.bluez.crypto.BigInteger
+----------------------------
+
+<init>(int byte[] )
+  Unable to fully structure code
+divBig(com.ibm.j9.bluez.crypto.BigInteger com.ibm.j9.bluez.crypto.BigInteger int int int boolean )
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+java.util.Hashtable$HashEnumerator
+----------------------------
+
+hasMoreElements()
+  Unable to fully structure code
+
+
+java.util.PropertyResourceBundle$1
+----------------------------
+
+findNext()
+  Unable to fully structure code
+
+
+de.vw.mib.widgets.ui.DynamicImageUI
+----------------------------
+
+paintPictureWithBorder(de.vw.mib.graphics.Graphics3D de.vw.mib.graphics.Rectangle de.vw.mib.graphics.Rectangle de.vw.mib.widgets.models.DynamicImageModel de.vw.mib.widgets.models.DynamicImageModel$Picture int boolean int int int int float )
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+com.ibm.oti.lang.reflect.ProxyMethod
+----------------------------
+
+matchMethod(java.lang.reflect.Method )
+  Unable to fully structure code
+
+
+de.vw.mib.widgets.TransformContainer
+----------------------------
+
+updateLocalTransform()
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+com.ibm.oti.connection.http.Connection
+----------------------------
+
+readln()
+  Unable to fully structure code
+
+
+generated.de.vw.mib.car.sm.CarActivity
+----------------------------
+
+performInternalTransitionAction_SubHapticCarDynState300(int )
+  Exception : java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+performInternalTransitionAction_SubHapticCarDynState600(int )
+  Exception : java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1
+
+
+com.ibm.oti.util.ExtendedResourceBundle$1
+----------------------------
+
+findNext()
+  Unable to fully structure code
+
+
+java.util.LinkedHashMap$LinkedHashIterator
+----------------------------
+
+remove()
+  Unable to fully structure code
+
+
+com.ibm.oti.security.provider.KeyFactoryDSA
+----------------------------
+
+engineGetKeySpec(java.security.Key java.lang.Class )
+  Unable to fully structure code
+
+
+de.esolutions.fw.util.commons.error.Floater
+----------------------------
+
+waste(int )
+  Unable to fully structure code
+
+
+de.vw.mib.sm.internal.journal.TraceSmJournal
+----------------------------
+
+trace(short )
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+de.vw.mib.asl.internal.list.impl.AbstractASLList
+----------------------------
+
+getFetchTimeout()
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+com.ibm.oti.net.www.protocol.http.HttpURLConnection
+----------------------------
+
+readln()
+  Unable to fully structure code
+
+
+com.ibm.oti.connection.ssl.Connection$SSLInputStream
+----------------------------
+
+available()
+  Unable to fully structure code
+read()
+  Unable to fully structure code
+read(byte[] int int )
+  Unable to fully structure code
+
+
+de.esolutions.fw.util.commons.job.StatisticInterceptor
+----------------------------
+
+<init>(de.esolutions.fw.util.commons.job.DispatcherBase de.esolutions.fw.util.commons.job.IJobLogger int int )
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+de.esolutions.fw.util.tracing.protocol.ProtocolHandler
+----------------------------
+
+handleIncomingMessage()
+  Unable to fully structure code
+
+
+de.vw.mib.asl.internal.smartphoneintegration.target.ASLHandler
+----------------------------
+
+updateExlapServerData(boolean )
+  Unable to fully structure code
+
+
+de.vw.mib.asl.internal.radio.dab.radiotext2.StateTextAvailable1
+----------------------------
+
+handle(de.vw.mib.genericevents.EventGeneric )
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+edu.emory.mathcs.backport.java.util.concurrent.ArrayBlockingQueue
+----------------------------
+
+offer(java.lang.Object long edu.emory.mathcs.backport.java.util.concurrent.TimeUnit )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 7[UNCONDITIONALDOLOOP]
+poll(long edu.emory.mathcs.backport.java.util.concurrent.TimeUnit )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 7[UNCONDITIONALDOLOOP]
+
+
+de.esolutions.fw.util.commons.threading.ThreadPool$DefaultRunnable
+----------------------------
+
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [7[TRYBLOCK]], but top level block is 28[WHILELOOP]
+
+
+edu.emory.mathcs.backport.java.util.concurrent.ConcurrentSkipListMap
+----------------------------
+
+findNode(java.lang.Comparable )
+  Unable to fully structure code
+addIndex(edu.emory.mathcs.backport.java.util.concurrent.ConcurrentSkipListMap$Index edu.emory.mathcs.backport.java.util.concurrent.ConcurrentSkipListMap$HeadIndex int )
+  Unable to fully structure code
+findNear(java.lang.Object int )
+  Unable to fully structure code
+
+
+edu.emory.mathcs.backport.java.util.concurrent.PriorityBlockingQueue
+----------------------------
+
+poll(long edu.emory.mathcs.backport.java.util.concurrent.TimeUnit )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 7[UNCONDITIONALDOLOOP]
+
+
+edu.emory.mathcs.backport.java.util.concurrent.AbstractExecutorService
+----------------------------
+
+doInvokeAny(java.util.Collection boolean long )
+  Unable to fully structure code
+
+
+de.vw.mib.graphics.internal.drawable.renderer.AbstractSharedDrawableRenderer
+----------------------------
+
+<clinit>()
+  Handled unverifiable bytecode (illegal stack merge).
+
+
+de.vw.mib.asl.internal.online.coreImpl.adapterMOD.impl.CoreServiceMODExternalImpl
+----------------------------
+
+downloadImage(java.lang.String java.lang.String java.lang.String boolean de.vw.mib.asl.internal.online.coreInterfaces.external.CoreServiceExternalListener )
+  Handled unverifiable bytecode (illegal stack merge).

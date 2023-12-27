@@ -1,0 +1,84 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.navmaptile.map.view;
+
+public interface ASLNavMapTileMapViewPropertyManager {
+    public static final int CURRENT_DAY_NIGHT_MODE_VALUE;
+    public static final int CURRENT_DAY_NIGHT_MODE_VALUE__DEFAULT_VALUE;
+    public static final int CURRENT_DAY_NIGHT_MODE_VALUE__C0_DAY;
+    public static final int CURRENT_DAY_NIGHT_MODE_VALUE__C1_NIGHT;
+    public static final int HEADING_VALUE;
+    public static final int HEADING_VALUE__DEFAULT_VALUE;
+    public static final int HEADING_VALUE__MIN_VALUE;
+    public static final int HEADING_VALUE__MAX_VALUE;
+    public static final int HEADING_VALUE__STEP_SIZE;
+    public static final int ZOOM_LEVEL;
+    public static final int ZOOM_LEVEL__DEFAULT_VALUE;
+    public static final int ZOOM_LEVEL__C0_0;
+    public static final int ZOOM_LEVEL__C1_1;
+    public static final int ZOOM_LEVEL__C2_2;
+    public static final int ZOOM_LEVEL__C3_3;
+    public static final int ZOOM_LEVEL__C4_4;
+    public static final int ZOOM_LEVEL__C5_5;
+    public static final int ZOOM_LEVEL__C6_6;
+    public static final int ZOOM_LEVEL__C7_7;
+    public static final int ZOOM_LEVEL__C8_8;
+    public static final int ZOOM_LEVEL__C9_9;
+    public static final int ZOOM_LEVEL__C10_10;
+    public static final int ZOOM_LEVEL__C11_11;
+    public static final int ZOOM_LEVEL__C12_12;
+    public static final int ZOOM_LEVEL__C13_13;
+    public static final int ZOOM_LEVEL__C14_14;
+    public static final int ZOOM_LEVEL__C15_15;
+    public static final int ZOOM_LEVEL__C16_16;
+    public static final int ZOOM_LEVEL__C17_17;
+    public static final int ZOOM_LEVEL__C18_18;
+    public static final int ZOOM_LEVEL__C19_19;
+    public static final int ZOOM_LEVEL__C20_20;
+    public static final int ZOOM_LEVEL__C21_21;
+    public static final int ZOOM_LEVEL__C22_22;
+    public static final int ZOOM_LEVEL__C23_23;
+    public static final int ZOOM_LEVEL__C24_24;
+    public static final int ZOOM_LEVEL__C25_25;
+    public static final int ZOOM_LEVEL__C26_26;
+    public static final int ZOOM_LEVEL__C27_27;
+    public static final int ZOOM_LEVEL__C28_28;
+    public static final int ZOOM_LEVEL__C29_29;
+    public static final int ZOOM_LEVEL__C30_30;
+    public static final int ZOOM_LEVEL__C31_31;
+    public static final int ZOOM_LEVEL__C32_32;
+    public static final int ZOOM_LEVEL__C33_33;
+    public static final int ZOOM_LEVEL__C34_34;
+    public static final int ZOOM_LEVEL__C35_35;
+    public static final int ZOOM_LEVEL__C36_36;
+    public static final int ZOOM_LEVEL__C37_37;
+    public static final int ZOOM_LEVEL__C38_38;
+    public static final int ZOOM_LEVEL__C39_39;
+    public static final int ZOOM_VALUE;
+    public static final int ZOOM_VALUE__DEFAULT_VALUE;
+    public static final int OVERVIEW_ZOOM;
+    public static final boolean OVERVIEW_ZOOM__DEFAULT_VALUE;
+    public static final boolean OVERVIEW_ZOOM__C0_OFF;
+    public static final boolean OVERVIEW_ZOOM__C1_ON;
+    public static final int DESTINATION_VIEW;
+    public static final boolean DESTINATION_VIEW__DEFAULT_VALUE;
+    public static final boolean DESTINATION_VIEW__C0_FALSE;
+    public static final boolean DESTINATION_VIEW__C1_TRUE;
+    public static final int RANGE_VIEW_ENABLED;
+    public static final boolean RANGE_VIEW_ENABLED__DEFAULT_VALUE;
+    public static final boolean RANGE_VIEW_ENABLED__C0_FALSE;
+    public static final boolean RANGE_VIEW_ENABLED__C1_TRUE;
+    public static final int AUTO_ZOOM;
+    public static final boolean AUTO_ZOOM__DEFAULT_VALUE;
+    public static final boolean AUTO_ZOOM__C0_FALSE;
+    public static final boolean AUTO_ZOOM__C1_TRUE;
+    public static final int PERSPECTIVE;
+    public static final int PERSPECTIVE__DEFAULT_VALUE;
+    public static final int PERSPECTIVE__C0_2DNORTH;
+    public static final int PERSPECTIVE__C1_2DHEADING;
+    public static final int PERSPECTIVE__C2_25DHEADING;
+    public static final int PERSPECTIVE__C3_3DHEADING;
+    public static final int PERSPECTIVE__C4_3DDTM;
+}
+

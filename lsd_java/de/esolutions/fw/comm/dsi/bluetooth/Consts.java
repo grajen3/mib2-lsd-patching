@@ -1,0 +1,24 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.esolutions.fw.comm.dsi.bluetooth;
+
+public class Consts {
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_ACCESSIBLEMODE;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_BTSTATE;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_DISCOVEREDDEVICES;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_TRUSTEDDEVICES;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_PASSKEYSTATE;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_SERVICEREQUESTSTATE;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_USERFRIENDLYNAME;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_RECONNECTINDICATOR;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_INCOMINGSERVICEREQUEST;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_SUPPORTEDBTPROFILES;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_MASTERROLEREQUESTERROR;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_HUCANDBTHSSTATE;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_A2DPUSERSETTING;
+    public static final int ATTRIBUTE_ID_DSIBLUETOOTH_PRIORIZEDDEVICERECONNECT;
+    public static final int ATTRIBUTE_ID_DSIOBJECTPUSH_OPPINCOMINGOBJECT;
+    public static final int ATTRIBUTE_ID_DSIOBJECTPUSH_VCARDSRECEIVED;
+}
+

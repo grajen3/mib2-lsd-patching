@@ -1,0 +1,84 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.navigation.map.ss;
+
+public interface ASLNavigationMapSSSetter {
+    public static final int SET_CURRENT_CONTENT_G;
+    public static final int SET_CURRENT_CONTENT_G__P0_VALUE__INT;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C0_AUDIO;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C1_COMPASS;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C2_GPS;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C3_GUIDANCESYMBOL;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C4_TRAFFICSIGNS;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C5_MANEUVERVIEW;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C6_MAP;
+    public static final int SET_CURRENT_CONTENT_G__VALUE__C7_PNAV;
+    public static final int SET_CURRENT_CONTENT_NG;
+    public static final int SET_CURRENT_CONTENT_NG__P0_VALUE__INT;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C0_AUDIO;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C1_COMPASS;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C2_GPS;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C3_TRAFFICSIGNS;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C4_MAP;
+    public static final int SET_CURRENT_CONTENT_NG__VALUE__C5_PNAV;
+    public static final int TOGGLE_SPLIT_SCREEN_G;
+    public static final int TOGGLE_SPLIT_SCREEN_NG;
+    public static final int SET_MANEUVER_VIEW_CONTENT;
+    public static final int SET_MANEUVER_VIEW_CONTENT__P0_VALUE__INT;
+    public static final int SET_MANEUVER_VIEW_CONTENT__VALUE__C0_MAP_JUNCTION_VIEW;
+    public static final int SET_MANEUVER_VIEW_CONTENT__VALUE__C1_MAP_INTERSECTION_VIEW;
+    public static final int SET_MANEUVER_VIEW_CONTENT__VALUE__C2_NO_MAP;
+    public static final int SET_MANEUVER_VIEW_CONTENT__P1_POSX__INT;
+    public static final int SET_MANEUVER_VIEW_CONTENT__P2_POSY__INT;
+    public static final int SET_MANEUVER_VIEW_CONTENT__P3_HEIGHT__INT;
+    public static final int SET_MANEUVER_VIEW_CONTENT__P4_WIDTH__INT;
+    public static final int SET_MAP_CONTENT;
+    public static final int SET_MAP_CONTENT__P0_VALUE__INT;
+    public static final int SET_MAP_CONTENT__VALUE__C0_MAP_POSITION;
+    public static final int SET_MAP_CONTENT__VALUE__C1_MAP_OVERVIEW;
+    public static final int SET_MAP_CONTENT__VALUE__C2_NO_MAP;
+    public static final int SET_MAP_CONTENT__P1_POSX__INT;
+    public static final int SET_MAP_CONTENT__P2_POSY__INT;
+    public static final int SET_MAP_CONTENT__P3_HEIGHT__INT;
+    public static final int SET_MAP_CONTENT__P4_WIDTH__INT;
+    public static final int MAP_ZOOM_IN;
+    public static final int MAP_ZOOM_OUT;
+    public static final int SET_MAP_CARSUR_POSITION;
+    public static final int SET_MAP_CARSUR_POSITION__P0_POSITIONX__INT;
+    public static final int SET_MAP_CARSUR_POSITION__P1_POSITIONY__INT;
+    public static final int SET_MAP_PERSPECTIVE;
+    public static final int SET_MAP_PERSPECTIVE__P0_VALUE__INT;
+    public static final int SET_MAP_PERSPECTIVE__VALUE__C0_2DNORTH;
+    public static final int SET_MAP_PERSPECTIVE__VALUE__C1_2DHEADING;
+    public static final int SET_MAP_PERSPECTIVE__VALUE__C2_3DHEADING;
+    public static final int TOGGLE_MAP_OVERVIEW_ZOOM;
+    public static final int TOGGLE_MAP_AUTO_ZOOM;
+    public static final int SET_RANGE_VIEW_ENABLED;
+    public static final int SET_RANGE_VIEW_ENABLED__P0_VALUE__BOOLEAN;
+    public static final boolean SET_RANGE_VIEW_ENABLED__VALUE__C0_OFF;
+    public static final boolean SET_RANGE_VIEW_ENABLED__VALUE__C1_ON;
+    public static final int ACTIVATE_COUNTRY_OVERVIEW;
+    public static final int TWO_FINGER_ZOOMED;
+    public static final int TWO_FINGER_ZOOMED__P0_POSX__INT;
+    public static final int TWO_FINGER_ZOOMED__P1_POSY__INT;
+    public static final int TWO_FINGER_ZOOMED__P2_ZDELTA__INT;
+    public static final int TWO_FINGER_ZOOMED__P3_ZDISTANCE__INT;
+    public static final int TWO_FINGER_DRAGGED;
+    public static final int TWO_FINGER_DRAGGED__P0_POSX__INT;
+    public static final int TWO_FINGER_DRAGGED__P1_POSY__INT;
+    public static final int TWO_FINGER_DRAGGED__P2_ZDELTAX__INT;
+    public static final int TWO_FINGER_DRAGGED__P3_ZDELTAY__INT;
+    public static final int SET_CLICK_IN_MAP;
+    public static final int SET_CLICK_IN_MAP__P0_ACTIONTYPE__INT;
+    public static final int SET_CLICK_IN_MAP__ACTIONTYPE__C0_PRESSED;
+    public static final int SET_CLICK_IN_MAP__ACTIONTYPE__C1_DRAGGED;
+    public static final int SET_CLICK_IN_MAP__ACTIONTYPE__C2_RELEASED;
+    public static final int SET_CLICK_IN_MAP__ACTIONTYPE__C3_CLICKED;
+    public static final int SET_CLICK_IN_MAP__ACTIONTYPE__C4_SELECTED;
+    public static final int SET_CLICK_IN_MAP__P1_XCOORDINATE__INT;
+    public static final int SET_CLICK_IN_MAP__P2_YCOORDINATE__INT;
+    public static final int SELECT_LIST_ELEMENT;
+    public static final int SELECT_LIST_ELEMENT__P0_INDEX__INT;
+}
+

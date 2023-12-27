@@ -1,0 +1,28 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.asl.internal.speechnavigation.usecase.destinationinput.jpn.prefecture.controller;
+
+import de.vw.mib.asl.api.navigation.INavigationLocation;
+import de.vw.mib.asl.internal.speechnavigation.navi.api.adapter.destinationinput.listener.DestinationInputListener;
+import de.vw.mib.asl.internal.speechnavigation.usecase.destinationinput.jpn.prefecture.controller.DestinationInputPrefectureController;
+
+class DestinationInputPrefectureController$2
+implements DestinationInputListener {
+    private final /* synthetic */ DestinationInputPrefectureController this$0;
+
+    DestinationInputPrefectureController$2(DestinationInputPrefectureController destinationInputPrefectureController) {
+        this.this$0 = destinationInputPrefectureController;
+    }
+
+    @Override
+    public void setDestinationFieldResponse(int n, INavigationLocation iNavigationLocation, int[] nArray) {
+        this.this$0.updateLocation(iNavigationLocation);
+        if (n == 1) {
+            this.this$0.onActionFailed();
+            return;
+        }
+        this.this$0.notifyPrefectureSelected(iNavigationLocation);
+    }
+}
+

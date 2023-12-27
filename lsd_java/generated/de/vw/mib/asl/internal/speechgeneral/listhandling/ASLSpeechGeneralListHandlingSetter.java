@@ -1,0 +1,9 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.speechgeneral.listhandling;
+
+public interface ASLSpeechGeneralListHandlingSetter {
+    public static final int ADJUSTMENT_STARTED;
+}
+

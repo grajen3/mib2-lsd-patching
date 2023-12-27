@@ -1,0 +1,82 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.car.personal;
+
+public interface ASLCarPersonalPropertyManager {
+    public static final int DRIVER_LIST__DRIVER_LIST__NAME;
+    public static final String DRIVER_LIST__DRIVER_LIST__NAME__DEFAULT_VALUE;
+    public static final int DRIVER_LIST__DRIVER_LIST__IS_ACTIVE;
+    public static final boolean DRIVER_LIST__DRIVER_LIST__IS_ACTIVE__DEFAULT_VALUE;
+    public static final int DRIVER_LIST__DRIVER_LIST__DRIVER_TYPE;
+    public static final int DRIVER_LIST__DRIVER_LIST__DRIVER_TYPE__DEFAULT_VALUE;
+    public static final int DRIVER_LIST__DRIVER_LIST__POS_VALUE;
+    public static final int DRIVER_LIST__DRIVER_LIST__POS_VALUE__DEFAULT_VALUE;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_STATE;
+    public static final boolean ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_STATE__DEFAULT_VALUE;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__DEFAULT_VALUE;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C0_NORMAL;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C1_ERROR;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C2_IGNITION;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C3_SPEED;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C4_ENGINE;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C5_TRAILER;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C6_UNDEFINED;
+    public static final int ASSIGN_KEY_AVAILABILITY__ASSIGN_KEY_AVAILABLE_REASON__C7_STANDSTILL;
+    public static final int ASSIGN_KEY_SYSTEM_EXISTENT;
+    public static final boolean ASSIGN_KEY_SYSTEM_EXISTENT__DEFAULT_VALUE;
+    public static final int MDM_SYSTEM_ACTIVE;
+    public static final boolean MDM_SYSTEM_ACTIVE__DEFAULT_VALUE;
+    public static final int ACTIVE_DRIVER__NAME;
+    public static final String ACTIVE_DRIVER__NAME__DEFAULT_VALUE;
+    public static final int ASSIGN_KEY_MODE;
+    public static final int ASSIGN_KEY_MODE__DEFAULT_VALUE;
+    public static final int ASSIGN_KEY_MODE__C0_AUTOMATICALLY;
+    public static final int ASSIGN_KEY_MODE__C1_MANUALLY;
+    public static final int ACTIVE_COMPONENTS_INSTALLED;
+    public static final boolean ACTIVE_COMPONENTS_INSTALLED__DEFAULT_VALUE;
+    public static final int KEY_ASSIGN_STATE;
+    public static final int KEY_ASSIGN_STATE__DEFAULT_VALUE;
+    public static final int KEY_ASSIGN_STATE__C0_NONE;
+    public static final int KEY_ASSIGN_STATE__C1_WAITING_FOR_KEYPRESS;
+    public static final int KEY_ASSIGN_STATE__C2_SUCCESS;
+    public static final int KEY_ASSIGN_STATE__C3_ERROR;
+    public static final int KEY_ASSIGN_STATE__C4_WAITING_FOR_KEY_ASSIGN;
+    public static final int RESET_ALL_STATE;
+    public static final int RESET_ALL_STATE__DEFAULT_VALUE;
+    public static final int RESET_ALL_STATE__C0_NONE;
+    public static final int RESET_ALL_STATE__C1_RUNNING;
+    public static final int RESET_STATE;
+    public static final int RESET_STATE__DEFAULT_VALUE;
+    public static final int RESET_STATE__C0_NONE;
+    public static final int RESET_STATE__C1_RUNNING;
+    public static final int CHANGE_PHYSICAL_SETTINGS_STATE;
+    public static final int CHANGE_PHYSICAL_SETTINGS_STATE__DEFAULT_VALUE;
+    public static final int CHANGE_PHYSICAL_SETTINGS_STATE__C0_NONE;
+    public static final int CHANGE_PHYSICAL_SETTINGS_STATE__C1_RUNNING;
+    public static final int COPY_STATE;
+    public static final int COPY_STATE__DEFAULT_VALUE;
+    public static final int COPY_STATE__C0_NONE;
+    public static final int COPY_STATE__C1_RUNNING;
+    public static final int TEMP_KEY_CODED;
+    public static final boolean TEMP_KEY_CODED__DEFAULT_VALUE;
+    public static final int ACTIVE_DRIVER_ID;
+    public static final int ACTIVE_DRIVER_ID__DEFAULT_VALUE;
+    public static final int ACTIVE_DRIVER_TYPE;
+    public static final int ACTIVE_DRIVER_TYPE__DEFAULT_VALUE;
+    public static final int PROFILE_SWITCHING;
+    public static final boolean PROFILE_SWITCHING__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__PERSONAL1;
+    public static final int FUNCTION_INDEX__PERSONAL1__DEFAULT_VALUE;
+    public static final int FUNCTION_INDEX__PERSONAL1__C0_MULTI_DRIVER_SYS_ACTIVE;
+    public static final int FUNCTION_INDEX__PERSONAL1__C1_DRIVER_SELECTION_DRIVERS;
+    public static final int FUNCTION_INDEX__PERSONAL1__C2_GENERAL_OPTIONS_RESET_ALL;
+    public static final int FUNCTION_EXISTENCE__PERSONAL;
+    public static final boolean FUNCTION_EXISTENCE__PERSONAL__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABILITY__PERSONAL;
+    public static final boolean FUNCTION_AVAILABILITY__PERSONAL__DEFAULT_VALUE;
+    public static final int FUNCTION_AVAILABLE_REASON__PERSONAL;
+    public static final int FUNCTION_AVAILABLE_REASON__PERSONAL__DEFAULT_VALUE;
+}
+

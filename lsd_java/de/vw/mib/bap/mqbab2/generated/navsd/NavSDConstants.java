@@ -1,0 +1,81 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.bap.mqbab2.generated.navsd;
+
+public interface NavSDConstants {
+    public static final int LSG_ID;
+    public static final int BAP_FCT_ID_GET_ALL;
+    public static final int BAP_FCT_ID_BAP_CONFIG;
+    public static final int BAP_FCT_ID_FUNCTION_LIST;
+    public static final int BAP_FCT_ID_HEART_BEAT;
+    public static final int BAP_FCT_ID_FSG_OPERATION_STATE;
+    public static final int BAP_FCT_ID_COMPASS_INFO;
+    public static final int BAP_FCT_ID_RG_STATUS;
+    public static final int BAP_FCT_ID_DISTANCE_TO_NEXT_MANEUVER;
+    public static final int BAP_FCT_ID_CURRENT_POSITION_INFO;
+    public static final int BAP_FCT_ID_TURN_TO_INFO;
+    public static final int BAP_FCT_ID_DISTANCE_TO_DESTINATION;
+    public static final int BAP_FCT_ID_TIME_TO_DESTINATION;
+    public static final int BAP_FCT_ID_MANEUVER_DESCRIPTOR;
+    public static final int BAP_FCT_ID_LANE_GUIDANCE;
+    public static final int BAP_FCT_ID_TM_CINFO;
+    public static final int BAP_FCT_ID_MAGNET_FIELD_ZONE;
+    public static final int BAP_FCT_ID_CALIBRATION;
+    public static final int BAP_FCT_ID_ASG_CAPABILITIES;
+    public static final int BAP_FCT_ID_LAST_DEST_LIST;
+    public static final int BAP_FCT_ID_FAVORITE_DEST_LIST;
+    public static final int BAP_FCT_ID_PREFERRED_DEST_LIST;
+    public static final int BAP_FCT_ID_NAV_BOOK;
+    public static final int BAP_FCT_ID_ADDRESS_LIST;
+    public static final int BAP_FCT_ID_RG_ACT_DEACT;
+    public static final int BAP_FCT_ID_REPEAT_LAST_NAV_ANNOUNCEMENT;
+    public static final int BAP_FCT_ID_VOICE_GUIDANCE;
+    public static final int BAP_FCT_ID_FUNCTION_SYNCHRONISATION;
+    public static final int BAP_FCT_ID_INFO_STATES;
+    public static final int BAP_FCT_ID_ACTIVE_RG_TYPE;
+    public static final int BAP_FCT_ID_TRAFFIC_BLOCK_INDICATION;
+    public static final int BAP_FCT_ID_GET_NEXT_LIST_POS;
+    public static final int BAP_FCT_ID_NB_SPELLER;
+    public static final int BAP_FCT_ID_MAP_COLOR_AND_TYPE;
+    public static final int BAP_FCT_ID_MAP_VIEW_AND_ORIENTATION;
+    public static final int BAP_FCT_ID_MAP_SCALE;
+    public static final int BAP_FCT_ID_DESTINATION_INFO;
+    public static final int BAP_FCT_ID_ALTITUDE;
+    public static final int BAP_FCT_ID_ONLINE_NAVIGATION_STATE;
+    public static final int BAP_FCT_ID_EXITVIEW;
+    public static final int BAP_FCT_ID_SEMIDYNAMIC_ROUTE_GUIDANCE;
+    public static final int BAP_FCT_ID_POI_SEARCH;
+    public static final int BAP_FCT_ID_POI_LIST;
+    public static final int BAP_FCT_ID_FSG_SETUP;
+    public static final int BAP_FCT_ID_MAP_PRESENTATION;
+    public static final int BAP_FCT_ID_MANEUVER_STATE;
+    public static final int BAP_FCT_ID_ETC_STATUS;
+    public static final int LSG_ERROR_ID_NO_ERROR;
+    public static final int LSG_ERROR_ID_BCL_MEDIA_NOT_ACCESSIBLE;
+    public static final int LSG_ERROR_ID_BCL_ILLEGAL_SEQUENCE_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_SEQUENCE_ERROR_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_TIMEOUT_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_OVERSIZE_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_BAD_DATA_LENGTH;
+    public static final int LSG_ERROR_ID_BCL_RECEIVED_DATA_LOST;
+    public static final int LSG_ERROR_ID_BPL_HEARTBEAT_TIMEOUT;
+    public static final int LSG_ERROR_ID_BPL_RETRY_TIMEOUT;
+    public static final int LSG_ERROR_ID_BPL_BUSY;
+    public static final int LSG_ERROR_ID_BPL_REQUEST_TIMEOUT;
+    public static final int LSG_ERROR_ID_BAL_WRONG_ADDRESSING;
+    public static final int LSG_ERROR_ID_BAL_INCOMPATIBLE_PROTOCOL_VERSION;
+    public static final int LSG_ERROR_ID_BAL_INCOMPATIBLE_FUNCTION_CATALOG_VERSION;
+    public static final int LSG_ERROR_ID_BAL_DATA_INVALID;
+    public static final int LSG_ERROR_ID_BAL_INVALID_STATE;
+    public static final int LSG_ERROR_ID_BAL_CACHE_NOT_AVAILABLE;
+    public static final int LSG_ERROR_ID_BAL_INVALID_ARGUMENT;
+    public static final int LSG_ERROR_ID_OUT_OF_RANGE;
+    public static final int LSG_ERROR_ID_TEMPORARY_NOT_AVAILABLE;
+    public static final int LSG_ERROR_ID_MAX_DATA_LENGTH_EXCEEDED;
+    public static final int LSG_ERROR_ID_UNIT_MISMATCH;
+    public static final int LSG_ERROR_ID_PARAMETER_MISMATCH;
+    public static final int LSG_ERROR_ID_INVALID_ARGUMENT;
+    public static final int LSG_ERROR_ID_METHOD_ABORTED;
+}
+

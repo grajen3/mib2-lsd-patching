@@ -1,0 +1,84 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.avdc.audio;
+
+public interface ASLAVDCAudioListenerConstants {
+    public static final int ACTIVE_PLAYED_DIRECTORY_NAME;
+    public static final int ACTIVE_SOURCE_NAME;
+    public static final int AUX_CONTENT_TYPE;
+    public static final int BT_AUDIO_AUTOPLAY_STATE;
+    public static final int CD_DVD_STATE;
+    public static final int DVD_CHANGER_STATE;
+    public static final int CD_MEDIUM_TYPE;
+    public static final int CONNECTED_MITSUMI_ADAPTER;
+    public static final int CURRENT_AUDIO_SOURCE;
+    public static final int CURRENT_AUDIO_SOURCE_CHANGE_REASON;
+    public static final int CURRENT_AUDIO_SOURCE_STATE;
+    public static final int CURRENT_AUDIO_SOURCE_VIDEO_CAPABLILITY;
+    public static final int CURRENT_BROWSING_SOURCE;
+    public static final int CURRENT_CD_RECORDING_QUALITY;
+    public static final int CURRENT_IMPORT_SOURCE;
+    public static final int CURRENT_MEDIA_TYPE;
+    public static final int CURRENT_TRACK_ELAPSED_TIME;
+    public static final int CURRENT_TRACK_REMAINING_TIME;
+    public static final int DELETION_PROGRESS;
+    public static final int DELETION_STATE__1;
+    public static final int IMPORT_PROGRESS;
+    public static final int IMPORT_STATE__1;
+    public static final int MEDIA_BLUETOOTH_DEVICE_NAME;
+    public static final int MEDIA_STORE_FILE_COUNT;
+    public static final int MEDIA_STORE_FILE_COUNT_MAX;
+    public static final int MEDIA_STORE_FREE_MEMORY_CAPACITY;
+    public static final int MEDIA_STORE_MEMORY_CAPACITY;
+    public static final int MEDIA_STORE_USED_MEMORY_CAPACITY;
+    public static final int MEDIATHEK_STATE;
+    public static final int NUMBER_OF_DELETED_FILES;
+    public static final int NUMBER_OF_FILES_TO_DELETE;
+    public static final int NUMBER_OF_FILES_TO_IMPORT;
+    public static final int NUMBER_OF_IMPORTED_FILES;
+    public static final int PLAYER_STATE;
+    public static final int PLAY_MORE_LIKE_THIS_FOUND_TITLE_COUNT;
+    public static final int REMOTE_CONTROL_PLAYER_STATE;
+    public static final int SD_CARD1STATE;
+    public static final int SD_CARD2STATE;
+    public static final int SHOW_PARTITIONS_FOR_CURRENT_SOURCE;
+    public static final int USB2STATE;
+    public static final int USB3STATE;
+    public static final int USB4STATE;
+    public static final int USB_STATE;
+    public static final int ANOTHER_DISK_AVAILABLE;
+    public static final int ANOTHER_FOLDER_AVAILABLE;
+    public static final int ANOTHER_SOURCE_AVAILABLE;
+    public static final int ANOTHER_TITLE_AVAILABLE;
+    public static final int AUX_DEVICE_AVAILABLE;
+    public static final int BROWSING_SUPPORTED;
+    public static final int BT_AUDIO_DEVICE_AVAILABLE;
+    public static final int CD_RIPPING_SUPPORTED;
+    public static final int DYN_AUDIO_SURROUND_MODE_ACTIVE;
+    public static final int EXTERNAL_AUX_AVAILABLE;
+    public static final int IMPORTING_INITIALIZED;
+    public static final int IMPORTING_SUPPORTED;
+    public static final int INCLUDE_SUBFOLDERS;
+    public static final int IPOD_ADAPTER_SUPPORTING_VIDEO;
+    public static final int MEDIA_STORE_CAPACITY_EXCEEDED_BY_IMPORT_SELECTION;
+    public static final int META_INFO_REQUEST_SUPPORTED;
+    public static final int MIX_ACTIVE;
+    public static final int MIX_SUPPORTED;
+    public static final int PLAY_ALL_SUPPORTED;
+    public static final int PLAY_MORE_LIKE_THIS_ACTIVE;
+    public static final int PLAY_MORE_LIKE_THIS_SUPPORTED;
+    public static final int PLAY_PAUSE_SUPPORTED;
+    public static final int PLAYTIME_SUPPORTED;
+    public static final int REPEAT_ACTIVE;
+    public static final int REPEAT_AVAILABLE_FOR_CURRENT_SCOPE;
+    public static final int REPEAT_FILE_SUPPORTED;
+    public static final int REPEAT_SUPPORTED;
+    public static final int SEEK_BACKWARD_SUPPORTED;
+    public static final int SEEK_FORWARD_SUPPORTED;
+    public static final int SET_TIME_POS_SUPPORTED;
+    public static final int SKIP_BACKWARD_SUPPORTED;
+    public static final int SKIP_FORWARD_SUPPORTED;
+    public static final int WLAN_DEVICE_CONNECTED;
+}
+

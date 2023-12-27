@@ -1,0 +1,46 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package generated.de.vw.mib.asl.internal.speechphone.response;
+
+public interface ASLSpeechPhoneResponseSystemEventConstants {
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_MAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_MAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_DIAL_CONTACT;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_DIAL_NUMBER;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_CALLSTACK;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_DIAL_MAILBOX;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_READ_SMS;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_REDIAL;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_EMERGENCY;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_SERVICE;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_HELP_INFORMATION;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_NUMBER;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_NUMBER_X;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_REDIAL;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_REDIAL_NO_NUMBER;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_REDIAL_NUMBER;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_REDIAL_CONTACT;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CONTACT;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSMISSED;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSDIALED;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSACCEPTED;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK_AGAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSMISSED_AGAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSDIALED_AGAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSACCEPTED_AGAIN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK_EMPTY;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK_COMPILING;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK_UNKNOWN;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACK_NBEST;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACKENTRY_NUMBER;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_CALLSTACKENTRY_CONTACT;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_DIAL_MAILBOX;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_SETUP_MAILBOX;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_EMERGENCY;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_SERVICE;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_INFORMATION;
+    public static final int SYSTEM_SPEECH_PHONE_RESPONSE_PHONE_NOT_AVAILABLE;
+}
+

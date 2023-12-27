@@ -1,0 +1,80 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.bap.mqbab2.generated.telephone2;
+
+public interface Telephone2Constants {
+    public static final int LSG_ID;
+    public static final int BAP_FCT_ID_GET_ALL;
+    public static final int BAP_FCT_ID_BAP_CONFIG;
+    public static final int BAP_FCT_ID_FUNCTION_LIST;
+    public static final int BAP_FCT_ID_HEART_BEAT;
+    public static final int BAP_FCT_ID_FSG_SETUP;
+    public static final int BAP_FCT_ID_FSG_OPERATION_STATE;
+    public static final int BAP_FCT_ID_MOBILE_SERVICE_SUPPORT;
+    public static final int BAP_FCT_ID_REGISTER_STATE2;
+    public static final int BAP_FCT_ID_LOCK_STATE2;
+    public static final int BAP_FCT_ID_NETWORK_PROVIDER2;
+    public static final int BAP_FCT_ID_SIGNAL_QUALITY2;
+    public static final int BAP_FCT_ID_DATA_CONNECTION_INDICATION2;
+    public static final int BAP_FCT_ID_EMAIL_STATE;
+    public static final int BAP_FCT_ID_PHONE_MODULE_STATE;
+    public static final int BAP_FCT_ID_CONNECTION_STATE;
+    public static final int BAP_FCT_ID_AUTOMATIC_CALL_FORWARDING;
+    public static final int BAP_FCT_ID_PHONEBOOK_DOWNLOAD_PROGRESS;
+    public static final int LSG_ERROR_ID_NO_ERROR;
+    public static final int LSG_ERROR_ID_BCL_MEDIA_NOT_ACCESSIBLE;
+    public static final int LSG_ERROR_ID_BCL_ILLEGAL_SEQUENCE_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_SEQUENCE_ERROR_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_TIMEOUT_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_OVERSIZE_SEGMENTATION;
+    public static final int LSG_ERROR_ID_BCL_BAD_DATA_LENGTH;
+    public static final int LSG_ERROR_ID_BCL_RECEIVED_DATA_LOST;
+    public static final int LSG_ERROR_ID_BPL_HEARTBEAT_TIMEOUT;
+    public static final int LSG_ERROR_ID_BPL_RETRY_TIMEOUT;
+    public static final int LSG_ERROR_ID_BPL_BUSY;
+    public static final int LSG_ERROR_ID_BPL_REQUEST_TIMEOUT;
+    public static final int LSG_ERROR_ID_BAL_WRONG_ADDRESSING;
+    public static final int LSG_ERROR_ID_BAL_INCOMPATIBLE_PROTOCOL_VERSION;
+    public static final int LSG_ERROR_ID_BAL_INCOMPATIBLE_FUNCTION_CATALOG_VERSION;
+    public static final int LSG_ERROR_ID_BAL_DATA_INVALID;
+    public static final int LSG_ERROR_ID_BAL_INVALID_STATE;
+    public static final int LSG_ERROR_ID_BAL_CACHE_NOT_AVAILABLE;
+    public static final int LSG_ERROR_ID_BAL_INVALID_ARGUMENT;
+    public static final int LSG_ERROR_ID_APP_ERR_OUT_OF_RANGE;
+    public static final int LSG_ERROR_ID_APP_ERR_TEMPORARY_NOT_AVAILABLE;
+    public static final int LSG_ERROR_ID_APP_ERR_MAX_DATA_LENGTH_EXCEEDED;
+    public static final int LSG_ERROR_ID_APP_ERR_UNIT_MISMATCH;
+    public static final int LSG_ERROR_ID_APP_ERR_PARAMETER_MISMATCH;
+    public static final int LSG_ERROR_ID_APP_ERR_INVALID_ARGUMENT;
+    public static final int LSG_ERROR_ID_APP_ERR_METHOD_ABORTED;
+    public static final int LSG_ERROR_ID_APP_ERR_UNKNOWN;
+    public static final int LSG_ERROR_ID_APP_ERR_NOT_SUCCESSFUL;
+    public static final int LSG_ERROR_ID_APP_ERR_OUT_OF_MEMORY;
+    public static final int LSG_ERROR_ID_APP_ERR_DATA_INVALID;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_USER_ACTIVE;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_NETWORK;
+    public static final int LSG_ERROR_ID_APP_ERR_NOT_SUPPORTED_BY_NETWORK;
+    public static final int LSG_ERROR_ID_APP_ERR_NOT_REGISTERED_EMERGENCY_CALL_ONLY;
+    public static final int LSG_ERROR_ID_APP_ERR_CURRENT_CODE_INVALID;
+    public static final int LSG_ERROR_ID_APP_ERR_NEW_CODE_INVALID;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_CODE_REQUIRED;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_REDIALNUMBER;
+    public static final int LSG_ERROR_ID_APP_ERR_ACTIVE_CALL_PRESENT_DIALING;
+    public static final int LSG_ERROR_ID_APP_ERR_HELD_CALL_PRESENT;
+    public static final int LSG_ERROR_ID_APP_ERR_ACTIVE_AND_HELD_CALL_PRESENT;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_CALL;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_CALL_RELATED_TO_CALL_ID;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_ACTIVE_CALL;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_CALL_ON_HOLD;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_INCOMING_WAITING_CALL;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_CONFERENCE;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_MEMBER_OF_CONFERENCE;
+    public static final int LSG_ERROR_ID_APP_ERR_MAXIMUM_NUMBER_FOR_MEMBERS_OF_CONFERENCE_REACHED;
+    public static final int LSG_ERROR_ID_APP_ERR_FUNCTION_NOT_SUPPORTED_FOR_CONFERENCE_CALLS;
+    public static final int LSG_ERROR_ID_APP_ERR_PHONEBOOK_DOWNLOAD_IN_PROGRESS;
+    public static final int LSG_ERROR_ID_APP_ERR_NOT_SUPPORTED_BY_MOBILE_PHONE_HFP;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_HEADSET_CONNECTED;
+    public static final int LSG_ERROR_ID_APP_ERR_NO_PAIRED_HEADSET;
+}
+

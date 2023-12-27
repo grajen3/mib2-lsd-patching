@@ -1,0 +1,81 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.esolutions.fw.comm.dsi.media;
+
+public interface DSIMediaBase$Consts {
+    public static final String VERSION;
+    public static final int DEVICETYPE_JUKEBOX;
+    public static final int DEVICETYPE_SD;
+    public static final int DEVICETYPE_USB;
+    public static final int DEVICETYPE_DVDINT;
+    public static final int DEVICETYPE_CDINT;
+    public static final int DEVICETYPE_CDC;
+    public static final int DEVICETYPE_DVDC;
+    public static final int DEVICETYPE_AUX;
+    public static final int DEVICETYPE_WLAN;
+    public static final int DEVICETYPE_BT;
+    public static final int DEVICETYPE_FILEPLAYER;
+    public static final int DEVICETYPE_BDINT;
+    public static final int DEVICEFLAGS_COOPERATIVE;
+    public static final int DEVICEFLAGS_EXCLUSIVE;
+    public static final int DEVICEFLAGS_ERROR;
+    public static final int DEVICEFLAGS_UNAVAILABLE;
+    public static final int DEVICEFLAGS_OVERTEMP;
+    public static final int DEVICEFLAGS_UNDERTEMP;
+    public static final int DEVICEFLAGS_OVERCURRENT;
+    public static final int DEVICEFLAGS_LIMITED_FUNCTIONALITY;
+    public static final int MEDIAFLAG_NOPLAYABLEFILES;
+    public static final int MEDIAFLAG_PASS_ALL_COMPLETED;
+    public static final int MEDIAFLAG_IMPORT_RUNNING;
+    public static final int MEDIAFLAG_INVALID_REGIONCODE;
+    public static final int MEDIAFLAG_PML_BLOCKED;
+    public static final int MEDIAFLAG_PML_RESTRICTED;
+    public static final int MEDIAFLAG_PLAYBACK;
+    public static final int MEDIAFLAG_NO_CONTENT;
+    public static final int MEDIAFLAG_COPY_PROTECTED;
+    public static final int MEDIAFLAG_READ_ONLY;
+    public static final int MEDIAFLAG_READY_FOR_RECORDER;
+    public static final int MEDIAFLAG_FIRMWARE_NOT_SUPPORTED;
+    public static final int MEDIAFLAG_PASS_FILESYSTEM_COMPLETED;
+    public static final int MEDIAFLAG_PASS_METADATA_COMPLETED;
+    public static final int MEDIAFLAG_PASS_COVERART_COMPLETED;
+    public static final int MEDIAFLAG_PASS_EXTERNAL_METADATA_COMPLETED;
+    public static final int MEDIAFLAG_DELETION_RUNNING;
+    public static final int MEDIAFLAG_LAST_PLAYSELECTION_VALID;
+    public static final int MEDIAFLAG_INTERNATIONALIZABLE;
+    public static final int MEDIAFLAG_CORRUPTED_PARTITION;
+    public static final int MEDIAFLAG_CHARGING;
+    public static final int MEDIAFLAG_DATABASE_FULL;
+    public static final int MEDIAFLAG_READY_FOR_ALBUMBROWSER;
+    public static final int MEDIATYPE_UNKNOWN;
+    public static final int MEDIATYPE_CDAUDIO;
+    public static final int MEDIATYPE_DVDAUDIO;
+    public static final int MEDIATYPE_DVDVIDEO;
+    public static final int MEDIATYPE_CDROM;
+    public static final int MEDIATYPE_DVDROM;
+    public static final int MEDIATYPE_FILESYSTEM;
+    public static final int MEDIATYPE_RAW;
+    public static final int MEDIATYPE_RCP;
+    public static final int MEDIATYPE_EMPTY;
+    public static final int MEDIATYPE_UNREADABLE;
+    public static final int MEDIATYPE_LOADING;
+    public static final int MEDIATYPE_AUTOMATIC_RELOAD;
+    public static final int MEDIATYPE_UNSUPPORTED;
+    public static final int MEDIATYPE_UPDATE;
+    public static final int MEDIATYPE_FILEPLAYER;
+    public static final int MEDIATYPE_NAVIGATIONDATABASE;
+    public static final int MEDIATYPE_IPOD;
+    public static final int MEDIATYPE_BLURAY;
+    public static final int MEDIATYPE_BOARDBOOK;
+    public static final int RESETMODE_FACTORYSETTINGS;
+    public static final int RESETMODE_DATABASE;
+    public static final int RESETMODE_JUKEBOX;
+    public static final int RESETMODE_CUSTOMERUPDATE;
+    public static final int CUSTOMERUPDATE_UNKNOWN;
+    public static final int CUSTOMERUPDATE_NOT_AVAILABLE;
+    public static final int CUSTOMERUPDATE_AVAILABLE;
+    public static final String DEVICE_NAME;
+    public static final String DEVICE_INSTANCE;
+}
+

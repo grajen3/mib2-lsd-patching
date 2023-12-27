@@ -1,0 +1,40 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package de.vw.mib.debug.common.probes.hsm;
+
+import de.vw.mib.debug.common.core.ByteArrayReader;
+import de.vw.mib.debug.common.probes.configuration.AbstractDebugProbeConfiguration;
+import java.util.Properties;
+
+public final class HsmProbeConfiguration
+extends AbstractDebugProbeConfiguration {
+    @Override
+    public byte getCodecVersion() {
+        return -2;
+    }
+
+    @Override
+    public String getDebugProbeName() {
+        return "HSMPROBE";
+    }
+
+    @Override
+    public void load(Properties properties) {
+    }
+
+    @Override
+    public Properties storeToProperties() {
+        Properties properties = new Properties();
+        return properties;
+    }
+
+    @Override
+    protected void readBinaryConfiguration(ByteArrayReader byteArrayReader) {
+    }
+
+    @Override
+    protected void writeBinaryConfiguration() {
+    }
+}
+
