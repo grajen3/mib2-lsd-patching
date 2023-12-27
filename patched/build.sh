@@ -25,6 +25,7 @@ de/esolutions/fw/dsi/androidauto2/DSIAndroidAuto2Dispatcher.java \
 de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
 "
 
+find . -name "*.class" -type f -delete
 for j in $FILES; do
 echo "Compiling $j"
 ${JAVA_HOME}/bin/javac -source 1.2 -target 1.2 -cp ".:${JAR}" $j
@@ -35,7 +36,12 @@ done
 #javac -source 1.2 -target 1.2 de/vw/mib/log4mib/internal/LoggingThread.java
 #jar cvf LoggingPatcher.jar de/vw/mib/log4mib/internal/LoggingThread.class
 
-CLASSES=$(echo $FILES | sed -r 's:\.java:.class:g')
+CLASSES=""
+for i in $FILES; do
+    classPattern=$(echo $i | sed -r 's:\.java:*.class:g')
+    classFiles=$(find . -path "./$classPattern" -type f)
+    CLASSES="$CLASSES $classFiles"
+done
 # echo "$CLASSES"
 
 jar cvf NavActiveIgnore.jar $CLASSES

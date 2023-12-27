@@ -78,9 +78,18 @@ public class CurrentStationInfo
     protected static /* final */ int[] SOUND_LISTENER_IDS;
     protected static /* final */ int[] EXBOX_LISTENER_IDS;
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status;
+    public static CurrentStationInfo instance;
+    private static int initCounter = 0;
+    private int currentInstance = -1;
+    public static String AndroidAutoTitle = "";
+    public static String AndroidAutoArtist = "";
+    public static String AndroidAutoAlbum = "";
 
     // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
+        currentInstance = initCounter++;
+        new Error("grajen3: CurrentStationInfo.init called #" + currentInstance).printStackTrace();
+        instance = this;
         this.getRadioService().addRadioServiceListener(this, RADIO_LISTENER_IDS);
         this.getMediaService().addMediaServiceListener(this, MEDIA_LISTENER_IDS);
         this.getTvTunerService().addTvTunerServiceListener(this, TV_TUNER_LISTENER_IDS);
@@ -355,6 +364,28 @@ public class CurrentStationInfo
         }
         currentStationInfo_Status.primaryInformation.setContent(string);
         currentStationInfo_Status.pi_Type = n;
+
+        if (!AndroidAutoTitle.equals("")) {
+            currentStationInfo_Status.primaryInformation.setContent(AndroidAutoTitle);
+            currentStationInfo_Status.pi_Type = 72;
+            currentStationInfo_Status.pi_Id = 0;
+        }
+
+        if (!AndroidAutoArtist.equals("")) {
+            currentStationInfo_Status.secondaryInformation.setContent(AndroidAutoArtist);
+            currentStationInfo_Status.si_Type = 73;
+        } else {
+            currentStationInfo_Status.secondaryInformation.setNullString();
+            currentStationInfo_Status.si_Type = 73;
+        }
+
+        if (!AndroidAutoAlbum.equals("")) {
+            currentStationInfo_Status.tertiaryInformation.setContent(AndroidAutoAlbum);
+            currentStationInfo_Status.ti_Type = 74;
+        } else {
+            currentStationInfo_Status.tertiaryInformation.setNullString();
+            currentStationInfo_Status.ti_Type = 74;
+        }
     }
 
     private void setStationInfoForExbox(CurrentStationInfo_Status currentStationInfo_Status) {
