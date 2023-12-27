@@ -4,7 +4,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 if [ -e "$1" ]; then
 JXE="$1"
 else
-JXE=car_lsd.jxe
+JXE=lsd.jxe
 #JXE=bench_vw_lsd.jxe
 fi
 
@@ -26,10 +26,10 @@ if [ ! -e $JAVA ]; then
   java -jar cfr-0.152.jar --previewfeatures false --switchexpression false --outputdir $JAVA $JAR
 fi
 
-if [ ! -e $ASM ]; then
-  echo "Disassembling $JAR -> $ASM"
-  python2 Krakatau/disassemble.py -roundtrip -out $ASM $JAR
-fi
+# if [ ! -e $ASM ]; then
+#   echo "Disassembling $JAR -> $ASM"
+#   python2 Krakatau/disassemble.py -roundtrip -out $ASM $JAR
+# fi
 
 if [ ! -e $JAVA_HOME ]; then
   mkdir $JAVA_HOME
