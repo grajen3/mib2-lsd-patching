@@ -195,18 +195,6 @@ public class DSIAndroidAuto2ReplyService
             }
 
             public String toString() {
-                // if (!CurrentStationInfo.AndroidAutoTitle.equals(this.title)
-                // || !CurrentStationInfo.AndroidAutoArtist.equals(this.artist)
-                // || !CurrentStationInfo.AndroidAutoAlbum.equals(this.album)
-                // ) {
-                // CurrentStationInfo.AndroidAutoTitle = this.title;
-                // CurrentStationInfo.AndroidAutoArtist = this.artist;
-                // CurrentStationInfo.AndroidAutoAlbum = this.album;
-                // if (CurrentStationInfo.instance != null) {
-                // // hack to trigger an update
-                // CurrentStationInfo.instance.languageChanged();
-                // }
-                // }
                 return "NowPlayingData:"
                         + " title: " + title
                         + " artist: " + artist
@@ -786,10 +774,7 @@ public class DSIAndroidAuto2ReplyService
                                 CurrentStationInfo.AndroidAutoTitle = nowPlaying.title;
                                 CurrentStationInfo.AndroidAutoArtist = nowPlaying.artist;
                                 CurrentStationInfo.AndroidAutoAlbum = nowPlaying.album;
-                                if (CurrentStationInfo.instance != null) {
-                                    // hack to trigger an update
-                                    CurrentStationInfo.instance.languageChanged();
-                                }
+                                CurrentStationInfo.refresh();
                             }
                         }
                     }

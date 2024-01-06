@@ -79,16 +79,18 @@ public class CurrentStationInfo
     protected static /* final */ int[] EXBOX_LISTENER_IDS;
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$audiosd$serializer$CurrentStationInfo_Status;
     public static CurrentStationInfo instance;
-    private static int initCounter = 0;
-    private int currentInstance = -1;
     public static String AndroidAutoTitle = "";
     public static String AndroidAutoArtist = "";
     public static String AndroidAutoAlbum = "";
 
+    public static void refresh() {
+        if (instance != null) {
+            instance.process(-1);
+        }
+    }
+
     // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
-        currentInstance = initCounter++;
-        new Error("grajen3: CurrentStationInfo.init called #" + currentInstance).printStackTrace();
         instance = this;
         this.getRadioService().addRadioServiceListener(this, RADIO_LISTENER_IDS);
         this.getMediaService().addMediaServiceListener(this, MEDIA_LISTENER_IDS);
