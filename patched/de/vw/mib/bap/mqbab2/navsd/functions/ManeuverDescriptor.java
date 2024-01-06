@@ -18,32 +18,36 @@ import de.vw.mib.bap.mqbab2.generated.navsd.serializer.ManeuverDescriptor_Status
 import de.vw.mib.bap.mqbab2.navsd.api.ASLNavSDConstants;
 import java.util.Iterator;
 
-public /*final*/ class ManeuverDescriptor
-extends Function
-implements Property,
-ASLNavSDConstants,
-NavigationServiceListener {
-    private static /*final*/ int MANEUVER_ZERO;
-    private static /*final*/ int MANEUVER_ONE;
-    private static /*final*/ int MANEUVER_TWO;
-    protected static /*final*/ int[] NAVIGATION_LISTENER_IDS;
+public /* final */ class ManeuverDescriptor
+        extends Function
+        implements Property,
+        ASLNavSDConstants,
+        NavigationServiceListener {
+    private static /* final */ int MANEUVER_ZERO;
+    private static /* final */ int MANEUVER_ONE;
+    private static /* final */ int MANEUVER_TWO;
+    protected static /* final */ int[] NAVIGATION_LISTENER_IDS;
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status;
 
-   // @Override
+    // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         return this.computeManeuverDescriptorStatus();
     }
 
     protected ManeuverDescriptor_Status dequeueBAPEntity() {
-        return (ManeuverDescriptor_Status)this.context.dequeueBAPEntity(this, class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status == null ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status = ManeuverDescriptor.class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.ManeuverDescriptor_Status")) : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status);
+        return (ManeuverDescriptor_Status) this.context.dequeueBAPEntity(this,
+                class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status == null
+                        ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status = ManeuverDescriptor
+                                .class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.ManeuverDescriptor_Status"))
+                        : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$ManeuverDescriptor_Status);
     }
 
-   // @Override
+    // @Override
     public void setFunctionData(BAPStage bAPStage, Object object) {
     }
 
-   // @Override
+    // @Override
     public int getFunctionId() {
         return 23;
     }
@@ -73,16 +77,16 @@ NavigationServiceListener {
         maneuverDescriptor_Status$Maneuver_1.sidestreets.setContent(string);
         maneuverDescriptor_Status$Maneuver_1.zLevelGuidance = n3;
         switch (maneuverDescriptor_Status$Maneuver_1.mainElement) {
-            case 1: 
-            case 2: 
-            case 3: 
-            case 4: 
-            case 5: 
-            case 8: 
-            case 9: 
-            case 10: 
-            case 34: 
-            case 35: 
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 8:
+            case 9:
+            case 10:
+            case 34:
+            case 35:
             case 38: {
                 maneuverDescriptor_Status$Maneuver_1.zLevelGuidance = 0;
                 maneuverDescriptor_Status$Maneuver_1.sidestreets.setEmptyString();
@@ -92,16 +96,16 @@ NavigationServiceListener {
                 maneuverDescriptor_Status$Maneuver_1.zLevelGuidance = 0;
                 break;
             }
-            case 17: 
-            case 18: 
-            case 19: 
-            case 20: 
-            case 25: 
-            case 26: 
-            case 27: 
-            case 28: 
-            case 29: 
-            case 30: 
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+            case 25:
+            case 26:
+            case 27:
+            case 28:
+            case 29:
+            case 30:
             case 31: {
                 maneuverDescriptor_Status$Maneuver_1.sidestreets.setEmptyString();
                 break;
@@ -122,27 +126,42 @@ NavigationServiceListener {
         }
         iterator = navigationService.getManeuverDescriptor();
         if (n > 0) {
-            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement)iterator.next();
-            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(navigationManeuverDescriptorElement.getDirection(), navigationManeuverDescriptorElement.getMainelement(), navigationManeuverDescriptorElement.getSideStreets(), navigationManeuverDescriptorElement.getZLevelGuidance());
+            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
+                    navigationManeuverDescriptorElement.getDirection(),
+                    navigationManeuverDescriptorElement.getMainelement(),
+                    navigationManeuverDescriptorElement.getSideStreets(),
+                    navigationManeuverDescriptorElement.getZLevelGuidance());
             maneuverDescriptor_Status.maneuver_1.direction = maneuverDescriptor_Status$Maneuver_1.direction;
             maneuverDescriptor_Status.maneuver_1.mainElement = maneuverDescriptor_Status$Maneuver_1.mainElement;
-            maneuverDescriptor_Status.maneuver_1.sidestreets.setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
+            maneuverDescriptor_Status.maneuver_1.sidestreets
+                    .setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
             maneuverDescriptor_Status.maneuver_1.zLevelGuidance = maneuverDescriptor_Status$Maneuver_1.zLevelGuidance;
         }
         if (n > 1) {
-            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement)iterator.next();
-            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(navigationManeuverDescriptorElement.getDirection(), navigationManeuverDescriptorElement.getMainelement(), navigationManeuverDescriptorElement.getSideStreets(), navigationManeuverDescriptorElement.getZLevelGuidance());
+            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
+                    navigationManeuverDescriptorElement.getDirection(),
+                    navigationManeuverDescriptorElement.getMainelement(),
+                    navigationManeuverDescriptorElement.getSideStreets(),
+                    navigationManeuverDescriptorElement.getZLevelGuidance());
             maneuverDescriptor_Status.maneuver_2.direction = maneuverDescriptor_Status$Maneuver_1.direction;
             maneuverDescriptor_Status.maneuver_2.mainElement = maneuverDescriptor_Status$Maneuver_1.mainElement;
-            maneuverDescriptor_Status.maneuver_2.sidestreets.setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
+            maneuverDescriptor_Status.maneuver_2.sidestreets
+                    .setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
             maneuverDescriptor_Status.maneuver_2.zLevelGuidance = maneuverDescriptor_Status$Maneuver_1.zLevelGuidance;
         }
         if (n > 2) {
-            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement)iterator.next();
-            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(navigationManeuverDescriptorElement.getDirection(), navigationManeuverDescriptorElement.getMainelement(), navigationManeuverDescriptorElement.getSideStreets(), navigationManeuverDescriptorElement.getZLevelGuidance());
+            navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator.next();
+            maneuverDescriptor_Status$Maneuver_1 = this.validateManeuverData(
+                    navigationManeuverDescriptorElement.getDirection(),
+                    navigationManeuverDescriptorElement.getMainelement(),
+                    navigationManeuverDescriptorElement.getSideStreets(),
+                    navigationManeuverDescriptorElement.getZLevelGuidance());
             maneuverDescriptor_Status.maneuver_3.direction = maneuverDescriptor_Status$Maneuver_1.direction;
             maneuverDescriptor_Status.maneuver_3.mainElement = maneuverDescriptor_Status$Maneuver_1.mainElement;
-            maneuverDescriptor_Status.maneuver_3.sidestreets.setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
+            maneuverDescriptor_Status.maneuver_3.sidestreets
+                    .setContent(maneuverDescriptor_Status$Maneuver_1.sidestreets);
             maneuverDescriptor_Status.maneuver_3.zLevelGuidance = maneuverDescriptor_Status$Maneuver_1.zLevelGuidance;
         }
     }
@@ -151,43 +170,43 @@ NavigationServiceListener {
         this.getDelegate().getPropertyListener(this).statusProperty(maneuverDescriptor_Status, this);
     }
 
-   // @Override
+    // @Override
     public void process(int n) {
         this.sendManeuverDescriptor(this.computeManeuverDescriptorStatus());
     }
 
-   // @Override
+    // @Override
     public void getProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void requestAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void errorAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void initialize(boolean bl) {
     }
 
-   // @Override
+    // @Override
     public void uninitialize() {
         this.getNavigationService().removeNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
     }
 
-   // @Override
+    // @Override
     public void indicationError(int n, BAPFunctionListener bAPFunctionListener) {
     }
 
-   // @Override
+    // @Override
     public void setGetProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void ackProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
@@ -200,11 +219,11 @@ NavigationServiceListener {
         return maneuverDescriptor_Status;
     }
 
-   // @Override
+    // @Override
     public void processHMIEvent(int n) {
     }
 
-   // @Override
+    // @Override
     public void updateNavigationData(NavigationService navigationService, int n) {
         this.process(-1);
     }
@@ -212,14 +231,12 @@ NavigationServiceListener {
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            throw new NoClassDefFoundError(string);
         }
     }
 
     static {
-        NAVIGATION_LISTENER_IDS = new int[]{732, 751};
+        NAVIGATION_LISTENER_IDS = new int[] { 732, 751 };
     }
 }
-

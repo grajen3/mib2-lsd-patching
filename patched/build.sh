@@ -3,17 +3,6 @@ set -e
 . ../process.sh
 
 FILES="\
-de/vw/mib/asl/internal/mostkombi/streamsink/usecases/ChangeDataRateSequence.java \
-de/vw/mib/bap/mqbab2/common/api/androidauto/AndroidAutoASLDataAdapter.java \
-de/vw/mib/asl/internal/androidauto/target/DSIHandler.java \
-de/vw/mib/asl/internal/androidauto/target/NavigationListener.java \
-de/vw/mib/asl/internal/androidauto/target/AndroidAutoGlobalProperties.java \
-de/vw/mib/asl/internal/androidauto/api/impl/ExboxGuidanceListenerImpl.java \
-de/vw/mib/asl/internal/carplay/common/CarPlayModeHandling.java \
-de/vw/mib/asl/internal/androidauto/target/AndroidAutoTarget.java \
-"
-
-FILES="\
 de/esolutions/fw/comm/dsi/androidauto2/impl/DSIAndroidAuto2ReplyService.java \
 de/esolutions/fw/comm/dsi/carplay/impl/DSICarplayProxy.java \
 de/vw/mib/asl/internal/androidauto/target/RequestHandler.java \
@@ -23,6 +12,10 @@ de/vw/mib/asl/internal/exboxm/api/impl/guidance/ExboxGuidanceManagerImpl.java \
 de/esolutions/fw/dsi/androidauto/DSIAndroidAutoDispatcher.java \
 de/esolutions/fw/dsi/androidauto2/DSIAndroidAuto2Dispatcher.java \
 de/vw/mib/bap/mqbab2/audiosd/functions/CurrentStationInfo.java \
+de/vw/mib/bap/mqbab2/navsd/functions/DistanceToNextManeuver.java \
+de/vw/mib/bap/mqbab2/navsd/functions/ManeuverDescriptor.java \
+de/vw/mib/bap/mqbab2/navsd/functions/RGStatus.java \
+de/vw/mib/bap/mqbab2/navsd/functions/TurnToInfo.java \
 "
 
 find . -name "*.class" -type f -delete

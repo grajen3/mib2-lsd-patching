@@ -17,33 +17,37 @@ import de.vw.mib.bap.mqbab2.generated.navsd.serializer.TurnToInfo_Status;
 import de.vw.mib.bap.mqbab2.navsd.api.ASLNavSDConstants;
 
 public class TurnToInfo
-extends Function
-implements Property,
-ASLNavSDConstants,
-NavigationServiceListener {
-    protected static /*final*/ int[] NAVIGATION_LISTENER_IDS = new int[]{744};
+        extends Function
+        implements Property,
+        ASLNavSDConstants,
+        NavigationServiceListener {
+    protected static /* final */ int[] NAVIGATION_LISTENER_IDS = new int[] { 744 };
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status;
 
-   // @Override
+    // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         return null;
     }
 
     protected TurnToInfo_Status dequeueBAPEntity() {
-        return (TurnToInfo_Status)this.context.dequeueBAPEntity(this, class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status == null ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status = TurnToInfo.class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.TurnToInfo_Status")) : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status);
+        return (TurnToInfo_Status) this.context.dequeueBAPEntity(this,
+                class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status == null
+                        ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status = TurnToInfo
+                                .class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.TurnToInfo_Status"))
+                        : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status);
     }
 
-   // @Override
+    // @Override
     public void setFunctionData(BAPStage bAPStage, Object object) {
     }
 
-   // @Override
+    // @Override
     public int getFunctionId() {
         return 20;
     }
 
-   // @Override
+    // @Override
     public void process(int n) {
         this.sendTurnToInfoStatus(this.computeTurnToInfoStatus());
     }
@@ -54,38 +58,38 @@ NavigationServiceListener {
         return turnToInfo_Status;
     }
 
-   // @Override
+    // @Override
     public void getProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void requestAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void errorAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void initialize(boolean bl) {
     }
 
-   // @Override
+    // @Override
     public void uninitialize() {
         this.getNavigationService().removeNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
     }
 
-   // @Override
+    // @Override
     public void indicationError(int n, BAPFunctionListener bAPFunctionListener) {
     }
 
-   // @Override
+    // @Override
     public void setGetProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void ackProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
@@ -100,11 +104,11 @@ NavigationServiceListener {
         turnToInfo_Status.signPost.setContent(navigationTurnToInfo.getTurnToInfoSignPost());
     }
 
-   // @Override
+    // @Override
     public void processHMIEvent(int n) {
     }
 
-   // @Override
+    // @Override
     public void updateNavigationData(NavigationService navigationService, int n) {
         this.process(-1);
     }
@@ -112,10 +116,8 @@ NavigationServiceListener {
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            throw new NoClassDefFoundError(string);
         }
     }
 }
-

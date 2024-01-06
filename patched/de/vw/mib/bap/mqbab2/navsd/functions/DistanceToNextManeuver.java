@@ -20,21 +20,21 @@ import de.vw.mib.bap.mqbab2.generated.navsd.serializer.DistanceToNextManeuver_St
 import de.vw.mib.bap.mqbab2.navsd.api.ASLNavSDConstants;
 import java.util.Iterator;
 
-public /*final*/ class DistanceToNextManeuver
-extends Function
-implements Property,
-ASLNavSDConstants,
-SystemServiceListener,
-NavigationServiceListener {
-    private static /*final*/ int NUMBER_OF_VALUES;
-    private static /*final*/ int WUSCHKE_DISTANCE_KM_CONSTANT;
-    private static /*final*/ int WUSCHKE_DISTANCE_MILES_CONSTANT;
-    private static /*final*/ int INVALID_DISTANCE;
-    protected static /*final*/ int[] SYSTEM_LISTENER_IDS;
-    protected static /*final*/ int[] NAVIGATION_LISTENER_IDS;
+public /* final */ class DistanceToNextManeuver
+        extends Function
+        implements Property,
+        ASLNavSDConstants,
+        SystemServiceListener,
+        NavigationServiceListener {
+    private static /* final */ int NUMBER_OF_VALUES;
+    private static /* final */ int WUSCHKE_DISTANCE_KM_CONSTANT;
+    private static /* final */ int WUSCHKE_DISTANCE_MILES_CONSTANT;
+    private static /* final */ int INVALID_DISTANCE;
+    protected static /* final */ int[] SYSTEM_LISTENER_IDS;
+    protected static /* final */ int[] NAVIGATION_LISTENER_IDS;
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status;
 
-   // @Override
+    // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
         this.getSystemService().addSystemServiceListener(this, SYSTEM_LISTENER_IDS);
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
@@ -42,14 +42,18 @@ NavigationServiceListener {
     }
 
     protected DistanceToNextManeuver_Status dequeueBAPEntity() {
-        return (DistanceToNextManeuver_Status)this.context.dequeueBAPEntity(this, class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status == null ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status = DistanceToNextManeuver.class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.DistanceToNextManeuver_Status")) : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status);
+        return (DistanceToNextManeuver_Status) this.context.dequeueBAPEntity(this,
+                class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status == null
+                        ? (class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status = DistanceToNextManeuver
+                                .class$("de.vw.mib.bap.mqbab2.generated.navsd.serializer.DistanceToNextManeuver_Status"))
+                        : class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$DistanceToNextManeuver_Status);
     }
 
-   // @Override
+    // @Override
     public void setFunctionData(BAPStage bAPStage, Object object) {
     }
 
-   // @Override
+    // @Override
     public int getFunctionId() {
         return 18;
     }
@@ -57,32 +61,34 @@ NavigationServiceListener {
     private int verifiedBapBargraphSetting() {
         int n;
         NavigationService navigationService = this.getNavigationService();
-        NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService.getDistanceToNextManeuver();
+        NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService
+                .getDistanceToNextManeuver();
         Iterator iterator = navigationService.getManeuverDescriptor();
         if (iterator.hasNext()) {
-            NavigationManeuverDescriptorElement navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement)iterator.next();
+            NavigationManeuverDescriptorElement navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator
+                    .next();
             switch (navigationManeuverDescriptorElement.getMainelement()) {
-                case 3: 
-                case 4: 
-                case 5: 
-                case 13: 
-                case 14: 
-                case 15: 
-                case 16: 
-                case 17: 
-                case 18: 
-                case 19: 
-                case 20: 
-                case 21: 
-                case 22: 
-                case 23: 
-                case 24: 
-                case 25: 
-                case 26: 
-                case 27: 
-                case 32: 
-                case 33: 
-                case 34: 
+                case 3:
+                case 4:
+                case 5:
+                case 13:
+                case 14:
+                case 15:
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 24:
+                case 25:
+                case 26:
+                case 27:
+                case 32:
+                case 33:
+                case 34:
                 case 35: {
                     n = navigationDistanceToNextManeuver.getDistanceToNextManeuverBargraphOnOff();
                     break;
@@ -102,10 +108,11 @@ NavigationServiceListener {
         boolean bl;
         Iterator iterator = this.getNavigationService().getManeuverDescriptor();
         if (iterator.hasNext()) {
-            NavigationManeuverDescriptorElement navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement)iterator.next();
+            NavigationManeuverDescriptorElement navigationManeuverDescriptorElement = (NavigationManeuverDescriptorElement) iterator
+                    .next();
             switch (navigationManeuverDescriptorElement.getMainelement()) {
-                case 8: 
-                case 9: 
+                case 8:
+                case 9:
                 case 10: {
                     bl = false;
                     break;
@@ -123,15 +130,23 @@ NavigationServiceListener {
 
     private void setDistanceToNextManeuverStatusData(DistanceToNextManeuver_Status distanceToNextManeuver_Status) {
         NavigationService navigationService = this.getNavigationService();
-        NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService.getDistanceToNextManeuver();
+        NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = navigationService
+                .getDistanceToNextManeuver();
         boolean bl = navigationService.getRouteGuidanceState() == 1;
         boolean bl2 = navigationService.getDistanceToNextManeuver().getDistanceToNextManeuverDistance() > 0 && bl;
         distanceToNextManeuver_Status.bargraphInfo.bargraphOnOff = this.verifiedBapBargraphSetting();
         this.computeDistanceAndDistanceUnit(distanceToNextManeuver_Status, bl);
-        distanceToNextManeuver_Status.bargraphInfo.bargraph = navigationDistanceToNextManeuver.getDistanceToNextManeuverBargraph();
-        distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = distanceToNextManeuver_Status.distanceToNextManeuver.unit != 0 && distanceToNextManeuver_Status.distanceToNextManeuver.unit != 3 ? (distanceToNextManeuver_Status.distanceToNextManeuver.unit == 4 ? bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 125 : bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 200) : bl2;
+        distanceToNextManeuver_Status.bargraphInfo.bargraph = navigationDistanceToNextManeuver
+                .getDistanceToNextManeuverBargraph();
+        distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = distanceToNextManeuver_Status.distanceToNextManeuver.unit != 0
+                && distanceToNextManeuver_Status.distanceToNextManeuver.unit != 3
+                        ? (distanceToNextManeuver_Status.distanceToNextManeuver.unit == 4
+                                ? bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 125
+                                : bl2 && distanceToNextManeuver_Status.distanceToNextManeuver.distance <= 200)
+                        : bl2;
         if (distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid) {
-            distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = this.showDistanceToNextManeuver();
+            distanceToNextManeuver_Status.validityInformation.distanceToNextManeuverValid = this
+                    .showDistanceToNextManeuver();
         }
     }
 
@@ -139,61 +154,65 @@ NavigationServiceListener {
         this.getDelegate().getPropertyListener(this).statusProperty(distanceToNextManeuver_Status, this);
     }
 
-   // @Override
+    // @Override
     public void process(int n) {
         DistanceToNextManeuver_Status distanceToNextManeuver_Status = this.dequeueBAPEntity();
         this.setDistanceToNextManeuverStatusData(distanceToNextManeuver_Status);
         this.sendDistanceToNextManeuverStatus(distanceToNextManeuver_Status);
     }
 
-   // @Override
+    // @Override
     public void getProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void requestAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void errorAcknowledge() {
     }
 
-   // @Override
+    // @Override
     public void initialize(boolean bl) {
     }
 
-   // @Override
+    // @Override
     public void uninitialize() {
         this.getSystemService().removeSystemServiceListener(this, SYSTEM_LISTENER_IDS);
         this.getNavigationService().removeNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
     }
 
-   // @Override
+    // @Override
     public void indicationError(int n, BAPFunctionListener bAPFunctionListener) {
     }
 
-   // @Override
+    // @Override
     public void setGetProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-   // @Override
+    // @Override
     public void ackProperty(BAPEntity bAPEntity, PropertyListener propertyListener) {
         propertyListener.requestError(65, this);
     }
 
-    private void computeDistanceAndDistanceUnit(DistanceToNextManeuver_Status distanceToNextManeuver_Status, boolean bl) {
+    private void computeDistanceAndDistanceUnit(DistanceToNextManeuver_Status distanceToNextManeuver_Status,
+            boolean bl) {
         if (bl) {
-            NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = this.getNavigationService().getDistanceToNextManeuver();
+            NavigationDistanceToNextManeuver navigationDistanceToNextManeuver = this.getNavigationService()
+                    .getDistanceToNextManeuver();
             int[] nArray = new int[2];
             switch (this.getSystemService().getCurrentDistanceUnit()) {
                 case 1: {
-                    this.getFixFormatter().cnv2Distance2withMinDistanceMiles(navigationDistanceToNextManeuver.getDistanceToNextManeuverDistance(), nArray);
+                    this.getFixFormatter().cnv2Distance2withMinDistanceMiles(
+                            navigationDistanceToNextManeuver.getDistanceToNextManeuverDistance(), nArray);
                     break;
                 }
                 default: {
-                    this.getFixFormatter().cnvDistance2KilometersExt(navigationDistanceToNextManeuver.getDistanceToNextManeuverDistance(), nArray);
+                    this.getFixFormatter().cnvDistance2KilometersExt(
+                            navigationDistanceToNextManeuver.getDistanceToNextManeuverDistance(), nArray);
                 }
             }
             distanceToNextManeuver_Status.distanceToNextManeuver.distance = nArray[0];
@@ -204,16 +223,16 @@ NavigationServiceListener {
         }
     }
 
-   // @Override
+    // @Override
     public void processHMIEvent(int n) {
     }
 
-   // @Override
+    // @Override
     public void updateNavigationData(NavigationService navigationService, int n) {
         this.process(-1);
     }
 
-   // @Override
+    // @Override
     public void updateSystemData(SystemService systemService, int n) {
         this.process(-1);
     }
@@ -221,15 +240,13 @@ NavigationServiceListener {
     static /* synthetic */ Class class$(String string) {
         try {
             return Class.forName(string);
-        }
-        catch (ClassNotFoundException classNotFoundException) {
-            throw new NoClassDefFoundError().initCause(classNotFoundException);
+        } catch (ClassNotFoundException classNotFoundException) {
+            throw new NoClassDefFoundError(string);
         }
     }
 
     static {
-        SYSTEM_LISTENER_IDS = new int[]{1584};
-        NAVIGATION_LISTENER_IDS = new int[]{732, 741, 751};
+        SYSTEM_LISTENER_IDS = new int[] { 1584 };
+        NAVIGATION_LISTENER_IDS = new int[] { 732, 741, 751 };
     }
 }
-
