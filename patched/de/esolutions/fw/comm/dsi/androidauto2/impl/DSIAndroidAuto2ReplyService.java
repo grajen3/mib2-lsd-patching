@@ -9,7 +9,6 @@ import de.esolutions.fw.comm.core.IProxyFrontend;
 import de.esolutions.fw.comm.core.ServiceInstanceID;
 import de.esolutions.fw.comm.core.method.MethodException;
 import de.esolutions.fw.comm.dsi.androidauto2.DSIAndroidAuto2Reply;
-import de.esolutions.fw.comm.dsi.androidauto2.impl.CallStateSerializer;
 import de.esolutions.fw.comm.dsi.androidauto2.impl.PlaybackInfoSerializer;
 import de.esolutions.fw.comm.dsi.androidauto2.impl.TelephonyStateSerializer;
 import de.esolutions.fw.comm.dsi.androidauto2.impl.TrackDataSerializer;
@@ -17,11 +16,15 @@ import de.esolutions.fw.comm.dsi.global.impl.ResourceLocatorSerializer;
 import de.esolutions.fw.util.serializer.IDeserializer;
 import de.esolutions.fw.util.serializer.exception.SerializerException;
 import de.vw.mib.bap.mqbab2.audiosd.functions.CurrentStationInfo;
+import de.vw.mib.bap.mqbab2.navsd.functions.DistanceToNextManeuver;
+import de.vw.mib.bap.mqbab2.navsd.functions.ManeuverDescriptor;
+import de.vw.mib.bap.mqbab2.navsd.functions.RGStatus;
+import de.vw.mib.bap.mqbab2.navsd.functions.TurnToInfo;
 import de.vw.mib.util.StringBuilder;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -470,6 +473,9 @@ public class DSIAndroidAuto2ReplyService
         public abstract class LastEventHandler {
             public void handleEvent(String type, Event event) {
             }
+
+            public void runFinished() {
+            }
         }
 
         Map map = new HashMap();
@@ -483,15 +489,11 @@ public class DSIAndroidAuto2ReplyService
                 if (esotrace_dir.exists()) {
                     int i = 0;
                     while (true) {
-                        long start = System.currentTimeMillis();
                         scanFiles();
-                        long timeDiff = System.currentTimeMillis() - start;
-                        System.out.println("TracesSDScanner run #" + i++ + " duration " + timeDiff +
-                                "ms");
                         if (!runInALoop) {
                             return;
                         }
-                        Thread.sleep(1000);
+                        Thread.sleep(500);
                     }
                 }
             } catch (Exception e) {
@@ -499,68 +501,85 @@ public class DSIAndroidAuto2ReplyService
             }
         }
 
-        private void scanFiles() {
-            try {
-                File[] filesInRootLogDir = esotrace_dir.listFiles();
-                TreeSet logFiles = new TreeSet();
-                String latestLogDir = null;
-                for (int i = 0; i < filesInRootLogDir.length; i++) {
-                    File fileInRootDir = filesInRootLogDir[i];
-                    if (fileInRootDir.isDirectory()) {
-                        File[] filesInLogDir = fileInRootDir.listFiles();
+        public TreeSet getFilesToScan() {
+            File[] filesInRootLogDir = esotrace_dir.listFiles();
+            TreeSet logFiles = new TreeSet();
+            latestLogDir = null;
+            for (int i = 0; i < filesInRootLogDir.length; i++) {
+                File fileInRootDir = filesInRootLogDir[i];
+                if (fileInRootDir.isDirectory()) {
+                    File[] filesInLogDir = fileInRootDir.listFiles();
 
-                        if (latestLogDir == null || latestLogDir.compareTo(fileInRootDir.getPath()) < 0) {
-                            boolean didClear = false;
+                    if (latestLogDir == null || latestLogDir.compareTo(fileInRootDir.getPath()) <= 0) {
+                        boolean didClear = false;
 
-                            for (int j = 0; j < filesInLogDir.length; j++) {
-                                String filePath = filesInLogDir[j].getPath();
-                                String extension = "";
+                        for (int j = 0; j < filesInLogDir.length; j++) {
+                            String filePath = filesInLogDir[j].getPath();
+                            String extension = "";
 
-                                int iext = filePath.lastIndexOf('.');
-                                if (iext > 0) {
-                                    extension = filePath.substring(iext + 1);
+                            int iext = filePath.lastIndexOf('.');
+                            if (iext > 0) {
+                                extension = filePath.substring(iext + 1);
+                            }
+
+                            if (extension.equals("esotrace")) {
+                                if (!didClear) {
+                                    logFiles.clear();
+                                    didClear = true;
                                 }
-
-                                if (extension.equals("esotrace")) {
-                                    if (!didClear) {
-                                        logFiles.clear();
-                                        didClear = true;
-                                    }
+                                if (lastScannedFile == null || lastScannedFile.compareTo(filePath) < 0) {
                                     logFiles.add(filePath);
                                 }
                             }
-                            latestLogDir = fileInRootDir.getPath();
                         }
+                        latestLogDir = fileInRootDir.getPath();
                     }
                 }
+            }
+            return logFiles;
+        }
+
+        String latestLogDir = null;
+
+        private boolean hasAnythingToFlush = false;
+
+        public void maybeFlushUpdates() {
+            if (!hasAnythingToFlush) {
+                return;
+            }
+
+            Iterator iterator = map.entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry entry = (Map.Entry) iterator.next();
+                Event event = (Event) entry.getValue();
+
+                if (lastEventHandler != null) {
+                    lastEventHandler.handleEvent((String) entry.getKey(), event);
+                } else {
+                    System.out
+                            .println("TracesSDScanner(default event handler) Last event of type " + entry.getKey() + "="
+                                    + event);
+                }
+            }
+
+            if (lastEventHandler != null) {
+                lastEventHandler.runFinished();
+            }
+
+            hasAnythingToFlush = false;
+        }
+
+        private void scanFiles() {
+            try {
+                TreeSet logFiles = getFilesToScan();
 
                 Iterator logFilesIterator = logFiles.iterator();
                 while (logFilesIterator.hasNext()) {
                     String logFilePath = (String) logFilesIterator.next();
-
-                    if (lastScannedFile == null || lastScannedFile.compareTo(logFilePath) <= 0) {
-                        this.scanFile(logFilePath);
-
-                    }
+                    this.scanFile(logFilePath, !logFilesIterator.hasNext());
                 }
 
-                System.out.println("TracesSDScanner collected " + eventCount + " events");
-                System.out.println("TracesSDScanner collected fields:");
-                printCollected();
-
-                Iterator iterator = map.entrySet().iterator();
-                while (iterator.hasNext()) {
-                    Map.Entry entry = (Map.Entry) iterator.next();
-                    Event event = (Event) entry.getValue();
-
-                    if (lastEventHandler != null) {
-                        lastEventHandler.handleEvent((String) entry.getKey(), event);
-                    } else {
-                        System.out
-                                .println("TracesSDScanner(default event handler) Last event of type " + entry.getKey()
-                                        + "=" + event);
-                    }
-                }
+                maybeFlushUpdates();
             } catch (Exception e) {
                 System.out.println("TracesSDScanner failed while running scanFiles: ");
                 e.printStackTrace();
@@ -572,10 +591,12 @@ public class DSIAndroidAuto2ReplyService
         }
 
         class UTFExtractor {
-            FileInputStream stream;
+            RandomAccessFile stream;
+            boolean isLastFile;
 
-            public UTFExtractor(FileInputStream stream) {
+            public UTFExtractor(RandomAccessFile stream, boolean isLastFile) {
                 this.stream = stream;
+                this.isLastFile = isLastFile;
             }
 
             private int matched = 0;
@@ -592,40 +613,49 @@ public class DSIAndroidAuto2ReplyService
             private int bytesBUfferLen = 0;
             private byte b = 0;
 
-            public long _timeReading = 0;
-            public long _timeReadingAndParsing = 0;
-            public long _timeCreatingStringsFromBytes = 0;
-
-            public long getTimeParsingBytesIntoStrings() {
-                return _timeReadingAndParsing - _timeReading;
-            }
-
             private byte read() throws Exception, IOException {
-                if (bytesBuferPos >= bytesBUfferLen) {
-                    // try to fill buffer
-                    long start = System.currentTimeMillis();
-                    int len = stream.read(bytesBuffer);
-                    _timeReading += System.currentTimeMillis() - start;
+                while (true) {
+                    if (bytesBuferPos >= bytesBUfferLen) {
+                        // try to fill buffer
+                        int len = stream.read(bytesBuffer);
 
-                    if (len <= 0) {
-                        throw new NoMoreBytesException();
+                        if (len <= 0) {
+                            boolean thisFileIsFinished = true;
+                            if (this.isLastFile && runInALoop) {
+                                maybeFlushUpdates();
+                                Thread.sleep(500);
+                                // check if there are any new files
+                                TreeSet logFiles = getFilesToScan();
+                                if (logFiles.size() == 0) {
+                                    // if there is nothing new - let's see if anything was appended
+
+                                    // when new stuff is appended
+                                    // consumed EOF byte is replaced with actual content
+                                    // so we need to "rewind" 1 byte to be able to read new content
+                                    // otherwise we would lose 1 byte and potentially break event mid write
+                                    stream.seek(stream.getFilePointer() - 1);
+                                    thisFileIsFinished = false;
+                                }
+                            }
+
+                            if (thisFileIsFinished) {
+                                throw new NoMoreBytesException();
+                            }
+                        } else {
+                            bytesBuferPos = 0;
+                            bytesBUfferLen = len;
+                        }
                     }
 
-                    bytesBuferPos = 0;
-                    bytesBUfferLen = len;
+                    byte b = bytesBuffer[bytesBuferPos++];
+                    // we skip EOF byte
+                    if (b != 10) {
+                        return b;
+                    }
                 }
-
-                return bytesBuffer[bytesBuferPos++];
             }
 
-            public String getNext() {
-                long start = System.currentTimeMillis();
-                String ret = getNextWithoutTiming();
-                _timeReadingAndParsing += System.currentTimeMillis() - start;
-                return ret;
-            }
-
-            private String getNextWithoutTiming() {
+            private String getNext() {
                 try {
                     matched = 0;
 
@@ -647,9 +677,7 @@ public class DSIAndroidAuto2ReplyService
                                 builderbytes[bytesC++] = b;
                             }
 
-                            long start = System.currentTimeMillis();
                             String s = new String(builderbytes, 0, bytesC);
-                            _timeCreatingStringsFromBytes += System.currentTimeMillis() - start;
                             return s;
                         } catch (Exception e) {
                             System.out.println("www" + e);
@@ -669,22 +697,20 @@ public class DSIAndroidAuto2ReplyService
             }
         }
 
-        private void scanFile(String path) {
+        private void scanFile(String path, boolean isLastFile) {
             int lineNumber = 0;
             int offset = 0;
             String line = "";
-            FileInputStream fis = null;
+            RandomAccessFile fis = null;
             try {
                 System.out.println("TracesSDScanner running scanFile \"" + path + "\"");
 
-                fis = new FileInputStream(new File(path));
-                UTFExtractor ext = new UTFExtractor(fis);
+                fis = new RandomAccessFile(path, "r");
+                UTFExtractor ext = new UTFExtractor(fis, isLastFile);
 
-                long _timeParsingStringsIntoEvents = 0;
-                long startTotal = System.currentTimeMillis();
+                lastScannedFile = path;
 
                 while ((line = ext.getNext()) != null) {
-                    long start = System.currentTimeMillis();
                     char c;
                     offset = 0;
                     StringBuilder metaTypeBuilder = new StringBuilder();
@@ -722,21 +748,17 @@ public class DSIAndroidAuto2ReplyService
                     if (event != null) {
                         // System.out.println("created for " + metaType + " " + event);
                         map.put(metaType, event);
+                        hasAnythingToFlush = true;
                     } else {
                         System.out.println("Skipped " + metaType + " / " + metaValues);
                     }
-                    _timeParsingStringsIntoEvents += System.currentTimeMillis() - start;
                 }
 
-                long totalScanFile = System.currentTimeMillis() - startTotal;
-
-                System.out.println("TracesSDScanner.scanFile \"" + path + "\" timings:\n - total: " + totalScanFile
-                        + "ms\n - stream reading bytes: " + ext._timeReading + "ms\n" + //
-                        " - trying to parse bytes into strings: " + ext.getTimeParsingBytesIntoStrings()
-                        + "ms\n - creating strings from selected bytes: " + ext._timeCreatingStringsFromBytes
-                        + "ms\n - parsing strings into events: " + _timeParsingStringsIntoEvents + "ms");
-
-                lastScannedFile = path;
+                if (isLastFile) {
+                    System.out.println("TracesSDScanner collected " + eventCount + " events");
+                    System.out.println("TracesSDScanner collected fields:");
+                    printCollected();
+                }
             } catch (Exception e) {
                 System.out.println("TracesSDScanner failed while running scanFile \"" + path
                         + "\": ");
@@ -764,10 +786,41 @@ public class DSIAndroidAuto2ReplyService
             if (_instance == null) {
                 TracesSDScanner scanner = new TracesSDScanner();
                 scanner.lastEventHandler = scanner.new LastEventHandler() {
+                    TracesSDScanner.NavigationNextTurnEvent nextTurn = null;
+                    TracesSDScanner.NavigationNextTurnDistance nextTurnDistance = null;
+                    TracesSDScanner.NowPlayingData nowPlaying = null;
+
+                    boolean navChanged = false;
+                    boolean nowPlayingChanged = false;
+
                     public void handleEvent(String type, DSIAndroidAuto2ReplyService.TracesSDScanner.Event event) {
-                        System.out.println("TracesSDScanner! Last event of type " + type + "=" + event);
-                        if (event instanceof TracesSDScanner.NowPlayingData) {
-                            TracesSDScanner.NowPlayingData nowPlaying = (TracesSDScanner.NowPlayingData) event;
+                        if (event instanceof TracesSDScanner.NavigationNextTurnEvent) {
+                            TracesSDScanner.NavigationNextTurnEvent newNextTurn = (TracesSDScanner.NavigationNextTurnEvent) event;
+                            if (nextTurn == null || !newNextTurn.toString().equals(nextTurn.toString())) {
+                                nextTurn = newNextTurn;
+                                navChanged = true;
+                            }
+                        } else if (event instanceof TracesSDScanner.NavigationNextTurnDistance) {
+                            TracesSDScanner.NavigationNextTurnDistance newNextTurnDistance = (TracesSDScanner.NavigationNextTurnDistance) event;
+                            if (nextTurnDistance == null
+                                    || !newNextTurnDistance.toString().equals(nextTurnDistance.toString())) {
+                                nextTurnDistance = newNextTurnDistance;
+                                navChanged = true;
+                            }
+
+                        } else if (event instanceof TracesSDScanner.NowPlayingData) {
+                            TracesSDScanner.NowPlayingData nextNowPlaying = (TracesSDScanner.NowPlayingData) event;
+                            if (nowPlaying == null
+                                    || !nextNowPlaying.toString().equals(nowPlaying.toString())) {
+                                nowPlaying = nextNowPlaying;
+                                nowPlayingChanged = true;
+                            }
+
+                        }
+                    }
+
+                    public void runFinished() {
+                        if (nowPlayingChanged) {
                             if (!CurrentStationInfo.AndroidAutoTitle.equals(nowPlaying.title)
                                     || !CurrentStationInfo.AndroidAutoArtist.equals(nowPlaying.artist)
                                     || !CurrentStationInfo.AndroidAutoAlbum.equals(nowPlaying.album)) {
@@ -776,7 +829,167 @@ public class DSIAndroidAuto2ReplyService
                                 CurrentStationInfo.AndroidAutoAlbum = nowPlaying.album;
                                 CurrentStationInfo.refresh();
                             }
+                            nowPlayingChanged = false;
                         }
+
+                        if (navChanged) {
+                            boolean shouldBeActive = false;
+                            String nextRoad = "";
+                            int nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_NO_SYMBOL;
+                            int nextDirection = 0;
+                            int nextDistance = -1;
+
+                            if (nextTurn != null && !nextTurn.event.equals("UNKNOWN")) {
+                                shouldBeActive = true;
+                                nextRoad = nextTurn.road != null ? nextTurn.road : "";
+
+                                if (nextTurnDistance != null) {
+                                    nextDistance = nextTurnDistance.distanceMeters;
+                                }
+
+                                // if event is estimated is more than 3 minutes into future and we are further
+                                // than 1km - we are just following along
+                                // to not distract with turns just yet.
+                                // - on highways 3 minutes will still be quite far away
+                                // - in city areas with potentially heavy traffic we also check for distance as
+                                // 1km might in jam might take longer than estimated
+                                // 3 minutes, but we should probably be getting ready to get on proper lane etc
+                                if (nextTurnDistance != null && nextTurnDistance.timeSeconds > 180
+                                        && nextTurnDistance.distanceMeters > 2500) {
+                                    nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_FOLLOW_STREET;
+                                    nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                } else if (nextTurn.event.equals("TURN")) {
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("SLIGHT_TURN")) {
+                                    // nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT_SLIGHT;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT_SLIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("SHARP_TURN")) {
+                                    // nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT_SHARP;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT_SHARP;
+                                    }
+                                } else if (nextTurn.event.equals("ON_RAMP")
+                                        || nextTurn.event.equals("OFF_RAMP") || nextTurn.event.equals("MERGE")) {
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_CHANGE_LANE;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_CHANGE_LANE;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    } else {
+                                        // this is for UNSPECIFIED turnSide - I get "MERGE" events with no turnSide
+                                        // using TURN with straight direction because it does show road name in gauge
+                                        // (FOLLOW_STREET shows "current streetname" to follow)
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("STRAIGHT") || nextTurn.event.equals("NAME_CHANGE")
+                                        || nextTurn.event.equals("DEPART")) {
+                                    nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_TURN;
+                                    nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                    if (nextTurn.event.equals("DEPART")) {
+                                        nextDistance = -1;
+                                    }
+                                } else if (nextTurn.event.equals("FORK")) {
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_2;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_2;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    } else {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_FORK_3;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("U_TURN")) {
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_UTURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_UTURN;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("ROUNDABOUT_ENTER")) {
+                                    nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_PREPARE_ROUNDABOUT;
+                                    nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                } else if (nextTurn.event.equals("ROUNDABOUT_EXIT")) {
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_EXIT_ROUNDABOUT_TRS_LEFT;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else {
+                                        nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_EXIT_ROUNDABOUT_TRS_RIGHT;
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    }
+                                } else if (nextTurn.event.equals("ROUNDABOUT_ENTER_AND_EXIT")) {
+                                    nextMainElement = nextTurn.turnSide.equals("LEFT")
+                                            ? ManeuverDescriptor.MAIN_ELEMENT_ROUNDABOUT_TRS_LEFT
+                                            : ManeuverDescriptor.MAIN_ELEMENT_ROUNDABOUT_TRS_RIGHT;
+                                    // Android "right" through roundabout is 90 maps to VW 192
+                                    // Android "straight" through roundabout is 180 maps to VW 0
+                                    // Android "left" through roundabout is 270 maps to VW 64
+                                    // Android "uturn" through roundabout is 360 maps to VW 128
+
+                                    // Android range from 0-360, VW range from 0-256
+                                    // Seems like VW supports increments of 16 (0, 16, 32, 48, 64, and so on)
+                                    // possibly more, but that's detailed enough.
+
+                                    nextDirection = ((((180 + (360 / (16 * 2)) + nextTurn.turnAngle) % 360) * 16) / 360)
+                                            * 16;
+                                } else if (nextTurn.event.equals("DESTINATION")) {
+                                    nextMainElement = ManeuverDescriptor.MAIN_ELEMENT_NEAR_DESTINATION;
+                                    nextDirection = ManeuverDescriptor.DIRECTION_STRAIGHT;
+                                    if (nextTurn.turnSide.equals("LEFT")) {
+                                        nextDirection = ManeuverDescriptor.DIRECTION_LEFT;
+                                    } else if (nextTurn.turnSide.equals("RIGHT")) {
+                                        nextDirection = ManeuverDescriptor.DIRECTION_RIGHT;
+                                    }
+                                }
+                            }
+
+                            boolean statusChanged = false;
+                            if (shouldBeActive != RGStatus.AndroidAutoRouteGuidanceActive) {
+                                RGStatus.AndroidAutoRouteGuidanceActive = shouldBeActive;
+                                statusChanged = true;
+                                RGStatus.refresh();
+                            }
+
+                            if (statusChanged || !nextRoad.equals(TurnToInfo.AndroidAutoRoad)) {
+                                TurnToInfo.AndroidAutoRoad = nextRoad;
+                                TurnToInfo.refresh();
+                            }
+
+                            if (statusChanged || ManeuverDescriptor.AndroidAutoManeuverMainELement != nextMainElement
+                                    || ManeuverDescriptor.AndroidAutoManeuverDirection != nextDirection) {
+                                ManeuverDescriptor.AndroidAutoManeuverMainELement = nextMainElement;
+                                ManeuverDescriptor.AndroidAutoManeuverDirection = nextDirection;
+                                ManeuverDescriptor.refresh();
+                            }
+
+                            if (statusChanged
+                                    || nextDistance != DistanceToNextManeuver.AndroidAutoDistanceToNextManeuver) {
+                                DistanceToNextManeuver.AndroidAutoDistanceToNextManeuver = nextDistance;
+                                DistanceToNextManeuver.refresh();
+                            }
+
+                            navChanged = false;
+                        }
+
                     }
                 };
                 scanner.start();

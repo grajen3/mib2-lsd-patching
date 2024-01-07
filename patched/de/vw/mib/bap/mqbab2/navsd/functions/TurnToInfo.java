@@ -23,9 +23,18 @@ public class TurnToInfo
         NavigationServiceListener {
     protected static /* final */ int[] NAVIGATION_LISTENER_IDS = new int[] { 744 };
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$TurnToInfo_Status;
+    public static TurnToInfo instance;
+    public static String AndroidAutoRoad = "";
+
+    public static void refresh() {
+        if (instance != null) {
+            instance.process(-1);
+        }
+    }
 
     // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
+        instance = this;
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         return null;
     }
@@ -99,9 +108,17 @@ public class TurnToInfo
     }
 
     protected void setTurnToInfoStatusData(TurnToInfo_Status turnToInfo_Status) {
-        NavigationTurnToInfo navigationTurnToInfo = this.getNavigationService().getTurnToInfo();
-        turnToInfo_Status.turnToInfo.setContent(navigationTurnToInfo.getTurnToInfoStreet());
-        turnToInfo_Status.signPost.setContent(navigationTurnToInfo.getTurnToInfoSignPost());
+        NavigationService navigationService = this.getNavigationService();
+        boolean isNastiveRouteGuidanceActive = navigationService.getRouteGuidanceState() == 1;
+        if (!isNastiveRouteGuidanceActive && RGStatus.AndroidAutoRouteGuidanceActive && !AndroidAutoRoad.equals("")) {
+            turnToInfo_Status.turnToInfo.setContent(AndroidAutoRoad);
+            turnToInfo_Status.signPost.setContent("");
+            return;
+        } else {
+            NavigationTurnToInfo navigationTurnToInfo = navigationService.getTurnToInfo();
+            turnToInfo_Status.turnToInfo.setContent(navigationTurnToInfo.getTurnToInfoStreet());
+            turnToInfo_Status.signPost.setContent(navigationTurnToInfo.getTurnToInfoSignPost());
+        }
     }
 
     // @Override

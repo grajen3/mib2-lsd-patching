@@ -23,9 +23,18 @@ public /* final */ class RGStatus
     private Boolean instrumentClusterActionStatus = null;
     protected static /* final */ int[] NAVIGATION_LISTENER_IDS = new int[] { 732, 733 };
     static /* synthetic */ Class class$de$vw$mib$bap$mqbab2$generated$navsd$serializer$RG_Status_Status;
+    public static RGStatus instance;
+    public static boolean AndroidAutoRouteGuidanceActive = false;
+
+    public static void refresh() {
+        if (instance != null) {
+            instance.process(-1);
+        }
+    }
 
     // @Override
     public BAPEntity init(BAPStageInitializer bAPStageInitializer) {
+        instance = this;
         this.getNavigationService().addNavigationServiceListener(this, NAVIGATION_LISTENER_IDS);
         return this.computeRGStatusStatus();
     }
@@ -54,11 +63,20 @@ public /* final */ class RGStatus
     }
 
     private void setRouteGuidanceStatus(RG_Status_Status rG_Status_Status) {
-        NavigationService navigationService = this.getNavigationService();
-        rG_Status_Status.rg_Status = navigationService.getNavigationStatus() != 0 ? 0
-                : (this.instrumentClusterActionStatus != null ? (this.instrumentClusterActionStatus
-                        .booleanValue() != false ? 1 : 0)
-                        : (navigationService.getRouteGuidanceState() == 0 ? 0 : 1));
+        if (AndroidAutoRouteGuidanceActive) {
+            // if Android Auto route guidance is active we force status to 1
+            // note that we "prefer" Android Auto route guidance status here
+            // over the native navigation service status, just for status
+            // but for actual navigation tips we prefer the native navigation service
+            rG_Status_Status.rg_Status = 1;
+        } else {
+            // otherwise we defer to the native navigation service
+            NavigationService navigationService = this.getNavigationService();
+            rG_Status_Status.rg_Status = navigationService.getNavigationStatus() != 0 ? 0
+                    : (this.instrumentClusterActionStatus != null ? (this.instrumentClusterActionStatus
+                            .booleanValue() != false ? 1 : 0)
+                            : (navigationService.getRouteGuidanceState() == 0 ? 0 : 1));
+        }
     }
 
     private void sendRouteGuidanceStatus(RG_Status_Status rG_Status_Status) {
