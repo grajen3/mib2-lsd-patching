@@ -182,8 +182,8 @@ public /* final */ class DistanceToNextManeuver
                     // above 1km round to nearest 0.1 kilometers
                     roundedDistance = ((roundedDistance + 50) / 100) * 100;
                 } else if (roundedDistance >= 300) {
-                    // above 300m round to nearest 25 meters
-                    roundedDistance = ((roundedDistance + 12) / 25) * 25;
+                    // above 300m round to nearest 50 meters
+                    roundedDistance = ((roundedDistance + 25) / 50) * 50;
                 } else {
                     // below 300m round to nearest 10 meters
                     roundedDistance = ((roundedDistance + 5) / 10) * 10;
